@@ -1,0 +1,212 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+%\hyperref[label_name]{''link text''}
+
+
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[english]{babel}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{mathrsfs}
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage{subfigure}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{comment}
+\usepackage{rotating}
+\usepackage{array}
+\usepackage{comment}
+
+\usepackage{lmodern}
+\usepackage[T1]{fontenc} 
+\usepackage[latin1]{inputenc} 
+\usepackage{textcomp}
+\usepackage{lineno}
+
+
+\usepackage{times}
+
+\usepackage{url,parskip} 	%other packages for formatting
+
+\newcommand{\HRule}{\rule[20pt]{\linewidth}{0.3mm}}
+\newcommand{\HRulesmall}{\rule[10pt]{0.5\linewidth}{0.3mm}}
+\newcommand{\atlas}{{\sc Atlas}}
+\newcommand{\cdf}{{\sc CDF}}
+\newcommand{\TeV}{{Te\kern -0.1em V}}
+\newcommand{\tev}{{Te\kern -0.1em V}}
+\newcommand{\GeV}{{Ge\kern -0.1em V}}
+\newcommand{\gev}{{Ge\kern -0.1em V}}
+%\def\TeV{\ifmmode {\mathrm{\ Te\kern -0.1em V}}\else
+%                   \textrm{Te\kern -0.1em V}\fi}%
+\newcommand{\trileptoncdf}{\ensuremath{p\bar{p}\rightarrow \tilde{\chi}_2^0\tilde{\chi}_1^\pm \rightarrow \ell\ell\ell\nu\tilde{\chi}_1^0\tilde{\chi}_1^0  }}
+\newcommand{\cnlep}{\ensuremath{\tilde{\chi}_2^0\tilde{\chi}_1^\pm \rightarrow \ell^+\ell^-\ell^\pm\nu\tilde{\chi}_1^0\tilde{\chi}_1^0}}
+\newcommand{\dchlep}{\ensuremath{H^{++}H^{--}\rightarrow \ell^{+}\ell^{+}\ell^{-}\ell^{-} }}
+\newcommand{\bprimelep}{\ensuremath{b'\bar{b}' \rightarrow WtWt \rightarrow WWbWWb}}
+\def\ifb{\mbox{fb$^{-1}$ }}%  Inverse femtobarns.
+
+
+\addtolength\topmargin{-1cm}
+%\addtolength\oddsidemargin{-1cm}
+%\addtolength\evensidemargin{-1cm}
+%\addtolength\textwidth{2cm}
+\addtolength\textheight{2cm}
+
+%\setlength\oddsidemargin{1cm}
+%\setlength\evensidemargin{1cm}
+
+\newcounter{pubcount}
+
+\include{definitions}
+
+
+
+\begin{document}
+
+%\linenumbers
+
+%\pagestyle{empty} % non-numbered pages
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0.pt}
+\renewcommand{\footrulewidth}{0.pt}
+\fancyfoot[RO, RE] {\thepage{} of 4}
+\fancyfoot[LO, LE] {{\it Srishti Patil - Project Report}}
+
+\vspace*{2mm}
+
+\thispagestyle{empty}
+\begin{center}
+\Large{\sc Signal Region Optimization for the search of Right Handed Neutrinos}
+\end{center}
+\vspace*{3mm}
+\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+  \large{}& \large{Srishti Patil}\\
+\end{tabular*}% 
+\vspace*{3mm}
+\HRule
+\vspace*{-2mm}
+
+
+\section{Introduction}
+\label{sec:intro}
+
+A powerful tool to search for new physics is the final state with three or more leptons. This signature occurs in several models of new physics such as directly or indirectly produced gauginos (\cnlep) in supersymmetry, or pair-produced charged Higgses (\dchlep), or 
+models with fourth generation down-type quarks (\bprimelep) where the $W$'s decay to leptons.
+With the right search strategy, this final state can be used to make definite statements about large parts of the phase space for new physics. 
+
+\section{Method}
+\label{sec:method}
+
+
+%figure
+\begin{figure}
+  \centering
+\end{figure}
+
+\subsection{Subsection1}
+\label{sec:submethod1}
+
+\begin{figure}
+  \centering
+\end{figure}
+
+\subsection{Subsection2}
+\label{sec:submethod2}
+
+\section{Tables}
+\label{sec:results}
+
+%tables
+\begin{table}
+  \begin{center}
+    \begin{tabular}{ccccc|c|c}
+      \hline \hline
+      \ntrk & Diboson& $Wt$& \ttbar& Fake& Total& Data\\
+      \hline \hline
+      \multicolumn{7}{c}{$40\gev<$ Leading muon $\pt<100\gev$} \\
+      \hline
+      $\ntrk<10$&            760&  616&  10074$\pm 16 \pm 1410$& 17972$\pm 3857$&	29422 $\pm$ $ 4107$& 29078 \\
+      $10\le \ntrk \le 11$ & 1.7&  13.4& 454$\pm 4 \pm 64$&         216$\pm 49$&	685 $\pm$ $ 81$&     639 \\
+      $12\le \ntrk \le 14$ & 0.7&  7.7&  251$\pm 3 \pm 35$&         114$\pm 29$&	373 $\pm$ $ 45$&     341 \\      
+      $15\le \ntrk \le 19$ & 0.2&  1.5&  86$\pm  2 \pm 12$&          38$\pm 11$&	126 $\pm$ $ 16$&      126 \\      
+      $\ntrk \ge 20$ &       0.0&  1.0&  14.9$\pm 0.6\pm 2.1$&      6.8 $\pm 2.1$&	23 $\pm$ $ 3$&     12 \\      \hline
+      \hline
+      \multicolumn{7}{c}{Leading muon $\pt>100\gev$} \\
+      \hline
+      $\ntrk<10$&            146& 198& 2127$\pm 8 \pm 298$&  2359$\pm 455$& 4830 $\pm$ $ 544$& 4443\\
+      $10\le \ntrk \le 11$ & 2.9& 4.4& 180$\pm 2 \pm 25$&       76$\pm 20$&   263 $\pm$ $ 32$& 272\\
+      $12\le \ntrk \le 14$ & 1.1& 6.0& 126$\pm 2 \pm 18$&       43$\pm 13$&   176 $\pm$ $ 22$& 167\\      
+      $15\le \ntrk \le 19$ & 0.3& 1.1& 56.1$\pm 1.2\pm 7.8$&  17.1$\pm 5.9$&   75 $\pm$ $ 10$& 68\\  \hline    
+      \hline
+      \multicolumn{7}{c}{Leading muon $\pt>40\gev$} \\ 
+      \hline
+      $\ntrk<20$&            913& 848& 13355$\pm 37 \pm 1870$&  20826$\pm 4379$& 35942 $\pm$ $ 4762$& 35134\\
+      $10\le \ntrk < 20$ &     7& 34&   1154$\pm 11 \pm 162$&    504$\pm 127$&   1699 $\pm$ $ 206$& 1613\\
+      \hline
+      \hline	
+    \end{tabular}
+  \caption[Validation Regions]{ The agreement in the validation regions between predictions and observation. Only the systematic
+uncertainty on the fake estimate is shown. The statistical and systematic uncertainties on the \ttbar{} background are shown. The Diboson
+and $Wt$ backgrounds are small, and the uncertainties on those are neither shown, nor included for this table.}
+  \label{tab:crsummary}
+  \end{center}
+\end{table}
+
+\begin{table}
+  \begin{center}
+    \begin{tabular}{c|c|ccc}
+      \hline \hline
+      Source&              Fake& \ttbar& $Wt$& Diboson \\ \hline
+      Measurement&         -& & & \\
+      Trigger&             -& & & \\
+      Bkgd. subtraction&   -& & & \\
+      \hline
+      ISR/FSR&              & 4.7& 4.5& \\ 
+      $t-$quark mass&       &  &  & \\
+      Generator&            & 7.6& 4.7& \\
+      $\mu$ reco/trig&       &  &  & \\
+      Cross section&        & 10.2& 6.8& 25\\ 
+      Luminosity& &           2.8& 2.8& 2.8\\ \hline
+      Total&                -&  14&  10& 25\\ \hline \hline
+    \end{tabular}
+  \caption[Systematics]{ The systematic uncertainties in percent in the background region are shown for the various backgrounds and sources. The uncertainties
+for the fake background are estimated in each region separately and are shown in Table~\ref{tab:crsummary}.}
+  \label{tab:systsummarybkg}
+  \end{center}
+\end{table}
+
+\begin{figure}
+  \centering
+  \subfigure{
+  }
+  \subfigure{
+  }
+\end{figure}
+
+\begin{thebibliography}{10}
+
+\bibitem{prlfb}
+  T.~Aaltonen {\it et al.}  [CDF Collaboration],
+  Phys.\ Rev.\ Lett.\  {\bf 101}, 251801 (2008)
+  [arXiv:0808.2446 [hep-ex]].
+
+\bibitem{cdfprl}
+  T.~Aaltonen {\it et al.}  [CDF Collaboration],
+  Phys.\ Rev.\ Lett.\  {\bf 99}, 191806 (2007)
+  [arXiv:0707.2362 [hep-ex]].
+
+
+
+\end{thebibliography}
+
+\end{document}
