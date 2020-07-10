@@ -2,7 +2,8 @@
 
 \usepackage{fullpage}
 \usepackage{fancyhdr}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\definecolor{highlight}{rgb}{0.46,0.98,0.59}
 \usepackage{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
@@ -24,6 +25,7 @@
 \usepackage{rotating}
 \usepackage{array}
 \usepackage{comment}
+\usepackage{graphicx}
 
 \usepackage{lmodern}
 \usepackage[T1]{fontenc} 
@@ -125,70 +127,53 @@ With the right search strategy, this final state can be used to make definite st
 \section{RHN Acceptance Cut-flow}
 \label{sec:cutflow}
 
+\begin{table}
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \hfil
+    \begin{tabular}{c|cccccc|cccccc}
+      \hline \hline
+       & \multicolumn{6}{c}{MVA} & \multicolumn{6}{c}{Deep} \\
+      \hline \hline
+      Selection & 150\GeV & 100\GeV & DY & \WZ & \ttbar & \wjets& 150\GeV & 100\GeV & DY & \WZ & \ttbar & \wjets\\
+      \hline
+      Total events ran & 285816 & 298880 & 23237 & 52560 & 24235935 & 57358383 & 285816 & 298880 & 23237 & 52560 & 24235935 & 57358383\\
+      Total events & 286200 & 299200 & 23237 & 52560 & 24265024 & 57402435 & 286200 & 299200 & 23237 & 52560 & 24265024 & 57402435\\
+      $4\ell$ events & 2 & 4 & 2 & 9 & 855 & 0 & 2 & 4 & 2 & 9 & 855 & 0\\
+      $N_{1\ell}$ events & 166649 & 140098 & 23237 & 52560 & 18340314 & 18917151 & 166649 & 140098 & 23237 & 52560 & 18340314 & 18917151\\
+      $N_{1\ell\_trigg}$ events & 99912 & 72436 & 21406 & 47589 & 13065106 & 10297682 & 99912 & 72436 & 21406 & 47589 & 13065106 & 10297682\\
+      $N_{1\ell\_trigg\_1\ell}$ events & 22994 & 10915 & 21033 & 38399 & 2835198 & 1538 & 22994 & 10915 & 21033 & 38399 & 2835198 & 1538\\
+      $N_{1\ell\_trigg\_1\ell\pt10}$ events & 21495 & 9111 & 20680 & 36568 & 2726718 & 396 & 21495 & 9111 & 20680 & 36568 & 2726718 & 396\\
+      $N_{1\ell\_trigg\_1\ell\pt10\_1\ell}$ events & 2681 & 857 & 54 & 825 & 16869 & 2 & 2681 & 857 & 54 & 825 & 16869 & 2\\
+      \rowcolor{highlight} $N_{1\ell\_trigg\_2\ell\pt10}$ events ($3\ell$ events) & 2251 & 619 & 37 & 746 & 10002 & 1 & 2251 & 619 & 37 & 746 & 10002 & 1\\
+      $N_{1\ell\_trigg\_1\ell\pt10\_1\tau}$ events & 4524 & 1022 & 16333 & 29722 & 1819 & 0 & 3389 & 663 & 11742 & 29813 & 1294 & 0\\
+      \rowcolor{highlight}$N_{1\ell\_trigg\_1\ell\pt10\_1\tau\pt20}$ events ($2\ell1\tau$ events) & 4280 & 908 & 16329 & 29706 & 1696 & 0 & 3389 & 663 & 11742 & 29813 & 1294 & 0\\
+      $N_{1\ell\_trigg\_1\tau}$ events & 23319 & 10796 & 189 & 7478 & 876646 & 7 & 17542 & 7315 & 284 & 7562 & 590115 & 6\\
+      $N_{1\ell\_trigg\_1\tau\pt20}$ events & 22069 & 9684 & 189 & 7476 & 805080 & 6 & 17452 & 7315 & 284 & 7562 & 590115 & 6\\
+      $N_{1\ell\_trigg\_1\tau\pt20\_1\tau}$ events & 3049 & 506 & 1 & 136 & 23 & 0 & 1681 & 190 & 0 & 25 & 7 & 0\\
+      \rowcolor{highlight}$N_{1\ell\_trigg\_2\tau\pt20}$ events ($1\ell2\tau$ events) & 2670 & 363 & 0 & 104 & 21 & 0 & 1681 & 190 & 0 & 25 & 7 & 0\\
+      $N_{1\tau}$ events & 37486 & 22362 & 0 & 0 & 1182328 & 1301502 & 27692 & 14793 & 0 & 0 & 803086 & 763144\\
+      $N_{1\tau\pt20}$ events & 35331 & 20113 & 0 & 0 & 1090836 & 1124963 & 27692 & 14793 & 0 & 0 & 803086 & 763144\\
+      $N_{1\tau\pt20\_1\tau}$ events & 6960 & 2038 & 0 & 0 & 71619 & 0 & 3724 & 916 & 0 & 0 & 33355 & 0\\
+      $N_{2\tau\pt20}$ events & 6118 & 1637 & 0 & 0 & 60823 & 0 & 3724 & 916 & 0 & 0 & 33355 & 0\\
+      $N_{2\tau\pt20\_1\tau}$ events & 520 & 79 & 0 & 0 & 0 & 0 & 231 & 28 & 0 & 0 & 0 & 0\\
+      \rowcolor{highlight} $N_{3\tau\pt20}$ events ($3\tau$ events) & 434 & 54 & 0 & 0 & 0 & 0 & 231 & 28 & 0 & 0 & 0 & 0\\
+      \hline
+      \hline	
+    \end{tabular}%
+  }
+  %\caption[Validation Regions]{ The agreement in the validation regions between predictions and observation. Only the systematic
+    %uncertainty on the fake estimate is shown. The statistical and systematic uncertainties on the \ttbar{} background are shown. The Diboson
+    %and $Wt$ backgrounds are small, and the uncertainties on those are neither shown, nor included for this table.}
+  \label{tab:crsummary}
+\end{table}
+
 \subsection{MVA Tau ID vs Deep Tau ID}
 \label{sec:mvadeep}
 
 \section{Results}
 \label{sec:results}
 
-
-\begin{table}
-  \begin{center}
-    \begin{tabular}{ccccc|c|c}
-      \hline \hline
-      \ntrk & Diboson& $Wt$& \ttbar& Fake& Total& Data\\
-      \hline \hline
-      \multicolumn{7}{c}{$40\gev<$ Leading muon $\pt<100\gev$} \\
-      \hline
-      $\ntrk<10$&            760&  616&  10074$\pm 16 \pm 1410$& 17972$\pm 3857$&	29422 $\pm$ $ 4107$& 29078 \\
-      $10\le \ntrk \le 11$ & 1.7&  13.4& 454$\pm 4 \pm 64$&         216$\pm 49$&	685 $\pm$ $ 81$&     639 \\
-      $12\le \ntrk \le 14$ & 0.7&  7.7&  251$\pm 3 \pm 35$&         114$\pm 29$&	373 $\pm$ $ 45$&     341 \\      
-      $15\le \ntrk \le 19$ & 0.2&  1.5&  86$\pm  2 \pm 12$&          38$\pm 11$&	126 $\pm$ $ 16$&      126 \\      
-      $\ntrk \ge 20$ &       0.0&  1.0&  14.9$\pm 0.6\pm 2.1$&      6.8 $\pm 2.1$&	23 $\pm$ $ 3$&     12 \\      \hline
-      \hline
-      \multicolumn{7}{c}{Leading muon $\pt>100\gev$} \\
-      \hline
-      $\ntrk<10$&            146& 198& 2127$\pm 8 \pm 298$&  2359$\pm 455$& 4830 $\pm$ $ 544$& 4443\\
-      $10\le \ntrk \le 11$ & 2.9& 4.4& 180$\pm 2 \pm 25$&       76$\pm 20$&   263 $\pm$ $ 32$& 272\\
-      $12\le \ntrk \le 14$ & 1.1& 6.0& 126$\pm 2 \pm 18$&       43$\pm 13$&   176 $\pm$ $ 22$& 167\\      
-      $15\le \ntrk \le 19$ & 0.3& 1.1& 56.1$\pm 1.2\pm 7.8$&  17.1$\pm 5.9$&   75 $\pm$ $ 10$& 68\\  \hline    
-      \hline
-      \multicolumn{7}{c}{Leading muon $\pt>40\gev$} \\ 
-      \hline
-      $\ntrk<20$&            913& 848& 13355$\pm 37 \pm 1870$&  20826$\pm 4379$& 35942 $\pm$ $ 4762$& 35134\\
-      $10\le \ntrk < 20$ &     7& 34&   1154$\pm 11 \pm 162$&    504$\pm 127$&   1699 $\pm$ $ 206$& 1613\\
-      \hline
-      \hline	
-    \end{tabular}
-  \caption[Validation Regions]{ The agreement in the validation regions between predictions and observation. Only the systematic
-uncertainty on the fake estimate is shown. The statistical and systematic uncertainties on the \ttbar{} background are shown. The Diboson
-and $Wt$ backgrounds are small, and the uncertainties on those are neither shown, nor included for this table.}
-  \label{tab:crsummary}
-  \end{center}
-\end{table}
-
-\begin{table}
-  \begin{center}
-    \begin{tabular}{c|c|ccc}
-      \hline \hline
-      Source&              Fake& \ttbar& $Wt$& Diboson \\ \hline
-      Measurement&         -& & & \\
-      Trigger&             -& & & \\
-      Bkgd. subtraction&   -& & & \\
-      \hline
-      ISR/FSR&              & 4.7& 4.5& \\ 
-      $t-$quark mass&       &  &  & \\
-      Generator&            & 7.6& 4.7& \\
-      $\mu$ reco/trig&       &  &  & \\
-      Cross section&        & 10.2& 6.8& 25\\ 
-      Luminosity& &           2.8& 2.8& 2.8\\ \hline
-      Total&                -&  14&  10& 25\\ \hline \hline
-    \end{tabular}
-  \caption[Systematics]{ The systematic uncertainties in percent in the background region are shown for the various backgrounds and sources. The uncertainties
-for the fake background are estimated in each region separately and are shown in Table~\ref{tab:crsummary}.}
-  \label{tab:systsummarybkg}
-  \end{center}
-\end{table}
 
 \begin{thebibliography}{10}
 
