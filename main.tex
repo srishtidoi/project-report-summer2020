@@ -37,7 +37,9 @@
 \usepackage{times}
 
 \usepackage{url,parskip} 	%other packages for formatting
+\usepackage{makecell}
 
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}  %for bullet points inside table
 \newcommand{\HRule}{\rule[20pt]{\linewidth}{0.3mm}}
 \newcommand{\HRulesmall}{\rule[10pt]{0.5\linewidth}{0.3mm}}
 \newcommand{\atlas}{{\sc Atlas}}
@@ -99,9 +101,6 @@
 \section{Introduction}
 \label{sec:intro}
 
-\trileptoncdf\\
-36\ifb 13 \TeV
-
 A powerful tool to search for new physics is the final state with three or more leptons. This signature occurs in several models of new physics such as directly or indirectly produced gauginos (\cnlep) in supersymmetry, or pair-produced charged Higgses (\dchlep), or 
 models with fourth generation down-type quarks (\bprimelep) where the $W$'s decay to leptons.
 With the right search strategy, this final state can be used to make definite statements about large parts of the phase space for new physics. 
@@ -114,6 +113,72 @@ With the right search strategy, this final state can be used to make definite st
 
 \subsection{Object Selection}
 \label{sec:objectsel}
+
+
+\begin{table}
+  \centering
+  \tiny
+  \setlength{\tabcolsep}{30pt}
+  \renewcommand{\arraystretch}{2}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{c|c}
+      \hline \hline
+      \textbf{Muons} & \textbf{Electrons}\\
+      \hline
+       
+      \makecell{\\$\sbullet \hspace{0.2cm} \pt>10, |\eta|<2.4$ \\
+        $\sbullet \hspace{0.2cm}$ Prompt ($d_{xy}<0.05, d_{z}<0.1$ cuts)\\
+        $\sbullet \hspace{0.2cm}$ POG Medium ID\\
+        $\sbullet \hspace{0.2cm}$ Relative dB-corrected isolation \\ tight WP $(<0.15$ in $\DeltaR=0.4)$}&
+      
+      \makecell{\\$\sbullet \hspace{0.2cm} \pt>10, |\eta|<2.5$ \\
+        $\sbullet \hspace{0.2cm}$ Prompt ($d_{xy}<0.05(0.1),$\\ $d_{z}<0.1(0.2)$ in barrel(endcap) region)\\
+        $\sbullet \hspace{0.2cm}$ Cut-based Medium ID\\
+        $\sbullet \hspace{0.2cm}$ Relative rho-corrected isolation \\ Medium WP (included in ID)}
+      \\
+      \\
+      \hline \hline
+
+    \end{tabular}%
+  }
+  \label{tab:objsel}
+\end{table}
+
+
+\begin{table}
+  \centering
+  \setlength{\tabcolsep}{30pt}
+  \renewcommand{\arraystretch}{2}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{c|c}
+      \hline \hline
+      \multicolumn{2}{c}{\textbf{Taus}}\\
+      \hline
+      MVA ID & Deep ID\\
+      \hline
+ 
+      \makecell{\\$\sbullet \hspace{0.2cm} \pT>20, |\eta|<2.3$ \\
+        $\sbullet \hspace{0.2cm}$ Prompt ($d_{z}<0.2$ cut)\\
+        $\sbullet \hspace{0.2cm}$ Old decayModeFinding, 1-prong \& 3-prong\\
+        $\sbullet \hspace{0.2cm}$ '2017v2' ID\\
+        $\sbullet \hspace{0.2cm}$ againstElectron \& againstMuon discriminators, loose WP\\
+        $\sbullet \hspace{0.2cm}$ Cleaning against tight ID light leptons ($\DeltaR>0.4$)}  &
+      
+      \makecell{\\$\sbullet \hspace{0.2cm} \pT>20, |\eta|<2.3$ \\
+        $\sbullet \hspace{0.2cm}$ Prompt ($d_{z}<0.2$ cut)\\
+        $\sbullet \hspace{0.2cm}$ New decayModeFinding, 1-prong \& 3-prong\\
+        $\sbullet \hspace{0.2cm}$ Tau\_idDeepTau2017v2p1VSe $\geq 15$ \& \\ Tau\_idDeepTau2017v2p1VSmu $\geq 3$ (Loose WP)\\
+        $\sbullet \hspace{0.2cm}$ Tau\_idDeepTau2017v2p1VSjet > 31 (Tight WP)}
+      \\
+      \\
+      \hline \hline
+      
+      
+    \end{tabular}%
+  }
+  \label{tab:objsel}
+\end{table}
+
 
 \subsection{Event Selection}
 \label{sec:eventsel}
