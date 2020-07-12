@@ -33,6 +33,14 @@
 \usepackage{textcomp}
 \usepackage{lineno}
 
+%for flowcharts
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=red]
+\tikzstyle{io} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{decision} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{arrow} = [thick, ->, >=stealth]
 
 \usepackage{times}
 
@@ -141,7 +149,7 @@ With the right search strategy, this final state can be used to make definite st
 
     \end{tabular}%
   }
-  \label{tab:objsel}
+  \label{tab:objselemu}
 \end{table}
 
 
@@ -176,12 +184,106 @@ With the right search strategy, this final state can be used to make definite st
       
     \end{tabular}%
   }
-  \label{tab:objsel}
+  \label{tab:objseltau}
 \end{table}
 
 
 \subsection{Event Selection}
 \label{sec:eventsel}
+
+\begin{tikzpicture}[node distance = 2cm]
+  \node(a)[io]{$\geq4\ell$};
+  \node(b)[startstop, below of=a]{$=3\ell + 0\tau$};
+  \node(c)[startstop, below of=b]{$=3\ell + \geq1\tau$};
+  \node(d)[startstop, below of=c]{$=2\ell + 2\geq\tau$};
+  \node(e)[startstop, below of=d]{$=2\ell + 1\tau$};
+  \node(f)[io, below of=e]{$=1\ell + \geq2\tau$};
+  \draw[arrow] (a)--(b);
+  \draw[arrow] (b)--(c);
+  \draw[arrow] (c)--(d);
+  \draw[arrow] (d)--(e);
+  \draw[arrow] (e)--(f);
+\end{tikzpicture}
+
+\begin{table}
+  \centering
+  \setlength{\tabcolsep}{30pt}
+  \renewcommand{\arraystretch}{1.2}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{l}
+    \hline \hline
+    \\
+    \centerline{Triggers for leading light lepton ($e/\mu$)}\\
+    \\
+  $\sbullet \hspace{0.2cm}$ Muons $\pt>26(29) \GeV$ for $2016$ \& $2018(2017)$\\
+  $\sbullet \hspace{0.2cm}$ Electrons $\pt>30(35) \GeV$ for $2016(2017$ \& $2018)$\\
+  \\
+  \hline
+  \\
+  \centerline{Trigger (in data only)}\\
+  $\sbullet \hspace{0.2cm}$ $2016$:\\
+  $\hspace{1cm}1. \hspace{0.2cm}$ For Single Muon PD, HLT\_IsoMu24 \& HLT\_IsoTkMu24\\
+  $\hspace{1cm}2. \hspace{0.2cm}$ For Single Electron PD, HLT\_Ele27\_WPTight\_Gsf\\
+  $\sbullet \hspace{0.2cm}$ $2017$:\\
+  $\hspace{1cm}1. \hspace{0.2cm}$ For Single Muon PD, HLT\_IsoMu27\\
+  $\hspace{1cm}2. \hspace{0.2cm}$ For Single Electron PD, HLT\_Ele32\_WPTight\_Gsf \& HLT\_Ele32\_WPTight\_Gsf\_L1DoubleEG\\
+  $\sbullet \hspace{0.2cm}$ $2018$:\\
+  $\hspace{1cm}1. \hspace{0.2cm}$ For Single Muon PD, HLT\_IsoMu24\\
+  $\hspace{1cm}2. \hspace{0.2cm}$ For Single Electron PD, HLT\_Ele32\_WPTight\_Gsf\\
+  \\
+  \hline \hline
+  
+
+  \end{tabular}%
+  }
+  \label{tab:triggers}
+\end{table}
+
+  
+
+\begin{table}
+  \centering
+  \setlength{\tabcolsep}{30pt}
+  \renewcommand{\arraystretch}{1.2}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{l}
+    \hline \hline
+    \centerline{\textbf{Event Selections}}\\
+    \hline
+    \centerline{$3\ell$}\\
+    \hline
+    $\sbullet \hspace{0.2cm}$ Leading light lepton ($e/\mu$) passing triggers\\
+    $\sbullet \hspace{0.2cm}$ Altleast two more light leptons ($e/\mu$), $\pt>10,10 \GeV$\\
+    $\sbullet \hspace{0.2cm} \DeltaR>0.4$ among the three leptons\\
+    $\sbullet \hspace{0.2cm}$ Minimum invariant mass of same flavor (SF) light lepton pair $> 12 \GeV$\\
+    $\sbullet \hspace{0.2cm}$ Minimum $\DeltaR$ between all leptons in the event $> 0.4$\\
+    $\sbullet \hspace{0.2cm}$ Triggers (in data only)\\
+    \hline
+    \centerline{$2\ell + \geq1\tau$}\\
+    \hline
+    $\sbullet \hspace{0.2cm}$ Event should fail $3\ell$ selection\\
+    $\sbullet \hspace{0.2cm}$ Leading light lepton ($e/\mu$) passing triggers\\
+    $\sbullet \hspace{0.2cm}$ Another light lepton ($e/\mu$), $\pt>10 GeV$\\
+    $\sbullet \hspace{0.2cm}$ Minimum invariant mass of same flavor (SF) light lepton pair $> 12 \GeV$\\
+    $\sbullet \hspace{0.2cm}$ Atleast one hadronic tau, $\pt>20 \GeV$\\
+    $\sbullet \hspace{0.2cm}$ $\DeltaR>0.4$ among the three leptons\\
+    $\sbullet \hspace{0.2cm}$ Triggers (in data only)\\
+    \hline
+    \centerline{$1\ell + \geq2\tau$}\\
+    \hline
+    $\sbullet \hspace{0.2cm}$ Exactly one light lepton ($e/\mu$), for triggering\\
+    $\sbullet \hspace{0.2cm}$ Atleast two hadronic taus, $\pt>20,20 \GeV$\\
+    \hspace{1cm}- Prompt taus passe tight ID, fake taus pass loose ID\\
+    $\sbullet \hspace{0.2cm}$ $\DeltaR>0.4$ among the three leptons\\
+    $\sbullet \hspace{0.2cm}$ Triggers (in data only)\\
+    $\sbullet \hspace{0.2cm}$ Event should fail all other event ($3\ell,2\ell+\geq1\tau..$) selections\\
+    \hline \hline
+      
+      
+    \end{tabular}%
+  }
+  \label{tab:eventsel}
+\end{table}
 
 \section{Backgrounds}
 \label{sec:backgrounds}
