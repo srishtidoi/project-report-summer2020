@@ -116,6 +116,33 @@ With the right search strategy, this final state can be used to make definite st
 \section{Overview}
 \label{sec:overview}
 
+\begin{table}
+  \centering
+  \setlength{\tabcolsep}{30pt}
+  \renewcommand{\arraystretch}{2}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{c|c|c|c}
+      \hline \hline
+        
+      \multirow{2}{*}{\textbf{Sample (Mass Point)}} & \multirow{2}{*}{\textbf{Total Number of Events}} &
+      \multirow{2}{*}{\makecell{$\textbf{Cross-Section (xsec)}$\\
+        $\textbf{(pb)}$}} &
+      \multirow{2}{*}{\makecell{$\textbf{Luminosity}$\\
+        $\textbf{(\ifb)}$}}\\
+       & & & \\
+      \hline
+      \rule{0pt}{7ex}    
+      100 $\GeV$ & 299200 & 0.830 & 360.482 \\
+      150 $\GeV$ & 286200 & 0.119 & 2405.042 \\
+      400 $\GeV$ & 200000 & 0.00272 & 73529.411 \\
+       & & & \\    
+      \hline \hline
+      
+    \end{tabular}%
+  }
+  \label{tab:samples}
+\end{table}
+
 \section{Selections}
 \label{sec:selections}
 
@@ -125,24 +152,24 @@ With the right search strategy, this final state can be used to make definite st
 
 \begin{table}
   \centering
-  \tiny
+  \scriptsize
   \setlength{\tabcolsep}{30pt}
   \renewcommand{\arraystretch}{2}
   \resizebox{\textwidth}{!}{%
     \begin{tabular}{c|c}
       \hline \hline
-      \textbf{Muons} & \textbf{Electrons}\\
+      \makecell[c]{\textbf{Muons}} & \makecell[c]{\textbf{Electrons}}\\
       \hline
        
-      \makecell{\\$\sbullet \hspace{0.2cm} \pt>10, |\eta|<2.4$ \\
+      \makecell[l]{\\$\sbullet \hspace{0.3cm} \pt>10, |\eta|<2.4$ \\
         $\sbullet \hspace{0.2cm}$ Prompt ($d_{xy}<0.05, d_{z}<0.1$ cuts)\\
         $\sbullet \hspace{0.2cm}$ POG Medium ID\\
-        $\sbullet \hspace{0.2cm}$ Relative dB-corrected isolation \\ tight WP $(<0.15$ in $\DeltaR=0.4)$}&
+        $\sbullet \hspace{0.2cm}$ Relative dB-corrected isolation \\$\hspace{0.3cm}$ tight WP $(<0.15$ in $\DeltaR=0.4)$}&
       
-      \makecell{\\$\sbullet \hspace{0.2cm} \pt>10, |\eta|<2.5$ \\
-        $\sbullet \hspace{0.2cm}$ Prompt ($d_{xy}<0.05(0.1),$\\ $d_{z}<0.1(0.2)$ in barrel(endcap) region)\\
-        $\sbullet \hspace{0.2cm}$ Cut-based Medium ID\\
-        $\sbullet \hspace{0.2cm}$ Relative rho-corrected isolation \\ Medium WP (included in ID)}
+      \makecell[l]{\\$\sbullet \hspace{0.2cm} \pt>10, |\eta|<2.5$ \\
+        $\sbullet \hspace{0.2cm}$Prompt ($d_{xy}<0.05(0.1), d_{z}<0.1(0.2)$ \\ $\hspace{0.3cm}$in barrel(endcap) region)\\
+        $\sbullet \hspace{0.2cm}$Cut-based Medium ID\\
+        $\sbullet \hspace{0.2cm}$Relative rho-corrected isolation \\$\hspace{0.2cm}$ Medium WP (included in ID)}
       \\
       \\
       \hline \hline
@@ -165,17 +192,17 @@ With the right search strategy, this final state can be used to make definite st
       MVA ID & Deep ID\\
       \hline
  
-      \makecell{\\$\sbullet \hspace{0.2cm} \pT>20, |\eta|<2.3$ \\
+      \makecell[l]{\\$\sbullet \hspace{0.3cm} \pT>20, |\eta|<2.3$ \\
         $\sbullet \hspace{0.2cm}$ Prompt ($d_{z}<0.2$ cut)\\
         $\sbullet \hspace{0.2cm}$ Old decayModeFinding, 1-prong \& 3-prong\\
         $\sbullet \hspace{0.2cm}$ '2017v2' ID\\
         $\sbullet \hspace{0.2cm}$ againstElectron \& againstMuon discriminators, loose WP\\
         $\sbullet \hspace{0.2cm}$ Cleaning against tight ID light leptons ($\DeltaR>0.4$)}  &
       
-      \makecell{\\$\sbullet \hspace{0.2cm} \pT>20, |\eta|<2.3$ \\
+      \makecell[l]{\\$\sbullet \hspace{0.3cm} \pT>20, |\eta|<2.3$ \\
         $\sbullet \hspace{0.2cm}$ Prompt ($d_{z}<0.2$ cut)\\
         $\sbullet \hspace{0.2cm}$ New decayModeFinding, 1-prong \& 3-prong\\
-        $\sbullet \hspace{0.2cm}$ Tau\_idDeepTau2017v2p1VSe $\geq 15$ \& \\ Tau\_idDeepTau2017v2p1VSmu $\geq 3$ (Loose WP)\\
+        $\sbullet \hspace{0.2cm}$ Tau\_idDeepTau2017v2p1VSe $\geq 15$ \& \\ $\hspace{0.3cm}$ Tau\_idDeepTau2017v2p1VSmu $\geq 3$ (Loose WP)\\
         $\sbullet \hspace{0.2cm}$ Tau\_idDeepTau2017v2p1VSjet > 31 (Tight WP)}
       \\
       \\
@@ -288,6 +315,40 @@ With the right search strategy, this final state can be used to make definite st
 \section{Backgrounds}
 \label{sec:backgrounds}
 
+\begin{table}
+  \centering
+  \setlength{\tabcolsep}{30pt}
+  \renewcommand{\arraystretch}{1.5}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{p{0.0001\textwidth}|p{0.15\textwidth}|c|c|c}
+      \hline \hline
+      \multicolumn{2}{c|}{\multirow{2}{*}{\textbf{Background}}} &
+      \multirow{2}{*}{\textbf{Total Number of Events}} &
+      \multirow{2}{*}{\makecell{$\textbf{Cross-Section (xsec)}$\\
+        $\textbf{(pb)}$}} &
+      \multirow{2}{*}{\makecell{$\textbf{Luminosity}$\\
+        $\textbf{(\ifb)}$}}\\
+      \multicolumn{2}{c|}{} & & & \\
+      \hline
+      &&&&\\
+      \multirow{4}{*}{\begin{sideways} {\large{$2\ell1\tau$ Skims}} \end{sideways}} & DY & 89,832,690 & 5765 & 15.582\\
+      & $\WZ$ & 6,610,401 & 5.052 & 1308.472\\
+      & $\ZZ$ & 7,547,891 & 1.325 & 5696.521\\
+      & $\ttbar$ & 24,265,024 & 88.29 & 274.833\\
+      &&&&\\   
+      \hline
+      &&&&\\
+      \multirow{4}{*}{\begin{sideways} {\large{$3\ell$ Skims}} \end{sideways}} & DY & 89,832,690 & 5765 & 15.582\\
+      & $\WZ$ & 1,295,229 & 5.052 & 256.378\\
+      & $\ZZ$ & 1,041,601 & 1.325 & 786.114\\
+      & $\ttbar$ & 24,265,024 & 88.29 & 274.833\\
+      &&&&\\   
+     \hline \hline
+    \end{tabular}%
+    }
+  \label{tab:bkgs} 
+\end{table}
+
 \section{Signal Region Optimization}
 \label{sec:sro}
 
@@ -298,7 +359,7 @@ With the right search strategy, this final state can be used to make definite st
   \centering
   \resizebox{\linewidth}{!}{%
     \hfil
-    \begin{tabular}{c|cccccc|cccccc}
+    \begin{tabular}{c|rrrrrr|rrrrrr}
       \hline \hline
        & \multicolumn{6}{c}{MVA} & \multicolumn{6}{c}{Deep} \\
       \hline \hline
