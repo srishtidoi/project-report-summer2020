@@ -42,6 +42,11 @@
 \tikzstyle{decision} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black]
 \tikzstyle{arrow} = [thick, ->, >=stealth]
 
+%for figures
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+\usepackage[font=footnotesize,labelfont=it]{caption}
+
 \usepackage{times}
 
 \usepackage{url,parskip} 	%other packages for formatting
@@ -88,8 +93,8 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0.pt}
 \renewcommand{\footrulewidth}{0.pt}
-\fancyfoot[RO, RE] {\thepage{} of }
-\fancyfoot[LO, LE] {{\it Srishti Patil - Project Report}}
+\fancyfoot[RO, RE] {\footnotesize{\thepage{} of }}
+\fancyfoot[LO, LE] {\footnotesize{\it Srishti Patil - Project Report}}
 
 \vspace*{2mm}
 
@@ -105,31 +110,34 @@
 \HRule
 \vspace*{-2mm}
 
-
 \section{Introduction}
 \label{sec:intro}
 
-The Standard Model of particle physics (SM) along with the theory of General Relativity (GR) can describe almost everything observed in nature, barring a few experimental and observational facts like baryon assymetry and the composition and origin of Dark Matter. If \emph{right handed neutrinos} (RHN) exist, they could be responsible for all these unexplained phenomena.
+The Standard Model of particle physics (SM) along with the theory of General Relativity (GR) can describe almost everything observed in nature, barring a few experimental and observational facts like baryon assymetry and the composition and origin of Dark Matter. \emph{Right handed neutrinos} (RHN), if they exist, could be responsible for a lot of these unexplained phenomena. They are promising Dark Matter candidates.
 
-This project is a part of the search for RHN using data samples collected by the CMS experiment at the LHC in 2016 [Table~\ref{table:samples}], corresponding to an integrated luminosity of 36 \ifb. We employ a technique called multilepton analysis [Section~\ref{sec:overview}]  for the search and the project focuses on a part of the process called Signal Region (SR) optimization [Section~\ref{sec:sro}]. The results obtained are used to produce limits on the production of right handed neutrinos.
+This project is a part of the search for RHN using data samples collected by the CMS experiment at the LHC in 2016 [Table~\ref{tab:samples}], corresponding to an integrated luminosity of 36 \ifb. We employ a technique called multilepton analysis [Section~\ref{sec:overview}]  for the search and the project focuses on a part of the process called Signal Region (SR) optimization [Section~\ref{sec:sro}]. The results obtained are used to produce limits on the production of right handed neutrinos.
+\\
+
+%feynman diagram
+\begin{figure}[h!]
+  \includegraphics[width=0.7\textwidth, center]{RHNfeynman.png}
+  \caption{Illustrative leading order Feynman diagram for the production of RHN and its subsequent decay that may result in a multilepton final state. The taus can decay either hadronically or leptonically, giving us different channels to analyze that have different background profiles}
+  \label{fig:rhnfeyn}
+\end{figure}
 
 \section{Overview}
 \label{sec:overview}
 
-The final state of an event (collision) is the set of particles seen by the detector. A lot of proceses Beyond the Standard Model (BSM) produce final states which majorly have multiple leptons, which is the motivation behind the development of a technique called Multilepton Analysis. Since a lot of SM processes also produce multilepton final states (called background), we use this strategy to distinguish signal from background.  
+The final state of an event (collision) is the set of particles seen by the detector. A lot of proceses Beyond the Standard Model (BSM) produce final states which majorly have multiple leptons, which is the motivation behind the development of a technique called Multilepton Analysis. Since a lot of SM processes also produce multilepton final states (called background), we use this strategy to distinguish signal from background.
 
-The model considered here [```ref figure```] includes a right handed neutrino ($N$) that decays into a \Wboson{} boson and a $\tau$, which decay further, giving rise to multilepton final states. For this analysis, we refer to electrons and muons collectively as light leptons ($\ell$). Events are then categorized by the multiplicity of light leptons and taus ($\tau$) in these final states, into the following channels:
+The model considered here [Figure~\ref{fig:rhnfeyn}] includes a right handed neutrino ($N$) that decays into a \Wboson{} boson and a $\tau$, which decay further, giving rise to multilepton final states. For this analysis, we refer to electrons and muons collectively as light leptons ($\ell$). Events are then categorized by the multiplicity of light leptons and taus ($\tau$) in these final states, into the following channels: $3\ell$, $2\ell1\tau$, $1\ell2\tau$ and $3\tau$.
 
-\begin{enumerate}
-\item $3\ell$
-\item $2\ell1\tau$
-\item $1\ell2\tau$
-\item $3\tau$
-\end{enumerate}
+To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cutflow}, Table~\ref{tab:cutflow}] for both the tau IDs, to understand the process and how various triggers and selections affect the acceptance. Next, we attempt to understand the process of RHN production and decay at the gen-level [```ref section```] (\ie{} from simulations). Guided by the conclucions drawn from the study of these gen-level plots, we try to carve out a Signal Region [Section~\ref{sec:sro}] from the phase space which will give us good signal sensitivity. We use signal significance [```ref table```] as a metric to compare signal regions.   
 
-% feynman diag, cutlfow, equation, obj sel, event sel, sro
-
-\begin{table}
+%samples
+\setcounter{table}{0}
+\begin{table}[t!]
+  \renewcommand\thetable{1}
   \centering
   \setlength{\tabcolsep}{30pt}
   \renewcommand{\arraystretch}{2}
@@ -137,7 +145,7 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
     \begin{tabular}{c|c|c|c}
       \hline \hline
         
-      \multirow{2}{*}{\textbf{Sample (Mass Point)}} & \multirow{2}{*}{\textbf{Total Number of Events}} &
+      \multirow{2}{*}{\textbf{Sample (Mass Point)}} & \multirow{2}{*}{\textbf{Total Number of Events (n)}} &
       \multirow{2}{*}{\makecell{$\textbf{Cross-Section (xsec)}$\\
         $\textbf{(pb)}$}} &
       \multirow{2}{*}{\makecell{$\textbf{Luminosity}$\\
@@ -145,25 +153,34 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
        & & & \\
       \hline
       \rule{0pt}{7ex}    
-      100 $\GeV$ & 299200 & 0.830 & 360.482 \\
-      150 $\GeV$ & 286200 & 0.119 & 2405.042 \\
-      400 $\GeV$ & 200000 & 0.00272 & 73529.411 \\
+      100 $\GeV$ & 299,200 & 0.830 & 360.482 \\
+      150 $\GeV$ & 286,200 & 0.119 & 2405.042 \\
+      400 $\GeV$ & 200,000 & 0.00272 & 73529.411 \\
        & & & \\    
       \hline \hline
       
     \end{tabular}%
   }
-  \label{table:samples}
+  \caption{Data samples used for this analysis. Three mass points are considered and their respective sample luminosities are calculated using the formula $L_{sample}$ = n$_{sample}$ / xsec$_{sample}$}
+  \label{tab:samples}
 \end{table}
 
-\section{Selections}
+\section{Object and Event Selections}
 \label{sec:selections}
 
-\subsection{Object Selection}
-\label{sec:objectsel}
+To better identify particles significant to our analysis, we apply certain basic preselctions and triggers to the data. Object selections are listed in Table~\ref{tab:objselemu} and Table~\ref{tab:objseltau}. Triggers are listed below. In addition to these, a few corrections like MET filters (on data and MC both), tau energy scale corrections and tau reco scale factors are also applied.
+\\
 
+Triggers:
+\begin{itemize}
+\item Leading muon $\pt>26(29) \GeV$ for $2016$ \& $2018(2017)$
+\item Leading electron $\pt>30(35) \GeV$ for $2016(2017$ \& $2018)$
+\item For Single Muon PD, HLT\_IsoMu24 \& HLT\_IsoTkMu24 (in data only)
+\item For Single Electron PD, HLT\_Ele27\_WPTight\_Gsf (in data only)
+\end{itemize}
 
-\begin{table}
+%object sel - e/mu
+\begin{table}[h!]
   \centering
   \scriptsize
   \setlength{\tabcolsep}{30pt}
@@ -189,10 +206,11 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
 
     \end{tabular}%
   }
-  \label{table:objselemu}
+  \caption{Object selections for light leptons}
+  \label{tab:objselemu}
 \end{table}
 
-
+%object sel - tau
 \begin{table}
   \centering
   \setlength{\tabcolsep}{30pt}
@@ -202,7 +220,7 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
       \hline \hline
       \multicolumn{2}{c}{\textbf{Taus}}\\
       \hline
-      MVA ID & Deep ID\\
+      MVA ID (old) & Deep ID (new)\\
       \hline
  
       \makecell[l]{\\$\sbullet \hspace{0.3cm} \pT>20, |\eta|<2.3$ \\
@@ -224,13 +242,11 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
       
     \end{tabular}%
   }
-  \label{table:objseltau}
+  \caption{Object selections for taus. A comparision between the two object IDs is given in Section~\ref{sec:cutflow}.}
+  \label{tab:objseltau}
 \end{table}
 
-
-\subsection{Event Selection}
-\label{sec:eventsel}
-
+%event selection flow
 \begin{tikzpicture}[node distance = 2cm]
   \node(a)[io]{$\geq4\ell$};
   \node(b)[startstop, below of=a]{$=3\ell + 0\tau$};
@@ -245,42 +261,7 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
   \draw[arrow] (e)--(f);
 \end{tikzpicture}
 
-\begin{table}
-  \centering
-  \setlength{\tabcolsep}{30pt}
-  \renewcommand{\arraystretch}{1.2}
-  \resizebox{\textwidth}{!}{%
-  \begin{tabular}{l}
-    \hline \hline
-    \\
-    \centerline{Triggers for leading light lepton ($e/\mu$)}\\
-    \\
-  $\sbullet \hspace{0.2cm}$ Muons $\pt>26(29) \GeV$ for $2016$ \& $2018(2017)$\\
-  $\sbullet \hspace{0.2cm}$ Electrons $\pt>30(35) \GeV$ for $2016(2017$ \& $2018)$\\
-  \\
-  \hline
-  \\
-  \centerline{Trigger (in data only)}\\
-  $\sbullet \hspace{0.2cm}$ $2016$:\\
-  $\hspace{1cm}1. \hspace{0.2cm}$ For Single Muon PD, HLT\_IsoMu24 \& HLT\_IsoTkMu24\\
-  $\hspace{1cm}2. \hspace{0.2cm}$ For Single Electron PD, HLT\_Ele27\_WPTight\_Gsf\\
-  $\sbullet \hspace{0.2cm}$ $2017$:\\
-  $\hspace{1cm}1. \hspace{0.2cm}$ For Single Muon PD, HLT\_IsoMu27\\
-  $\hspace{1cm}2. \hspace{0.2cm}$ For Single Electron PD, HLT\_Ele32\_WPTight\_Gsf \& HLT\_Ele32\_WPTight\_Gsf\_L1DoubleEG\\
-  $\sbullet \hspace{0.2cm}$ $2018$:\\
-  $\hspace{1cm}1. \hspace{0.2cm}$ For Single Muon PD, HLT\_IsoMu24\\
-  $\hspace{1cm}2. \hspace{0.2cm}$ For Single Electron PD, HLT\_Ele32\_WPTight\_Gsf\\
-  \\
-  \hline \hline
-  
-
-  \end{tabular}%
-  }
-  \label{table:triggers}
-\end{table}
-
-  
-
+%event sel
 \begin{table}
   \centering
   \setlength{\tabcolsep}{30pt}
@@ -318,16 +299,15 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
     $\sbullet \hspace{0.2cm}$ Triggers (in data only)\\
     $\sbullet \hspace{0.2cm}$ Event should fail all other event ($3\ell,2\ell+\geq1\tau..$) selections\\
     \hline \hline
-      
-      
     \end{tabular}%
   }
-  \label{table:eventsel}
+  \label{tab:eventsel}
 \end{table}
 
 \section{Background Estimation}
 \label{sec:bkgs}
 
+%bkgs
 \begin{table}
   \centering
   \setlength{\tabcolsep}{30pt}
@@ -359,7 +339,7 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
      \hline \hline
     \end{tabular}%
     }
-  \label{table:bkgs} 
+  \label{tab:bkgs} 
 \end{table}
 
 \section{Signal Region Optimization}
@@ -368,6 +348,7 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
 \section{RHN Acceptance Cut-flow}
 \label{sec:cutflow}
 
+%cutflow
 \begin{table}
   \centering
   \resizebox{\linewidth}{!}{%
@@ -403,10 +384,8 @@ The model considered here [```ref figure```] includes a right handed neutrino ($
       \hline	
     \end{tabular}%
   }
-  %\caption[Validation Regions]{ The agreement in the validation regions between predictions and observation. Only the systematic
-    %uncertainty on the fake estimate is shown. The statistical and systematic uncertainties on the \ttbar{} background are shown. The Diboson
-    %and $Wt$ backgrounds are small, and the uncertainties on those are neither shown, nor included for this table.}
-  \label{table:cutflow}
+  \caption{}
+  \label{tab:cutflow}
 \end{table}
 
 \section{Results}
