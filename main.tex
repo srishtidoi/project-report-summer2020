@@ -88,7 +88,7 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0.pt}
 \renewcommand{\footrulewidth}{0.pt}
-\fancyfoot[RO, RE] {\thepage{} of 4}
+\fancyfoot[RO, RE] {\thepage{} of }
 \fancyfoot[LO, LE] {{\it Srishti Patil - Project Report}}
 
 \vspace*{2mm}
@@ -109,12 +109,25 @@
 \section{Introduction}
 \label{sec:intro}
 
-A powerful tool to search for new physics is the final state with three or more leptons. This signature occurs in several models of new physics such as directly or indirectly produced gauginos (\cnlep) in supersymmetry, or pair-produced charged Higgses (\dchlep), or 
-models with fourth generation down-type quarks (\bprimelep) where the $W$'s decay to leptons.
-With the right search strategy, this final state can be used to make definite statements about large parts of the phase space for new physics. 
+The Standard Model of particle physics (SM) along with the theory of General Relativity (GR) can describe almost everything observed in nature, barring a few experimental and observational facts like baryon assymetry and the composition and origin of Dark Matter. If \emph{right handed neutrinos} (RHN) exist, they could be responsible for all these unexplained phenomena.
+
+This project is a part of the search for RHN using data samples collected by the CMS experiment at the LHC in 2016 [Table~\ref{table:samples}], corresponding to an integrated luminosity of 36 \ifb. We employ a technique called multilepton analysis [Section~\ref{sec:overview}]  for the search and the project focuses on a part of the process called Signal Region (SR) optimization [Section~\ref{sec:sro}]. The results obtained are used to produce limits on the production of right handed neutrinos.
 
 \section{Overview}
 \label{sec:overview}
+
+The final state of an event (collision) is the set of particles seen by the detector. A lot of proceses Beyond the Standard Model (BSM) produce final states which majorly have multiple leptons, which is the motivation behind the development of a technique called Multilepton Analysis. Since a lot of SM processes also produce multilepton final states (called background), we use this strategy to distinguish signal from background.  
+
+The model considered here [```ref figure```] includes a right handed neutrino ($N$) that decays into a \Wboson{} boson and a $\tau$, which decay further, giving rise to multilepton final states. For this analysis, we refer to electrons and muons collectively as light leptons ($\ell$). Events are then categorized by the multiplicity of light leptons and taus ($\tau$) in these final states, into the following channels:
+
+\begin{enumerate}
+\item $3\ell$
+\item $2\ell1\tau$
+\item $1\ell2\tau$
+\item $3\tau$
+\end{enumerate}
+
+% feynman diag, cutlfow, equation, obj sel, event sel, sro
 
 \begin{table}
   \centering
@@ -140,7 +153,7 @@ With the right search strategy, this final state can be used to make definite st
       
     \end{tabular}%
   }
-  \label{tab:samples}
+  \label{table:samples}
 \end{table}
 
 \section{Selections}
@@ -176,7 +189,7 @@ With the right search strategy, this final state can be used to make definite st
 
     \end{tabular}%
   }
-  \label{tab:objselemu}
+  \label{table:objselemu}
 \end{table}
 
 
@@ -211,7 +224,7 @@ With the right search strategy, this final state can be used to make definite st
       
     \end{tabular}%
   }
-  \label{tab:objseltau}
+  \label{table:objseltau}
 \end{table}
 
 
@@ -222,7 +235,7 @@ With the right search strategy, this final state can be used to make definite st
   \node(a)[io]{$\geq4\ell$};
   \node(b)[startstop, below of=a]{$=3\ell + 0\tau$};
   \node(c)[startstop, below of=b]{$=3\ell + \geq1\tau$};
-  \node(d)[startstop, below of=c]{$=2\ell + 2\geq\tau$};
+  \node(d)[startstop, below of=c]{$=2\ell + \geq2\tau$};
   \node(e)[startstop, below of=d]{$=2\ell + 1\tau$};
   \node(f)[io, below of=e]{$=1\ell + \geq2\tau$};
   \draw[arrow] (a)--(b);
@@ -263,7 +276,7 @@ With the right search strategy, this final state can be used to make definite st
 
   \end{tabular}%
   }
-  \label{tab:triggers}
+  \label{table:triggers}
 \end{table}
 
   
@@ -309,11 +322,11 @@ With the right search strategy, this final state can be used to make definite st
       
     \end{tabular}%
   }
-  \label{tab:eventsel}
+  \label{table:eventsel}
 \end{table}
 
-\section{Backgrounds}
-\label{sec:backgrounds}
+\section{Background Estimation}
+\label{sec:bkgs}
 
 \begin{table}
   \centering
@@ -346,7 +359,7 @@ With the right search strategy, this final state can be used to make definite st
      \hline \hline
     \end{tabular}%
     }
-  \label{tab:bkgs} 
+  \label{table:bkgs} 
 \end{table}
 
 \section{Signal Region Optimization}
@@ -393,30 +406,10 @@ With the right search strategy, this final state can be used to make definite st
   %\caption[Validation Regions]{ The agreement in the validation regions between predictions and observation. Only the systematic
     %uncertainty on the fake estimate is shown. The statistical and systematic uncertainties on the \ttbar{} background are shown. The Diboson
     %and $Wt$ backgrounds are small, and the uncertainties on those are neither shown, nor included for this table.}
-  \label{tab:crsummary}
+  \label{table:cutflow}
 \end{table}
-
-\subsection{MVA Tau ID vs Deep Tau ID}
-\label{sec:mvadeep}
 
 \section{Results}
 \label{sec:results}
-
-
-\begin{thebibliography}{10}
-
-\bibitem{prlfb}
-  T.~Aaltonen {\it et al.}  [CDF Collaboration],
-  Phys.\ Rev.\ Lett.\  {\bf 101}, 251801 (2008)
-  [arXiv:0808.2446 [hep-ex]].
-
-\bibitem{cdfprl}
-  T.~Aaltonen {\it et al.}  [CDF Collaboration],
-  Phys.\ Rev.\ Lett.\  {\bf 99}, 191806 (2007)
-  [arXiv:0707.2362 [hep-ex]].
-
-
-
-\end{thebibliography}
 
 \end{document}
