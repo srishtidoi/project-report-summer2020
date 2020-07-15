@@ -74,7 +74,7 @@
 %\addtolength\oddsidemargin{-1cm}
 %\addtolength\evensidemargin{-1cm}
 %\addtolength\textwidth{2cm}
-\addtolength\textheight{2cm}
+\addtolength\textheight{2.5cm}
 
 %\setlength\oddsidemargin{1cm}
 %\setlength\evensidemargin{1cm}
@@ -245,8 +245,9 @@ Triggers:
   \caption{Object selections for taus. A comparision between the two object IDs is given in Section~\ref{sec:cutflow}.}
   \label{tab:objseltau}
 \end{table}
-
+  
 %event selection flow
+\begin{wrapfigure}{r}{0.15\textwidth}
 \begin{tikzpicture}[node distance = 2cm]
   \node(a)[io]{$\geq4\ell$};
   \node(b)[startstop, below of=a]{$=3\ell + 0\tau$};
@@ -260,6 +261,11 @@ Triggers:
   \draw[arrow] (d)--(e);
   \draw[arrow] (e)--(f);
 \end{tikzpicture}
+\caption{Event selection flow}
+\label{fig:eventselflow}
+\end{wrapfigure}
+
+The events used for analysis are selected only if they pass certain conditions. These selections are listed in Table~\ref{tab:eventsel}. An event is selected for a channel only if it fails the selections for all the previous channels. The order of priority (event selection flow) is illustrated in Figure~\ref{fig:eventselflow}. This project focuses on the 2$\ell$1$\tau$ and 3$\ell$ channels. The relevant states have been highlighted in red.
 
 %event sel
 \begin{table}
@@ -280,7 +286,7 @@ Triggers:
     $\sbullet \hspace{0.2cm}$ Minimum $\DeltaR$ between all leptons in the event $> 0.4$\\
     $\sbullet \hspace{0.2cm}$ Triggers (in data only)\\
     \hline
-    \centerline{$2\ell + \geq1\tau$}\\
+    \centerline{$2\ell1\tau$}\\
     \hline
     $\sbullet \hspace{0.2cm}$ Event should fail $3\ell$ selection\\
     $\sbullet \hspace{0.2cm}$ Leading light lepton ($e/\mu$) passing triggers\\
@@ -290,7 +296,7 @@ Triggers:
     $\sbullet \hspace{0.2cm}$ $\DeltaR>0.4$ among the three leptons\\
     $\sbullet \hspace{0.2cm}$ Triggers (in data only)\\
     \hline
-    \centerline{$1\ell + \geq2\tau$}\\
+    \centerline{$1\ell2\tau$}\\
     \hline
     $\sbullet \hspace{0.2cm}$ Exactly one light lepton ($e/\mu$), for triggering\\
     $\sbullet \hspace{0.2cm}$ Atleast two hadronic taus, $\pt>20,20 \GeV$\\
@@ -301,6 +307,7 @@ Triggers:
     \hline \hline
     \end{tabular}%
   }
+  \caption{Event selections for the 3$\ell$, 2$\ell$1$\tau$ and 1$\ell$2$\tau$ channels}
   \label{tab:eventsel}
 \end{table}
 
@@ -351,9 +358,11 @@ Triggers:
 %cutflow
 \begin{table}
   \centering
-  \resizebox{\linewidth}{!}{%
-    \hfil
-    \begin{tabular}{c|rrrrrr|rrrrrr}
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.2}
+  \hspace*{-1.7cm}
+  \resizebox{1.2\linewidth}{!}{%
+    \begin{tabular}{l|rr|rrrr|rr|rrrr}
       \hline \hline
        & \multicolumn{6}{c}{MVA} & \multicolumn{6}{c}{Deep} \\
       \hline \hline
@@ -367,19 +376,19 @@ Triggers:
       $N_{1\ell\_trigg\_1\ell}$ events & 22994 & 10915 & 21033 & 38399 & 2835198 & 1538 & 22994 & 10915 & 21033 & 38399 & 2835198 & 1538\\
       $N_{1\ell\_trigg\_1\ell\pt10}$ events & 21495 & 9111 & 20680 & 36568 & 2726718 & 396 & 21495 & 9111 & 20680 & 36568 & 2726718 & 396\\
       $N_{1\ell\_trigg\_1\ell\pt10\_1\ell}$ events & 2681 & 857 & 54 & 825 & 16869 & 2 & 2681 & 857 & 54 & 825 & 16869 & 2\\
-      \rowcolor{highlight} $N_{1\ell\_trigg\_2\ell\pt10}$ events ($3\ell$ events) & 2251 & 619 & 37 & 746 & 10002 & 1 & 2251 & 619 & 37 & 746 & 10002 & 1\\
+      $N_{1\ell\_trigg\_2\ell\pt10}$ events ($3\ell$ events) & 2251 & 619 & 37 & 746 & 10002 & 1 & 2251 & 619 & 37 & 746 & 10002 & 1\\
       $N_{1\ell\_trigg\_1\ell\pt10\_1\tau}$ events & 4524 & 1022 & 16333 & 29722 & 1819 & 0 & 3389 & 663 & 11742 & 29813 & 1294 & 0\\
-      \rowcolor{highlight}$N_{1\ell\_trigg\_1\ell\pt10\_1\tau\pt20}$ events ($2\ell1\tau$ events) & 4280 & 908 & 16329 & 29706 & 1696 & 0 & 3389 & 663 & 11742 & 29813 & 1294 & 0\\
+      $N_{1\ell\_trigg\_1\ell\pt10\_1\tau\pt20}$ events ($2\ell1\tau$ events) & 4280 & 908 & 16329 & 29706 & 1696 & 0 & 3389 & 663 & 11742 & 29813 & 1294 & 0\\
       $N_{1\ell\_trigg\_1\tau}$ events & 23319 & 10796 & 189 & 7478 & 876646 & 7 & 17542 & 7315 & 284 & 7562 & 590115 & 6\\
       $N_{1\ell\_trigg\_1\tau\pt20}$ events & 22069 & 9684 & 189 & 7476 & 805080 & 6 & 17452 & 7315 & 284 & 7562 & 590115 & 6\\
       $N_{1\ell\_trigg\_1\tau\pt20\_1\tau}$ events & 3049 & 506 & 1 & 136 & 23 & 0 & 1681 & 190 & 0 & 25 & 7 & 0\\
-      \rowcolor{highlight}$N_{1\ell\_trigg\_2\tau\pt20}$ events ($1\ell2\tau$ events) & 2670 & 363 & 0 & 104 & 21 & 0 & 1681 & 190 & 0 & 25 & 7 & 0\\
+      $N_{1\ell\_trigg\_2\tau\pt20}$ events ($1\ell2\tau$ events) & 2670 & 363 & 0 & 104 & 21 & 0 & 1681 & 190 & 0 & 25 & 7 & 0\\
       $N_{1\tau}$ events & 37486 & 22362 & 0 & 0 & 1182328 & 1301502 & 27692 & 14793 & 0 & 0 & 803086 & 763144\\
       $N_{1\tau\pt20}$ events & 35331 & 20113 & 0 & 0 & 1090836 & 1124963 & 27692 & 14793 & 0 & 0 & 803086 & 763144\\
       $N_{1\tau\pt20\_1\tau}$ events & 6960 & 2038 & 0 & 0 & 71619 & 0 & 3724 & 916 & 0 & 0 & 33355 & 0\\
       $N_{2\tau\pt20}$ events & 6118 & 1637 & 0 & 0 & 60823 & 0 & 3724 & 916 & 0 & 0 & 33355 & 0\\
       $N_{2\tau\pt20\_1\tau}$ events & 520 & 79 & 0 & 0 & 0 & 0 & 231 & 28 & 0 & 0 & 0 & 0\\
-      \rowcolor{highlight} $N_{3\tau\pt20}$ events ($3\tau$ events) & 434 & 54 & 0 & 0 & 0 & 0 & 231 & 28 & 0 & 0 & 0 & 0\\
+      $N_{3\tau\pt20}$ events ($3\tau$ events) & 434 & 54 & 0 & 0 & 0 & 0 & 231 & 28 & 0 & 0 & 0 & 0\\
       \hline
       \hline	
     \end{tabular}%
