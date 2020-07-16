@@ -17,7 +17,7 @@
 \usepackage{mathrsfs}
 \usepackage{setspace}
 \usepackage{lineno}
-\usepackage{subfigure}
+\usepackage{subfig}
 \usepackage{mathrsfs}
 \usepackage{amsmath}
 \usepackage{cite}
@@ -36,10 +36,10 @@
 %for flowcharts
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
-\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=red]
-\tikzstyle{io} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black]
-\tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black]
-\tikzstyle{decision} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{io} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, text centered, draw=black]
+\tikzstyle{decision} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, text centered, draw=black]
 \tikzstyle{arrow} = [thick, ->, >=stealth]
 
 %for figures
@@ -113,9 +113,9 @@
 \section{Introduction}
 \label{sec:intro}
 
-The Standard Model of particle physics (SM) along with the theory of General Relativity (GR) can describe almost everything observed in nature, barring a few experimental and observational facts like baryon assymetry and the composition and origin of Dark Matter. \emph{Right handed neutrinos} (RHN), if they exist, could be responsible for a lot of these unexplained phenomena. They are promising Dark Matter candidates.
+The Standard Model of particle physics (SM) along with the theory of General Relativity (GR) can describe almost everything observed in nature, barring a few experimental and observational facts like baryon assymetry in the universe and the composition and origin of Dark Matter. \emph{Right handed neutrinos} (RHN), if they exist, could be responsible for a lot of these unexplained phenomena. They are promising Dark Matter candidates as well.
 
-This project is a part of the search for RHN using data samples collected by the CMS experiment at the LHC in 2016 [Table~\ref{tab:samples}], corresponding to an integrated luminosity of 36 \ifb. We employ a technique called multilepton analysis [Section~\ref{sec:overview}]  for the search and the project focuses on a part of the process called Signal Region (SR) optimization [Section~\ref{sec:sro}]. The results obtained are used to produce limits on the production of right handed neutrinos.
+This project is a part of the search for RHN using data samples collected by the CMS experiment at the LHC in 2016 [Table~\ref{tab:samples}], corresponding to an integrated luminosity of 36 \ifb. We employ a technique called multilepton analysis [Section~\ref{sec:overview}]  for the search and the project focuses on a part of the process called Signal Region (SR) optimization. The results obtained are used to produce limits on the production of right handed neutrinos.
 \\
 
 %feynman diagram
@@ -128,11 +128,11 @@ This project is a part of the search for RHN using data samples collected by the
 \section{Overview}
 \label{sec:overview}
 
-The final state of an event (collision) is the set of particles seen by the detector. A lot of proceses Beyond the Standard Model (BSM) produce final states which majorly have multiple leptons, which is the motivation behind the development of a technique called Multilepton Analysis. Since a lot of SM processes also produce multilepton final states (called background), we use this strategy to distinguish signal from background.
+The final state of an event (collision) is the set of particles seen by the detector. A lot of processes Beyond the Standard Model (BSM) produce final states with multiple leptons.  Multilepton Analysis is a useful technique for studying such processes. Since a lot of SM processes also produce multilepton final states (called background), we use this strategy to distinguish signal from background.
 
 The model considered here [Figure~\ref{fig:rhnfeyn}] includes a right handed neutrino ($N$) that decays into a \Wboson{} boson and a $\tau$, which decay further, giving rise to multilepton final states. For this analysis, we refer to electrons and muons collectively as light leptons ($\ell$). Events are then categorized by the multiplicity of light leptons and taus ($\tau$) in these final states, into the following channels: $3\ell$, $2\ell1\tau$, $1\ell2\tau$ and $3\tau$.
 
-To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cutflow}, Table~\ref{tab:cutflow}] for both the tau IDs, to understand the process and how various triggers and selections affect the acceptance. Next, we attempt to understand the process of RHN production and decay at the gen-level [```ref section```] (\ie{} from simulations). Guided by the conclucions drawn from the study of these gen-level plots, we try to carve out a Signal Region [Section~\ref{sec:sro}] from the phase space which will give us good signal sensitivity. We use signal significance [```ref table```] as a metric to compare signal regions.   
+To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cutflow}, Table~\ref{tab:cutflow}] to understand the process and how various triggers and selections affect the acceptance. Next, we attempt to understand the process of RHN production and decay at the gen-level [```ref section```] (\ie{} from simulations). Guided by the conclucions drawn from the study of these gen-level plots, we try to carve out a Signal Region [Section~\ref{sec:sro}] from the phase space which will give us good signal sensitivity. We use signal significance as a metric to compare signal regions. We do this for two channels: $2\ell1\tau$ and $3\ell$.
 
 %samples
 \setcounter{table}{0}
@@ -145,7 +145,7 @@ To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cu
     \begin{tabular}{c|c|c|c}
       \hline \hline
         
-      \multirow{2}{*}{\textbf{Sample (Mass Point)}} & \multirow{2}{*}{\textbf{Total Number of Events (n)}} &
+      \multirow{2}{*}{\textbf{Sample (RHN Mass Point)}} & \multirow{2}{*}{\textbf{Total Number of Events (n)}} &
       \multirow{2}{*}{\makecell{$\textbf{Cross-Section (xsec)}$\\
         $\textbf{(pb)}$}} &
       \multirow{2}{*}{\makecell{$\textbf{Luminosity}$\\
@@ -168,13 +168,12 @@ To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cu
 \section{Object and Event Selections}
 \label{sec:selections}
 
-To better identify particles significant to our analysis, we apply certain basic preselctions and triggers to the data. Object selections are listed in Table~\ref{tab:objselemu} and Table~\ref{tab:objseltau}. Triggers are listed below. In addition to these, a few corrections like MET filters (on data and MC both), tau energy scale corrections and tau reco scale factors are also applied.
-\\
+To better identify particles significant to our analysis, we apply certain basic preselections and triggers to the data. Object selections are listed in Table~\ref{tab:objselemu} and Table~\ref{tab:objseltau}. Triggers are listed below. A few corrections like MET filters (on data and MC both), tau energy scale corrections and tau reco scale factors are also applied.
 
 Triggers:
 \begin{itemize}
-\item Leading muon $\pt>26(29) \GeV$ for $2016$ \& $2018(2017)$
-\item Leading electron $\pt>30(35) \GeV$ for $2016(2017$ \& $2018)$
+\item Leading muon $\pt>$ 26$\GeV$ 
+\item Leading electron $\pt>$ 30$\GeV$ 
 \item For Single Muon PD, HLT\_IsoMu24 \& HLT\_IsoTkMu24 (in data only)
 \item For Single Electron PD, HLT\_Ele27\_WPTight\_Gsf (in data only)
 \end{itemize}
@@ -194,13 +193,12 @@ Triggers:
       \makecell[l]{\\$\sbullet \hspace{0.3cm} \pt>10, |\eta|<2.4$ \\
         $\sbullet \hspace{0.2cm}$ Prompt ($d_{xy}<0.05, d_{z}<0.1$ cuts)\\
         $\sbullet \hspace{0.2cm}$ POG Medium ID\\
-        $\sbullet \hspace{0.2cm}$ Relative dB-corrected isolation \\$\hspace{0.3cm}$ tight WP $(<0.15$ in $\DeltaR=0.4)$}&
+        $\sbullet \hspace{0.2cm}$ Relative dB-corrected isolation \\$\hspace{0.3cm}$ tight WP $(<0.15$ in $\DeltaR=0.4)$ \vspace{0.4cm}}&
       
       \makecell[l]{\\$\sbullet \hspace{0.2cm} \pt>10, |\eta|<2.5$ \\
         $\sbullet \hspace{0.2cm}$Prompt ($d_{xy}<0.05(0.1), d_{z}<0.1(0.2)$ \\ $\hspace{0.3cm}$in barrel(endcap) region)\\
         $\sbullet \hspace{0.2cm}$Cut-based Medium ID\\
-        $\sbullet \hspace{0.2cm}$Relative rho-corrected isolation \\$\hspace{0.2cm}$ Medium WP (included in ID)}
-      \\
+        $\sbullet \hspace{0.2cm}$Relative rho-corrected isolation \\$\hspace{0.2cm}$ Medium WP (included in ID) \vspace{0.4cm}}
       \\
       \hline \hline
 
@@ -228,14 +226,13 @@ Triggers:
         $\sbullet \hspace{0.2cm}$ Old decayModeFinding, 1-prong \& 3-prong\\
         $\sbullet \hspace{0.2cm}$ '2017v2' ID\\
         $\sbullet \hspace{0.2cm}$ againstElectron \& againstMuon discriminators, loose WP\\
-        $\sbullet \hspace{0.2cm}$ Cleaning against tight ID light leptons ($\DeltaR>0.4$)}  &
+        $\sbullet \hspace{0.2cm}$ Cleaning against tight ID light leptons ($\DeltaR>0.4$)  \vspace{0.7cm}}  &
       
       \makecell[l]{\\$\sbullet \hspace{0.3cm} \pT>20, |\eta|<2.3$ \\
         $\sbullet \hspace{0.2cm}$ Prompt ($d_{z}<0.2$ cut)\\
         $\sbullet \hspace{0.2cm}$ New decayModeFinding, 1-prong \& 3-prong\\
         $\sbullet \hspace{0.2cm}$ Tau\_idDeepTau2017v2p1VSe $\geq 15$ \& \\ $\hspace{0.3cm}$ Tau\_idDeepTau2017v2p1VSmu $\geq 3$ (Loose WP)\\
-        $\sbullet \hspace{0.2cm}$ Tau\_idDeepTau2017v2p1VSjet > 31 (Tight WP)}
-      \\
+        $\sbullet \hspace{0.2cm}$ Tau\_idDeepTau2017v2p1VSjet > 31 (Tight WP) \vspace{0.7cm}}
       \\
       \hline \hline
       
@@ -247,7 +244,10 @@ Triggers:
 \end{table}
   
 %event selection flow
+%\advance\rightskip-1cm
 \begin{wrapfigure}{r}{0.15\textwidth}
+  \scriptsize
+  \centering
 \begin{tikzpicture}[node distance = 2cm]
   \node(a)[io]{$\geq4\ell$};
   \node(b)[startstop, below of=a]{$=3\ell + 0\tau$};
@@ -261,11 +261,12 @@ Triggers:
   \draw[arrow] (d)--(e);
   \draw[arrow] (e)--(f);
 \end{tikzpicture}
+
 \caption{Event selection flow}
 \label{fig:eventselflow}
 \end{wrapfigure}
 
-The events used for analysis are selected only if they pass certain conditions. These selections are listed in Table~\ref{tab:eventsel}. An event is selected for a channel only if it fails the selections for all the previous channels. The order of priority (event selection flow) is illustrated in Figure~\ref{fig:eventselflow}. This project focuses on the 2$\ell$1$\tau$ and 3$\ell$ channels. The relevant states have been highlighted in red.
+The events used for analysis are selected only if they pass certain conditions (selections) listed in Table~\ref{tab:eventsel}. An event is selected for a channel only if it fails the selections for all the previous channels. The order of priority (event selection flow) is illustrated in Figure~\ref{fig:eventselflow}.
 
 %event sel
 \begin{table}
@@ -307,56 +308,83 @@ The events used for analysis are selected only if they pass certain conditions. 
     \hline \hline
     \end{tabular}%
   }
-  \caption{Event selections for the 3$\ell$, 2$\ell$1$\tau$ and 1$\ell$2$\tau$ channels}
+  \caption{Event selections for 3$\ell$, 2$\ell$1$\tau$ and 1$\ell$2$\tau$ channels}
   \label{tab:eventsel}
 \end{table}
 
-\section{Background Estimation}
+\section{Background}
 \label{sec:bkgs}
+
+%bkgs feynman diagrams
+\begin{figure}
+  \begin{adjustbox}{minipage=\textwidth, scale=0.75}
+    \centering
+    \subfloat[DY]{{\includegraphics[width=0.3\textwidth]{DYfeynman.png} }}%
+    \qquad
+    \subfloat[\ttbar]{{\includegraphics[width=0.3\textwidth]{ttbarfeynman.png} }}%
+    \caption{\normalsize{Leading order Feynman diagrams for fake background processes. \emph{(a)} The Drell-Yan process. The third lepton can be faked by another particle/jet. \emph{(b)} One of the possible decay products of the \ttbar{} process}}
+    \label{fig:bkgsfeyn}
+  \end{adjustbox}
+\end{figure}
+Many SM processes give rise to multilepton final states, and our objective is to distinguish these processes (background) from the signal (RHN decay). The method used for background estimation in this analysis is Monte-Carlo based. All the background processes considered are listed in Table~\ref{tab:bkgs}. \WZ{} and \ZZ{} are prompt backgrounds while DY and \ttbar{} are fake (\ie{} one of the leptons is faked by another particle/jet).   
 
 %bkgs
 \begin{table}
   \centering
   \setlength{\tabcolsep}{30pt}
-  \renewcommand{\arraystretch}{1.5}
+  \renewcommand{\arraystretch}{1.9}
   \resizebox{\textwidth}{!}{%
     \begin{tabular}{p{0.0001\textwidth}|p{0.15\textwidth}|c|c|c}
       \hline \hline
       \multicolumn{2}{c|}{\multirow{2}{*}{\textbf{Background}}} &
-      \multirow{2}{*}{\textbf{Total Number of Events}} &
+      \multirow{2}{*}{\textbf{Total Number of Events (n)}} &
       \multirow{2}{*}{\makecell{$\textbf{Cross-Section (xsec)}$\\
         $\textbf{(pb)}$}} &
       \multirow{2}{*}{\makecell{$\textbf{Luminosity}$\\
         $\textbf{(\ifb)}$}}\\
       \multicolumn{2}{c|}{} & & & \\
       \hline
-      &&&&\\
-      \multirow{4}{*}{\begin{sideways} {\large{$2\ell1\tau$ Skims}} \end{sideways}} & DY & 89,832,690 & 5765 & 15.582\\
+      \multirow{4}{*}{\begin{sideways} {\large{$2\ell1\tau$}} \end{sideways}} & DY & 89,832,690 & 5765 & 15.582\\
       & $\WZ$ & 6,610,401 & 5.052 & 1308.472\\
       & $\ZZ$ & 7,547,891 & 1.325 & 5696.521\\
-      & $\ttbar$ & 24,265,024 & 88.29 & 274.833\\
-      &&&&\\   
+      & $\ttbar$ & 24,265,024 & 88.29 & 274.833\\   
       \hline
-      &&&&\\
-      \multirow{4}{*}{\begin{sideways} {\large{$3\ell$ Skims}} \end{sideways}} & DY & 89,832,690 & 5765 & 15.582\\
+      \multirow{4}{*}{\begin{sideways} {\large{$3\ell$}} \end{sideways}} & DY & 89,832,690 & 5765 & 15.582\\
       & $\WZ$ & 1,295,229 & 5.052 & 256.378\\
       & $\ZZ$ & 1,041,601 & 1.325 & 786.114\\
-      & $\ttbar$ & 24,265,024 & 88.29 & 274.833\\
-      &&&&\\   
+      & $\ttbar$ & 24,265,024 & 88.29 & 274.833\\   
      \hline \hline
     \end{tabular}%
-    }
+  }
+  \caption{A few background processes and their luminosities. Luminosity is calculated by the formula $L$~=~n~/~xsec}
   \label{tab:bkgs} 
 \end{table}
 
 \section{Signal Region Optimization}
 \label{sec:sro}
 
+The objective of Signal Region optimization is to find a region in the phase space in which the signal is easily distinguished from background. A metric for the same is signal significance, defined as-
+
+\[
+Significance = \frac{Signal}{\sqrt{Background}}
+\]
+
+The higher the significance, the better is the signal region. We perform signal region optimization for the $2\ell1\tau$ and $3\ell$ channels separately because the background profiles for these channels are different.
+
+\subsection{Understanding the Process with Simulations}
+\label{sec:gen}
+
+\subsection{\Large{\boldmath$2\ell1\tau$}}
+\label{sec:2l1t}
+
+\subsection{\Large{\boldmath$3\ell$}}
+\label{sec:3l}
+
 \section{RHN Acceptance Cut-flow}
 \label{sec:cutflow}
 
 %cutflow
-\begin{table}
+\begin{table}[h]
   \centering
   \setlength{\tabcolsep}{5pt}
   \renewcommand{\arraystretch}{1.2}
