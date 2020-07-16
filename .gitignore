@@ -1,1 +1,13 @@
 latex
+#main.pdf#
+RHNfeynman.png.svg
+RHNfeynman.svg
+_region_.log
+_region_.tex
+definitions.log
+definitions.aux
+lineno.log
+main.aux
+main.log
+main.out
+prv_main.log
