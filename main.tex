@@ -242,10 +242,11 @@ Triggers:
   \caption{Object selections for taus. A comparision between the two object IDs is given in Section~\ref{sec:cutflow}.}
   \label{tab:objseltau}
 \end{table}
-  
+
+
 %event selection flow
 %\advance\rightskip-1cm
-\begin{wrapfigure}{r}{0.15\textwidth}
+\begin{wrapfigure}[10]{r}{0.15\textwidth} %the [10] is to end the wrap before the next section starts
   \scriptsize
   \centering
 \begin{tikzpicture}[node distance = 2cm]
@@ -265,7 +266,8 @@ Triggers:
 \caption{Event selection flow}
 \label{fig:eventselflow}
 \end{wrapfigure}
-
+\
+\
 The events used for analysis are selected only if they pass certain conditions (selections) listed in Table~\ref{tab:eventsel}. An event is selected for a channel only if it fails the selections for all the previous channels. The order of priority (event selection flow) is illustrated in Figure~\ref{fig:eventselflow}.
 
 %event sel
@@ -312,6 +314,7 @@ The events used for analysis are selected only if they pass certain conditions (
   \label{tab:eventsel}
 \end{table}
 
+
 \section{Background}
 \label{sec:bkgs}
 
@@ -327,6 +330,7 @@ The events used for analysis are selected only if they pass certain conditions (
   \end{adjustbox}
 \end{figure}
 Many SM processes give rise to multilepton final states, and our objective is to distinguish these processes (background) from the signal (RHN decay). The method used for background estimation in this analysis is Monte-Carlo based. All the background processes considered are listed in Table~\ref{tab:bkgs}. \WZ{} and \ZZ{} are prompt backgrounds while DY and \ttbar{} are fake (\ie{} one of the leptons is faked by another particle/jet).   
+
 
 %bkgs
 \begin{table}
@@ -360,11 +364,12 @@ Many SM processes give rise to multilepton final states, and our objective is to
   \label{tab:bkgs} 
 \end{table}
 
+
 \section{Signal Region Optimization}
 \label{sec:sro}
 
-The objective of Signal Region optimization is to find a region in the phase space in which the signal is easily distinguished from background. A metric for the same is signal significance, defined as-
 
+The objective of Signal Region optimization is to find a region in the phase space in which the signal is easily distinguished from background. A metric for the same is signal significance, defined as-
 \[
 Significance = \frac{Signal}{\sqrt{Background}}
 \]
@@ -373,6 +378,86 @@ The higher the significance, the better is the signal region. We perform signal 
 
 \subsection{Understanding the Process with Simulations}
 \label{sec:gen}
+
+To undrestand the general topology of the events, like the \DeltaR{} between leptons and origin (mother particle) of the particles involved, we plot these quantities using data from simulations.
+\vspace{0.7cm}
+\begin{figure}[h]
+\centering
+\subfloat[{\scriptsize RHN \pT}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{RHN_pT.png} }}%
+\qquad
+\subfloat[{\scriptsize PDG-ID of RHN Mothers}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{RHN_momid.png} }}%
+
+\subfloat[{\scriptsize\pT{} of $\tau$ coming from PV }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{pvtaupt.png} }}%
+\qquad
+\subfloat[{\scriptsize \DeltaR{} (RHN,$\tau$)}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{pvtaudRRHN.png} }}%
+\caption{Gen plots for the production of RHN (all the plots have been normalized to unity). \emph{(a)} Transverse momenta of RHN of different mass points. We can see that the 400\GeV{} RHN is more boosted than the 100\GeV{} RHN. \emph{(b)} PDG-ID of mother particles of RHN. We observe that they are mostly quarks. \emph{(c)} Transverse momentum of the $\tau$ coming from the production vertex (PV). \emph{(d)} \DeltaR{} between RHN and $\tau$ coming from PV. We observe that they are produced back-to-back.}
+
+\label{fig:gen}  
+\end{figure}
+\clearpage
+
+Next, we look at the final state leptons and their plots. Here, we divide the $2\ell1\tau$ channel further into two categories: (1) OS (opposite-sign) in which the two light leptons have opposite signs and (2) SS (same-sign) in which they have the same sign. The motivation behind this is that these two categories will have different dominating backgrounds. For instance, the $2\ell1\tau$-OS category is likely to have DY in large numbers because it can't produce same-sign dileptons.
+
+\vspace{0.7cm}
+\begin{figure}[h]
+\centering
+\subfloat[{\scriptsize $\ell_{1}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_OS_momidL1.png} }}%
+\quad
+\subfloat[{\scriptsize $\ell_{2}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_OS_momidL2.png} }}%
+\quad
+\subfloat[{\scriptsize $\tau$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_OS_momidT.png} }}%
+\quad
+
+\caption{Gen plots for the $2\ell1\tau$-OS channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading light lepton $\ell_{1}$. We see peaks at $\pm15$ and $\pm24$ which correspond to taus and \Wboson{} bosons respectively. \emph{(b)} PDG-ID of the mother of the sub-leading light lepton $\ell_{2}$. \emph{(c)} PDG-ID of the mother of the $\tau$. We see peaks at 66 and within the range (-6,6), which correspond to RHN and quarks (PV) respectively.}
+
+\label{fig:2l1tOSgen}  
+\end{figure}
+
+\vspace{0.7cm}
+
+When we compare Figure~\ref{fig:2l1tOSgen} with the feynman diagram in Figure~\ref{fig:2l1tgenfeyn} (a), we see that the observations match. From the diagram, we can further hypothesize that the light lepton pair should be close together (when boosted). Similarly, the observations from Figure~\ref{fig:2l1tSSgen} (SS gen plots) match with the ones from the Feynman diagram [Figure~\ref{fig:2l1tgenfeyn} (b)].
+
+%gen feynman diagrams
+\begin{figure}[h]
+  \centering
+  \subfloat[OS]{{\includegraphics[width=0.4\textwidth]{2l1tOSfeynman.png} }}%
+  \qquad
+  \subfloat[SS]{{\includegraphics[width=0.4\textwidth]{2l1tSSfeynman.png} }}%
+  \caption{Feynman diagrams for $2\ell1\tau$ OS and SS channels. \emph{(a)} The PV $\tau$ decays hadronically and the $\tau$ coming from the RHN decays leptonically. Since RHN is electrically neutral, the light lepton pair in the final state will be OS in this case. \emph{(b)} The only way an SS pair can be produced is for one of the light leptons to be a product of the PV $\tau$ decay, since the daughters of RHN will have to be OS (note that this can result in an OS pair as well).}
+  \label{fig:2l1tgenfeyn}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[h]
+\centering
+\subfloat[{\scriptsize $\ell_{1}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_SS_momidL1.png} }}%
+\quad
+\subfloat[{\scriptsize $\ell_{2}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_SS_momidL1L2.png} }}%
+\quad
+\subfloat[{\scriptsize $\tau$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_SS_momidT.png} }}%
+\quad
+
+\caption{Gen plots for the $2\ell1\tau$-SS channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading light lepton $\ell_{1}$. Again, we see peaks at taus and \Wboson{} bosons, but this time the peak at $\tau$ is comparable to the one at \Wboson{} boson. \emph{(b)} PDG-ID of the mother of the sub-leading light lepton $\ell_{2}$. \emph{(c)} PDG-ID of the mother of the $\tau$. We see a peak only at RHN.}
+\label{fig:2l1tSSgen}  
+\end{figure}
+\vspace{0.7cm}
+
+In conclusion, we decide to divide the $2\ell1\tau$ channel into OS and SS categories, owing to the differences in their production and backgrounds. For a better understanding, we study the $1\ell2\tau$ channel in a similar manner [Figure~\ref{fig:1l2tgen}]. We observe that the PV $\tau$ is almost always the leading $\tau$.
+
+\vspace{0.7cm}
+\begin{figure}[h]
+\centering
+\subfloat[{\scriptsize $\tau_{1}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{1L2T_momidT1.png} }}%
+\quad
+\subfloat[{\scriptsize $\tau_{2}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{1L2T_momidT2.png} }}%
+\quad
+\subfloat[{\scriptsize $\ell$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{1L2T_momidL.png} }}%
+\quad
+
+\caption{Gen plots for the $1\ell2\tau$ channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading tau $\tau_{1}$. We see peaks at RHN and quarks. \emph{(b)} PDG-ID of the mother of the sub-leading tau $\tau_{2}$. \emph{(c)} PDG-ID of the mother of the light lepton $\ell$.}
+\label{fig:1l2tgen}  
+\end{figure}
 
 \subsection{\Large{\boldmath$2\ell1\tau$}}
 \label{sec:2l1t}
