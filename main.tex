@@ -1,5 +1,6 @@
 \documentclass[letterpaper,12pt]{article}
 
+%\usepackage{color, soul}
 \usepackage{fullpage}
 \usepackage{fancyhdr}
 \usepackage[table]{xcolor}
@@ -120,7 +121,7 @@ This project is a part of the search for RHN using data samples collected by the
 
 %feynman diagram
 \begin{figure}[h!]
-  \includegraphics[width=0.7\textwidth, center]{RHNfeynman.png}
+  \includegraphics[width=0.7\textwidth, center]{images/RHNfeynman.png}
   \caption{Illustrative leading order Feynman diagram for the production of RHN and its subsequent decay that may result in a multilepton final state. The taus can decay either hadronically or leptonically, giving us different channels to analyze that have different background profiles}
   \label{fig:rhnfeyn}
 \end{figure}
@@ -132,7 +133,7 @@ The final state of an event (collision) is the set of particles seen by the dete
 
 The model considered here [Figure~\ref{fig:rhnfeyn}] includes a right handed neutrino ($N$) that decays into a \Wboson{} boson and a $\tau$, which decay further, giving rise to multilepton final states. For this analysis, we refer to electrons and muons collectively as light leptons ($\ell$). Events are then categorized by the multiplicity of light leptons and taus ($\tau$) in these final states, into the following channels: $3\ell$, $2\ell1\tau$, $1\ell2\tau$ and $3\tau$.
 
-To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cutflow}, Table~\ref{tab:cutflow}] to understand the process and how various triggers and selections affect the acceptance. Next, we attempt to understand the process of RHN production and decay at the gen-level [```ref section```] (\ie{} from simulations). Guided by the conclucions drawn from the study of these gen-level plots, we try to carve out a Signal Region [Section~\ref{sec:sro}] from the phase space which will give us good signal sensitivity. We use signal significance as a metric to compare signal regions. We do this for two channels: $2\ell1\tau$ and $3\ell$.
+To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cutflow}, Table~\ref{tab:cutflow}] to understand the process and how various triggers and selections affect the acceptance. Next, we attempt to understand the process of RHN production and decay at the gen-level [Seciton~\ref{sec:gen}] (\ie{} from simulations). Guided by the conclucions drawn from the study of these gen-level plots, we try to carve out a Signal Region [Section~\ref{sec:sro}] from the phase space which will give us good signal sensitivity. Some selections used to cut down on the background are explained in Secion~\ref{sec:reducebkg}. We use signal significance as a metric to compare signal regions. We do this for two channels: $2\ell1\tau$ and $3\ell$.
 
 %samples
 \setcounter{table}{0}
@@ -322,9 +323,9 @@ The events used for analysis are selected only if they pass certain conditions (
 \begin{figure}
   \begin{adjustbox}{minipage=\textwidth, scale=0.75}
     \centering
-    \subfloat[DY]{{\includegraphics[width=0.3\textwidth]{DYfeynman.png} }}%
+    \subfloat[DY]{{\includegraphics[width=0.3\textwidth]{images/DYfeynman.png} }}%
     \qquad
-    \subfloat[\ttbar]{{\includegraphics[width=0.3\textwidth]{ttbarfeynman.png} }}%
+    \subfloat[\ttbar]{{\includegraphics[width=0.3\textwidth]{images/ttbarfeynman.png} }}%
     \caption{\normalsize{Leading order Feynman diagrams for fake background processes. \emph{(a)} The Drell-Yan process. The third lepton can be faked by another particle/jet. \emph{(b)} One of the possible decay products of the \ttbar{} process}}
     \label{fig:bkgsfeyn}
   \end{adjustbox}
@@ -383,13 +384,13 @@ To undrestand the general topology of the events, like the \DeltaR{} between lep
 \vspace{0.7cm}
 \begin{figure}[h]
 \centering
-\subfloat[{\scriptsize RHN \pT}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{RHN_pT.png} }}%
+\subfloat[{\scriptsize RHN \pT{} [\GeV]}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/RHN_pT.png} }}%
 \qquad
-\subfloat[{\scriptsize PDG-ID of RHN Mothers}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{RHN_momid.png} }}%
+\subfloat[{\scriptsize PDG-ID of RHN Mothers}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/RHN_momid.png} }}%
 
-\subfloat[{\scriptsize\pT{} of $\tau$ coming from PV }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{pvtaupt.png} }}%
+\subfloat[{\scriptsize\pT{} of $\tau$ coming from PV [\GeV] }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/pvtaupt.png} }}%
 \qquad
-\subfloat[{\scriptsize \DeltaR{} (RHN,$\tau$)}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{pvtaudRRHN.png} }}%
+\subfloat[{\scriptsize \DeltaR{} (RHN,$\tau$)}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/pvtaudRRHN.png} }}%
 \caption{Gen plots for the production of RHN (all the plots have been normalized to unity). \emph{(a)} Transverse momenta of RHN of different mass points. We can see that the 400\GeV{} RHN is more boosted than the 100\GeV{} RHN. \emph{(b)} PDG-ID of mother particles of RHN. We observe that they are mostly quarks. \emph{(c)} Transverse momentum of the $\tau$ coming from the production vertex (PV). \emph{(d)} \DeltaR{} between RHN and $\tau$ coming from PV. We observe that they are produced back-to-back.}
 
 \label{fig:gen}  
@@ -401,11 +402,11 @@ Next, we look at the final state leptons and their plots. Here, we divide the $2
 \vspace{0.7cm}
 \begin{figure}[h]
 \centering
-\subfloat[{\scriptsize $\ell_{1}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_OS_momidL1.png} }}%
+\subfloat[{\scriptsize $\ell_{1}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/2L1T_OS_momidL1.png} }}%
 \quad
-\subfloat[{\scriptsize $\ell_{2}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_OS_momidL2.png} }}%
+\subfloat[{\scriptsize $\ell_{2}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/2L1T_OS_momidL2.png} }}%
 \quad
-\subfloat[{\scriptsize $\tau$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_OS_momidT.png} }}%
+\subfloat[{\scriptsize $\tau$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/2L1T_OS_momidT.png} }}%
 \quad
 
 \caption{Gen plots for the $2\ell1\tau$-OS channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading light lepton $\ell_{1}$. We see peaks at $\pm15$ and $\pm24$ which correspond to taus and \Wboson{} bosons respectively. \emph{(b)} PDG-ID of the mother of the sub-leading light lepton $\ell_{2}$. \emph{(c)} PDG-ID of the mother of the $\tau$. We see peaks at 66 and within the range (-6,6), which correspond to RHN and quarks (PV) respectively.}
@@ -420,9 +421,9 @@ When we compare Figure~\ref{fig:2l1tOSgen} with the feynman diagram in Figure~\r
 %gen feynman diagrams
 \begin{figure}[h]
   \centering
-  \subfloat[OS]{{\includegraphics[width=0.4\textwidth]{2l1tOSfeynman.png} }}%
+  \subfloat[OS]{{\includegraphics[width=0.4\textwidth]{images/2l1tOSfeynman.png} }}%
   \qquad
-  \subfloat[SS]{{\includegraphics[width=0.4\textwidth]{2l1tSSfeynman.png} }}%
+  \subfloat[SS]{{\includegraphics[width=0.4\textwidth]{images/2l1tSSfeynman.png} }}%
   \caption{Feynman diagrams for $2\ell1\tau$ OS and SS channels. \emph{(a)} The PV $\tau$ decays hadronically and the $\tau$ coming from the RHN decays leptonically. Since RHN is electrically neutral, the light lepton pair in the final state will be OS in this case. \emph{(b)} The only way an SS pair can be produced is for one of the light leptons to be a product of the PV $\tau$ decay, since the daughters of RHN will have to be OS (note that this can result in an OS pair as well).}
   \label{fig:2l1tgenfeyn}
 \end{figure}
@@ -431,11 +432,11 @@ When we compare Figure~\ref{fig:2l1tOSgen} with the feynman diagram in Figure~\r
 
 \begin{figure}[h]
 \centering
-\subfloat[{\scriptsize $\ell_{1}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_SS_momidL1.png} }}%
+\subfloat[{\scriptsize $\ell_{1}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/2L1T_SS_momidL1.png} }}%
 \quad
-\subfloat[{\scriptsize $\ell_{2}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_SS_momidL1L2.png} }}%
+\subfloat[{\scriptsize $\ell_{2}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/2L1T_SS_momidL1L2.png} }}%
 \quad
-\subfloat[{\scriptsize $\tau$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{2L1T_SS_momidT.png} }}%
+\subfloat[{\scriptsize $\tau$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/2L1T_SS_momidT.png} }}%
 \quad
 
 \caption{Gen plots for the $2\ell1\tau$-SS channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading light lepton $\ell_{1}$. Again, we see peaks at taus and \Wboson{} bosons, but this time the peak at $\tau$ is comparable to the one at \Wboson{} boson. \emph{(b)} PDG-ID of the mother of the sub-leading light lepton $\ell_{2}$. \emph{(c)} PDG-ID of the mother of the $\tau$. We see a peak only at RHN.}
@@ -448,22 +449,669 @@ In conclusion, we decide to divide the $2\ell1\tau$ channel into OS and SS categ
 \vspace{0.7cm}
 \begin{figure}[h]
 \centering
-\subfloat[{\scriptsize $\tau_{1}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{1L2T_momidT1.png} }}%
+\subfloat[{\scriptsize $\tau_{1}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/1L2T_momidT1.png} }}%
 \quad
-\subfloat[{\scriptsize $\tau_{2}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{1L2T_momidT2.png} }}%
+\subfloat[{\scriptsize $\tau_{2}$ Mother PDG-ID}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/1L2T_momidT2.png} }}%
 \quad
-\subfloat[{\scriptsize $\ell$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{1L2T_momidL.png} }}%
+\subfloat[{\scriptsize $\ell$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/1L2T_momidL.png} }}%
 \quad
 
 \caption{Gen plots for the $1\ell2\tau$ channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading tau $\tau_{1}$. We see peaks at RHN and quarks. \emph{(b)} PDG-ID of the mother of the sub-leading tau $\tau_{2}$. \emph{(c)} PDG-ID of the mother of the light lepton $\ell$.}
 \label{fig:1l2tgen}  
 \end{figure}
 
+\subsection{Reducing Background}
+\label{sec:reducebkg}
+
+Based on our understanding of the SM background processes and the RHN decay, we can apply specific selections to kill the background to a large extent. The following conditions or vetoes were applied:
+
+\begin{enumerate}
+  \item \textbf{On-\boldmath{\Zboson} veto}: In the process of RHN decay, the light leptons are daughters of \Wboson{} bosons or $\tau$. In the background processes (like \ZZ, \WZ{} and DY), many of the light leptons are daughters of the \Zboson{} boson. Thus, we exclude the on-\Zboson{} region, \ie{} we exculde events for which the invariant mass of the light lepton pair ($M_{\ell_{1}\ell_{2}}$) is in the on-\Zboson{} range. We define this range to be $76\GeV - 106\GeV$ (\Zboson-mass is $91\GeV$). Table~\ref{tab:reducebkg} and Figure~\ref{fig:reducebkg} show how this veto affects the background and signal.
+
+\begin{table}[h]
+  \centering
+  \footnotesize
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \resizebox{0.6\textwidth}{!}{%
+    \begin{tabular}{c|l|r|r}
+    \hline \hline
+    & Region & Events Before Veto & Events After Veto\\
+    \hline
+\multirow{3}{*}{DY} & $2\ell1\tau$ & $10,512$ & $745$\\
+& $2\ell1\tau$-OS & $10,456$ & $738$\\
+& $2\ell1\tau$-SS & $56$ & $7$\\
+\hline
+\multirow{3}{*}{\ttbar} & $2\ell1\tau$ & $3,719$ & $1,046$\\
+& $2\ell1\tau$-OS & $3,377$ & $942$\\
+& $2\ell1\tau$-SS & $342$ & $104$\\
+\hline
+\multirow{3}{*}{M100} & $2\ell1\tau$ & $413$ & $154$\\
+& $2\ell1\tau$-OS & $371$ & $125$\\
+& $2\ell1\tau$-SS & $42$ & $27$\\
+\hline
+\multirow{3}{*}{M150} & $2\ell1\tau$ & $2,560$ & $1,199$\\
+& $2\ell1\tau$-OS & $2,161$ & $880$\\
+& $2\ell1\tau$-SS & $390$ & $305$\\
+\hline \hline
+    \end{tabular}%
+    }
+  \caption{The number of events before and after applying the On-\Zboson{} veto. The signal also reduces with the background but the overall significance immproves in every region.}
+  \label{tab:reducebkg}
+\end{table}
+
+\vspace{0.5cm}
+\begin{figure}[h]
+  \centering
+\subfloat[{\scriptsize \Lt{} before On-\Zboson{} veto [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/Ltbv.png} }}%
+\qquad
+\subfloat[{\scriptsize \Lt{} after On-\Zboson{} veto [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/Ltav.png} }}%
+
+\caption{\Lt{} plots before and after the application of the On-\Zboson{} veto (\Lt{} is defined as the scalar sum of the \pt{} for the final state leptons). All the sample luminosities have been scaled to the interated luminosity of $36$ \ifb{} so that the comparision is accurate.}
+\label{fig:reducebkg}  
+\end{figure}
+
+\item \textbf{\boldmath$N_{Bjets}$ veto}: This veto is majorly for cutting down \ttbar{} background. The \ttbar{} decay produces b-jets [Figure~\ref{fig:bkgsfeyn}] while RHN does not. So, we include events which have no b-jets ($N_{Bjets}~=~0$).
+
+  \item \textbf{\boldmath$H_{T}^{50} < 100$ veto}: RHN decay usually doesn't result in high energy jets, while other background processes might. So we put a upper limit on the sum \pt of all jets in an event. This variable is named $H_{T}$. We use a modified variable $H_{T}^{50}$ which puts a lower limit of $50$ on jet \pt. This is to avoid pileup and consider only real jets.
+  \end{enumerate}
+
+  
 \subsection{\Large{\boldmath$2\ell1\tau$}}
 \label{sec:2l1t}
 
+Guided by the observations and conclusions from the gen plots, and after applying vetoes to kill background, we try to find a region with appropriate selections. To begin, we study some basic plots:
+
+%metpt
+\vspace{0.5cm}
+\begin{figure}[h]
+  \centering
+  \subfloat[{\scriptsize \metpt{} (\2l1t-OS) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/metpt.png} }}%
+  \qquad
+  \subfloat[{\scriptsize \metpt{} (\2l1t-SS) [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/metpt-ss.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \2l1t-OS & \2l1t-OS \metpt $<50$ & \2l1t-OS \metpt $>50$\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.2582$\\
+        \sig{} $(150) = 0.2817$\\
+        \sig{} $(400) = 0.0337$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.1564$\\
+      \sig{} $(150) = 0.1399$\\
+      \sig{} $(400) = 0.0079$} &
+    \makecell{
+      \sig{} $(100) = 0.2877$\\
+      \sig{} $(150) = 0.3789$\\
+      \sig{} $(400) = 0.0633$}\\
+    \hline
+  \end{tabular}
+  
+  \caption{\metpt{} for \2l1t OS and SS channels. In \emph{(a)}, we observe that most of the DY background lies in the low \metpt{} range. This is confirmed by the significance table. Thus, \metpt $>50$ will be our first selection, \ie{} we exculde the region below $50\GeV$.}
+  \label{fig:2l1tmetpt}
+\end{figure}
+
+\subsubsection{{\Large{\boldmath$2\ell1\tau$}} - OS}
+\label{sec:2l1tOS}
+
+After stduying the \metpt{} plots for the OS channel [Figure~\ref{fig:2l1tmetpt}], we decide to select the region in which \metpt{} is above $50$. This eliminates a lot of DY background. All the following plots are of the \metpt{} $>50$ region. In Figure~\ref{fig:2l1tOSptdr}, we have the \pt{} and \DeltaR{} plots. We observe that the light lepton pair for RHN events is generally closer together [Fig.~\ref{fig:2l1tOSptdr}\emph{(d)}] and that the sub-leading light lepton and the tau are far apart [Fig.~\ref{fig:2l1tOSptdr}\emph{(f)}](as expected from simulations).
+
+Next, we plot a number of physical quatities like \dphi, $m_{\ll\ls}$, transverse mass ($m_{T}$), visible transverse mass, etc. We also define a few new variables like \MET/$m_{T}$ and $m_{T}$ ($\ell_{res}$, \MET) where $\ell_{res}$ is defined as the vector sum of one of the two OS pairs. Transverse mass is defined as -
+
+\[
+m_{T} = \sqrt{2\pt^{miss}\pt^{\ell}[1 - cos(\dphi_{m_{T}})]}
+\]
+
+where $\pt^{\ell}$ is the \pt{} of the lepton under consideration.
+\clearpage
+
+%OS pt dr
+\begin{figure}[h!]
+  \centering
+  \subfloat[{\scriptsize \pt{} of leading light lepton \ll [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/llpt.png}}}
+  \qquad
+  \renewcommand{\thesubfigure}{d}
+  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/dR0.png} }}%
+  \qquad
+  \renewcommand{\thesubfigure}{b}
+  \subfloat[{\scriptsize \pt{} of sub-leading light lepton \ls [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/slpt.png} }}%
+  \qquad
+  \renewcommand{\thesubfigure}{e}
+  \subfloat[{\scriptsize \DeltaR{} (\ll,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/dR1.png} }}%
+  \qquad
+  \renewcommand{\thesubfigure}{c}
+  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/tpt.png} }}%
+  \qquad
+  \renewcommand{\thesubfigure}{f}
+  \subfloat[{\scriptsize \DeltaR{} (\ls,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/dR2.png} }}%
+  \caption{\pt{} and \DeltaR{} plots for the \2l1t-OS \metpt $>50$ region.}
+  \label{fig:2l1tOSptdr}
+\end{figure}
+\vspace{1cm}
+Based on these plots, we attempt to find the optimal signal region so that signal significance is maximized. We try a bunch of selections (or cuts) for the same. The ones that yield the best results are given in Figures~\ref{fig:2l1tc1} to \ref{fig:2l1tc5} (\Lt is used as the discriminating variable). A summary of all the selections is given in Table~\ref{tab:2l1t}.
+%OS Lt & mt2
+\begin{figure}[h]
+  \centering
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/Lt.png}}}
+  \qquad
+  \subfloat[{\scriptsize $m_{T}$ ($\tau$, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/mt2.png} }}%
+  \caption{\Lt{} and transverse mass plots for the \2l1t-OS \metpt $>50$ region.}
+  \label{fig:2l1tOSltmt}
+\end{figure}
+%cut 1
+\begin{figure}
+  \centering
+  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/2l1tc1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=7cm, width=0.1\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/2l1tc1lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cut & Significance after cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.2990$\\
+        \sig{} $(150) = 0.3800$\\
+        \sig{} $(400) = 0.0654$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.4811$\\
+      \sig{} $(150) = 0.4675$\\
+      \sig{} $(400) = 0.0176$}\\
+    \hline
+  \end{tabular}
+  \caption{\DeltaR{} (\ll,\ls) < 1.5 for \2l1t-OS \metpt $>50$ events.}
+  \label{fig:2l1tc1}
+\end{figure}
+\clearpage
+%cut 2
+\begin{figure}[h]
+  \centering
+  \subfloat[{\scriptsize \dphi{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/2l1tc2.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=7cm, width=0.1\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/2l1tc2lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cut & Significance after cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.2990$\\
+        \sig{} $(150) = 0.3800$\\
+        \sig{} $(400) = 0.0654$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.4610$\\
+      \sig{} $(150) = 0.4222$\\
+      \sig{} $(400) = 0.0197$}\\
+    \hline
+  \end{tabular}
+  \caption{\dphi{} (\ll,\ls) < 1 for \2l1t-OS \metpt $>50$ events.}
+  \label{fig:2l1tc2}
+\end{figure}
+%cut 3
+\begin{figure}[h!]
+  \centering
+  \subfloat[{\scriptsize $m_{T}$ ($\tau$, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc3.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \DeltaR{} (\ls, $\tau$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc3-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/2l1tc3lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Significance before cuts & Significance after $m_{T}$ cut & Significance after \DeltaR{} cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.2990$\\
+        \sig{} $(150) = 0.3800$\\
+        \sig{} $(400) = 0.0654$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.2289$\\
+      \sig{} $(150) = 0.4736$\\
+      \sig{} $(400) = 0.1147$} & 
+    \makecell{
+      \sig{} $(100) = 0.3676$\\
+      \sig{} $(150) = 0.4723$\\
+      \sig{} $(400) = 0.0774$}\\
+    \hline
+  \end{tabular}
+  \caption{$m_{T}$ ($\tau$, \met) $> 100$ and \DeltaR{} (\ls, $\tau$) $>2.5$ \2l1t-OS \metpt $>50$ events.}
+  \label{fig:2l1tc3}
+\end{figure}
+\clearpage
+%cut 4
+\begin{figure}[h]
+  \centering
+  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc4.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \DeltaR{} (\ls, $\tau$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc4-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/2l1tc4lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Significance before cuts & Significance after \pt{} cut & Significance after \DeltaR{} cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.2990$\\
+        \sig{} $(150) = 0.3800$\\
+        \sig{} $(400) = 0.0654$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.2305$\\
+      \sig{} $(150) = 0.5681$\\
+      \sig{} $(400) = 0.1764$} & 
+    \makecell{
+      \sig{} $(100) = 0.3032$\\
+      \sig{} $(150) = 0.6260$\\
+      \sig{} $(400) = 0.1408$}\\
+    \hline
+  \end{tabular}
+  \caption{\pt{} of $\tau$ $>80$ and \DeltaR{} (\ls, $\tau$) $>2$ for \2l1t-OS \metpt $>50$ events.}
+  \label{fig:2l1tc4}
+\end{figure}
+%cut 5
+\begin{figure}[h!]
+  \centering
+  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc5.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \dphi{} (\ll, \ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc5-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/2l1tc5lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    Significance before cuts & Significance after \pt{} cut & Significance after \dphi{} cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.2990$\\
+        \sig{} $(150) = 0.3800$\\
+        \sig{} $(400) = 0.0654$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.2305$\\
+      \sig{} $(150) = 0.5681$\\
+      \sig{} $(400) = 0.1764$} & 
+    \makecell{
+      \sig{} $(100) = 0.4426$\\
+      \sig{} $(150) = 0.6855$\\
+      \sig{} $(400) = 0.0452$}\\
+    \hline
+  \end{tabular}
+  \caption{\pt{} of $\tau$ $>80$ and \dphi{} (\ll, \ls) $< 0.75$ for \2l1t-OS \metpt $>50$ events.}
+  \label{fig:2l1tc5}
+\end{figure}
+\vspace{1.5cm}
+
+As expected, the \DeltaR{} variables are impotant and selecting regions based on them can give us good signinificance for all the mass points. We therefore plot 2-D histograms with these variables on one axis. Different regions on the 2-D plane can then be selected as signal regions. These plots are shown in Figures~\ref{fig:2l1t2d1} to \ref{fig:2l1t2d3}.
+\newpage
+\begin{samepage}
+%2d1
+\captionsetup[subfigure]{labelformat=empty}
+\begin{figure}[h!]
+  \centering
+  \makebox[0pt][c]{
+    \subfloat[{\scriptsize $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ll, \ls) ($100\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/2l1t-2d/1-100.png} }}%
+    \enskip
+    \subfloat[{\scriptsize $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ll, \ls) ($150\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/2l1t-2d/1-150.png} }}%
+    \enskip
+    \subfloat[{\scriptsize $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ll, \ls) ($400\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/2l1t-2d/1-400.png} }}%
+  }
+  \makebox[\textwidth][c]{
+    \rule{0pt}{0.2cm}
+  }
+  \makebox[0pt][c]{
+    \subfloat[{\scriptsize DY}]{{\includegraphics[trim=0 0 0 25,clip,width=0.27\textwidth]{images/2l1t-2d/1-dy.png} }}%
+    \enskip
+    \subfloat[{\scriptsize \ttbar}]{{\includegraphics[trim=0 0 0 25,clip,width=0.27\textwidth]{images/2l1t-2d/1-ttbar.png}}}%
+    \enskip
+    \subfloat[{\scriptsize \WZ}]{{\includegraphics[trim=0 0 0 25,clip, width=0.27\textwidth]{images/2l1t-2d/1-wz.png} }}%
+    \subfloat[{\scriptsize \ZZ}]{{\includegraphics[trim=0 0 0 25,clip, width=0.27\textwidth]{images/2l1t-2d/1-zz.png} }}%
+  }
+  \makebox[\textwidth][c]{
+    \rule{0pt}{0.2cm}
+  }
+  \makebox[\textwidth][c]{
+    \tiny
+    \setlength{\tabcolsep}{20pt}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{|c|c|}
+      \hline
+      Significance before cuts & Significance after cuts\\
+      \hline
+      \Gape[0.2cm]{\makecell{
+          \sig{} $(100) = 0.2990$\\
+          \sig{} $(150) = 0.3800$\\
+          \sig{} $(400) = 0.0654$ }} & 
+      \makecell{
+        \sig{} $(100) = 0.443$ [bin $(1,1)$]\\
+        \sig{} $(150) = 0.376$ [bin $(1,2)$]\\
+        \sig{} $(400) = 0.110$ [bin $(2,2)$]}\\
+    \hline
+    \end{tabular}
+  }
+  \caption{[2-D histogram] $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ll, \ls) (all $m_{T}$ axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
+  \label{fig:2l1t2d1}
+  \vspace{0.4cm}
+\end{figure}
+\nopagebreak
+%2d2
+\captionsetup[subfigure]{labelformat=empty}
+\begin{figure}[h!]
+  \centering
+  \makebox[0pt][c]{
+    \subfloat[{\scriptsize $\tau$ \pt{} v/s \DeltaR{} (\ll, \ls) ($100\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/2l1t-2d/2-100.png} }}%
+    \enskip
+    \subfloat[{\scriptsize $\tau$ \pt{} v/s \DeltaR{} (\ll, \ls) ($150\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/2l1t-2d/2-150.png} }}%
+    \enskip
+    \subfloat[{\scriptsize $\tau$ \pt{} v/s \DeltaR{} (\ll, \ls) ($400\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/2l1t-2d/2-400.png} }}%
+  }
+  \makebox[\textwidth][c]{
+    \rule{0pt}{0.2cm}
+  }
+  \makebox[0pt][c]{
+    \subfloat[{\scriptsize DY}]{{\includegraphics[trim=0 0 0 25,clip,width=0.27\textwidth]{images/2l1t-2d/2-dy.png} }}%
+    \enskip
+    \subfloat[{\scriptsize \ttbar}]{{\includegraphics[trim=0 0 0 25,clip,width=0.27\textwidth]{images/2l1t-2d/2-ttbar.png}}}%
+    \enskip
+    \subfloat[{\scriptsize \WZ}]{{\includegraphics[trim=0 0 0 25,clip, width=0.27\textwidth]{images/2l1t-2d/2-wz.png} }}%
+    \subfloat[{\scriptsize \ZZ}]{{\includegraphics[trim=0 0 0 25,clip, width=0.27\textwidth]{images/2l1t-2d/2-zz.png} }}%
+  }
+  \makebox[\textwidth][c]{
+    \rule{0pt}{0.2cm}
+  }
+  \makebox[\textwidth][c]{
+    \tiny
+    \setlength{\tabcolsep}{20pt}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{|c|c|}
+      \hline
+      Significance before cuts & Significance after cuts\\
+      \hline
+      \Gape[0.2cm]{\makecell{
+          \sig{} $(100) = 0.2990$\\
+          \sig{} $(150) = 0.3800$\\
+          \sig{} $(400) = 0.0654$ }} & 
+      \makecell{
+        \sig{} $(100) = 0.416$ [bin $(1,2)$]\\
+        \sig{} $(150) = 0.425$ [bin $(1,2)$]\\
+        \sig{} $(400) = 0.117$ [bin $(2,2)$]}\\
+    \hline
+    \end{tabular}
+  }
+  \caption{[2-D histogram] $\tau$ \pt{} v/s \DeltaR{} (\ll, \ls) (all \pt{} axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
+  \label{fig:2l1t2d2}
+\end{figure}
+\end{samepage}
+\newpage
+%2d3
+\captionsetup[subfigure]{labelformat=empty}
+\begin{figure}[h!]
+  \centering
+  \makebox[0pt][c]{
+    \subfloat[{\scriptsize $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ls, $\tau$) ($100\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/2l1t-2d/3-100.png} }}%
+    \enskip
+    \subfloat[{\scriptsize $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ls, $\tau$) ($150\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/2l1t-2d/3-150.png} }}%
+    \enskip
+    \subfloat[{\scriptsize $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ls, $\tau$) ($400\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/2l1t-2d/3-400.png} }}%
+  }
+  \makebox[\textwidth][c]{
+    \rule{0pt}{0.2cm}
+  }
+  \makebox[0pt][c]{
+    \subfloat[{\scriptsize DY}]{{\includegraphics[trim=0 0 0 25,clip,width=0.27\textwidth]{images/2l1t-2d/3-dy.png} }}%
+    \enskip
+    \subfloat[{\scriptsize \ttbar}]{{\includegraphics[trim=0 0 0 25,clip,width=0.27\textwidth]{images/2l1t-2d/3-ttbar.png}}}%
+    \enskip
+    \subfloat[{\scriptsize \WZ}]{{\includegraphics[trim=0 0 0 25,clip, width=0.27\textwidth]{images/2l1t-2d/3-wz.png} }}%
+    \subfloat[{\scriptsize \ZZ}]{{\includegraphics[trim=0 0 0 25,clip, width=0.27\textwidth]{images/2l1t-2d/3-zz.png} }}%
+  }
+  \makebox[\textwidth][c]{
+    \rule{0pt}{0.2cm}
+  }
+  \makebox[\textwidth][c]{
+    \tiny
+    \setlength{\tabcolsep}{20pt}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{|c|c|}
+      \hline
+      Significance before cuts & Significance after cuts\\
+      \hline
+      \Gape[0.2cm]{\makecell{
+          \sig{} $(100) = 0.2990$\\
+          \sig{} $(150) = 0.3800$\\
+          \sig{} $(400) = 0.0654$ }} & 
+      \makecell{
+        \sig{} $(100) = 0.342$ [bin $(2,2)$]\\
+        \sig{} $(150) = 0.450$ [bin $(2,2)$]\\
+        \sig{} $(400) = 0.075$ [bin $(1,2)$]}\\
+    \hline
+    \end{tabular}
+  }
+  \caption{[2-D histogram] $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ls, $\tau$) (all $m_{T}$ axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
+  \label{fig:2l1t2d3}
+  \vspace{0.4cm}
+  \makebox[0pt][c]{
+  }
+\end{figure}
+
+\subsubsection{{\Large{\boldmath$2\ell1\tau$} - SS}}
+\label{sec:2l1tSS}
+
+Following a strategy similar to that of the \2l1t-OS channel, we look at the basic \pt, \DeltaR, $m_{T}$ and \Lt{} plots and then apply the appropriate selections. We try a number of cuts on newly introduced variables specific to this channel (like \DeltaR{} between the same-sign lepton pair, Invariant mass of the same-sign lepton pair, etc). We also make cuts based on the presence of an opposite-sign lepton pair. Unfortunately, none of the selections give a significance better than the initial one. The optimal signal region seems to be the region with events that have an OS pair. A few of the selections we tried are shown in Figures~\ref{fig:ss2l1tc1} to \ref{fig:ss2l1t2d}. A summary of all the selections is given in Table~\ref{tab:2l1t}.
+\newpage
+%SS pt dr
+\begin{figure}[h!]
+  \centering
+  \subfloat[{\scriptsize \pt{} of leading light lepton \ll [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/llpt.png}}}
+  \qquad
+  \renewcommand{\thesubfigure}{d}
+  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/dR0.png} }}%
+  \qquad
+  \renewcommand{\thesubfigure}{b}
+  \subfloat[{\scriptsize \pt{} of sub-leading light lepton \ls [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/slpt.png} }}%
+  \qquad
+  \renewcommand{\thesubfigure}{e}
+  \subfloat[{\scriptsize \DeltaR{} (\ll,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/dR1.png} }}%
+  \qquad
+  \renewcommand{\thesubfigure}{c}
+  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/tpt.png} }}%
+  \qquad
+  \renewcommand{\thesubfigure}{f}
+  \subfloat[{\scriptsize \DeltaR{} (\ls,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/dR2.png} }}%
+  \caption{\pt{} and \DeltaR{} plots for the \2l1t-SS channel.}
+  \label{fig:2l1tSSptdr}
+\end{figure}
+
+%SS Lt & mt2
+\begin{figure}[ht!]
+  \centering
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/Lt.png}}}
+  \qquad
+  \subfloat[{\scriptsize $m_{T}$ (\ll, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/mt0.png} }}%
+  \caption{\Lt{} and transverse mass plots for the \2l1t-SS channel.}
+  \label{fig:2l1tSSltmt}
+  \vspace{2cm}
+\end{figure}
+
+%cut 1
+\begin{figure}[h!]
+  \centering
+  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/ss/2l1tc1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=7cm, width=0.1\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/2l1tc1lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cut & Significance after cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.3339$\\
+        \sig{} $(150) = 0.5645$\\
+        \sig{} $(400) = 0.0618$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.3021$\\
+      \sig{} $(150) = 0.5263$\\
+      \sig{} $(400) = 0.0512$}\\
+    \hline
+  \end{tabular}
+  \caption{\DeltaR{} (\ll,\ls) $> 2.4$ for \2l1t-SS channel.}
+  \label{fig:ss2l1tc1}
+\end{figure}
+
+%cut 2
+\begin{figure}[h!]
+  \centering
+  \subfloat[{\scriptsize \dphi{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/ss/2l1tc2.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=7cm, width=0.1\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/2l1tc2lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cut & Significance after cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.3339$\\
+        \sig{} $(150) = 0.5645$\\
+        \sig{} $(400) = 0.0618$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.3441$\\
+      \sig{} $(150) = 0.5127$\\
+      \sig{} $(400) = 0.0468$}\\
+    \hline
+  \end{tabular}
+  \caption{\dphi{} (\ll,\ls) $> 2.3$ for \2l1t-SS channel.}
+  \label{fig:ss2l1tc2}
+\end{figure}
+
+%cut 3
+\begin{figure}[h!]
+  \centering
+  \subfloat[{\scriptsize \DeltaR{} (\ls, $\tau$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/ss/2l1tc3.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=7cm, width=0.1\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/2l1tc3lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cut & Significance after cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.3339$\\
+        \sig{} $(150) = 0.5645$\\
+        \sig{} $(400) = 0.0618$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.2388$\\
+      \sig{} $(150) = 0.4074$\\
+      \sig{} $(400) = 0.0329$}\\
+    \hline
+  \end{tabular}
+  \caption{\DeltaR{} (\ls,$\tau$) $< 2$ for \2l1t-SS channel.}
+  \label{fig:ss2l1tc3}
+\end{figure}
+\newpage
+%2d1
+\captionsetup[subfigure]{labelformat=empty}
+\begin{figure}[h!]
+  \centering
+  \makebox[0pt][c]{
+    \subfloat[{\scriptsize \Lt{} v/s \DeltaR{} (\ll, \ls) ($100\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/ss/1-100.png} }}%
+    \enskip
+    \subfloat[{\scriptsize \Lt{} v/s \DeltaR{} (\ll, \ls) ($150\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/ss/1-150.png} }}%
+    \enskip
+    \subfloat[{\scriptsize \Lt{} v/s \DeltaR{} (\ll, \ls) ($400\GeV$)}]{{\includegraphics[trim=0 0 0 25,clip, width=0.4\textwidth]{images/ss/1-400.png} }}%
+  }
+  \makebox[\textwidth][c]{
+    \rule{0pt}{0.2cm}
+  }
+  \makebox[0pt][c]{
+    \subfloat[{\scriptsize DY}]{{\includegraphics[trim=0 0 0 25,clip,width=0.27\textwidth]{images/ss/1-dy.png} }}%
+    \enskip
+    \subfloat[{\scriptsize \ttbar}]{{\includegraphics[trim=0 0 0 25,clip,width=0.27\textwidth]{images/ss/1-ttbar.png}}}%
+    \enskip
+    \subfloat[{\scriptsize \WZ}]{{\includegraphics[trim=0 0 0 25,clip, width=0.27\textwidth]{images/ss/1-wz.png} }}%
+    \subfloat[{\scriptsize \ZZ}]{{\includegraphics[trim=0 0 0 25,clip, width=0.27\textwidth]{images/ss/1-zz.png} }}%
+  }
+  \makebox[\textwidth][c]{
+    \rule{0pt}{0.2cm}
+  }
+  \makebox[\textwidth][c]{
+    \tiny
+    \setlength{\tabcolsep}{20pt}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{|c|c|}
+      \hline
+      Significance before cuts & Significance after cuts\\
+      \hline
+      \Gape[0.2cm]{\makecell{
+          \sig{} $(100) = 0.3339$\\
+          \sig{} $(150) = 0.5645$\\
+          \sig{} $(400) = 0.0618$ }} & 
+      \makecell{
+        \sig{} $(100) = 0.317$ [bin $(2,2)$]\\
+        \sig{} $(150) = 0.501$ [bin $(2,2)$]\\
+        \sig{} $(400) = 0.093$ [bin $(2,2)$]}\\
+    \hline
+    \end{tabular}
+  }
+  \caption{[2-D histogram] \Lt{} v/s \DeltaR{} (\ll, \ls) (all \Lt{} axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
+  \label{fig:ss2l1t2d}
+  \vspace{0.4cm}
+\end{figure}
+
+%summary table
+\begin{table}[h]
+  \centering
+  \large
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{2}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{r|l|r|r|r}
+    \hline \hline
+    &Selection & \multicolumn{1}{r|}{\sig{} $(100)$} & \multicolumn{1}{r|}{\sig{} $(150)$} & \multicolumn{1}{r}{\sig{} $(400)$}\\
+    \hline
+\multirow{3}{*}{\begin{sideways}\2l1t-OS \end{sideways}} & $\pt^{miss} >50$ + \DeltaR{} (\ll, \ls) $<1.5$  & $0.4811$ & $0.4675$ & $0.0176$\\
+& $\pt^{miss} >50$ + \pt($\tau$) $>80$ + \dphi{} (\ll, \ls) $<0.75$ & \colorbox{yellow}{\boldmath $0.4426$} & \colorbox{yellow}{\boldmath $0.6855$} & \colorbox{yellow}{\boldmath $0.0452$}\\
+& $\pt^{miss} >50$ [2-D histogram]  \pt($\tau$) v/s \DeltaR{} (\ll, \ls)  & $0.416$ & $0.425$ & $0.117$\\
+\hline
+\multirow{3}{*}{\begin{sideways}\2l1t-SS \end{sideways}} & Events with an OS pair & \colorbox{yellow}{\boldmath $0.3657$} & \colorbox{yellow}{\boldmath $0.6417$} & \colorbox{yellow}{\boldmath $0.0693$}\\
+& \dphi{} (\ll, \ls) $>2.3$ & $0.3441$ & $0.5127$ & $0.0468$\\
+& [2-D histogram] \Lt{} v/s \DeltaR{} (\ll, \ls)  & $0.317$ & $0.501$ & $0.093$\\
+\hline \hline
+    \end{tabular}%
+    }
+  \caption{Summary table for \2l1t{} channel.}
+  \label{tab:2l1t}
+\end{table}
+
 \subsection{\Large{\boldmath$3\ell$}}
 \label{sec:3l}
+
 
 \section{RHN Acceptance Cut-flow}
 \label{sec:cutflow}
@@ -479,29 +1127,29 @@ In conclusion, we decide to divide the $2\ell1\tau$ channel into OS and SS categ
       \hline \hline
        & \multicolumn{6}{c}{MVA} & \multicolumn{6}{c}{Deep} \\
       \hline \hline
-      Selection & 150\GeV & 100\GeV & DY & \WZ & \ttbar & \wjets& 150\GeV & 100\GeV & DY & \WZ & \ttbar & \wjets\\
+      Selection & $150\GeV$ & $100\GeV$ & DY & \WZ & \ttbar & \wjets& $150\GeV$ & $100\GeV$ & DY & \WZ & \ttbar & \wjets\\
       \hline
-      Total events ran & 285816 & 298880 & 23237 & 52560 & 24235935 & 57358383 & 285816 & 298880 & 23237 & 52560 & 24235935 & 57358383\\
-      Total events & 286200 & 299200 & 23237 & 52560 & 24265024 & 57402435 & 286200 & 299200 & 23237 & 52560 & 24265024 & 57402435\\
-      $4\ell$ events & 2 & 4 & 2 & 9 & 855 & 0 & 2 & 4 & 2 & 9 & 855 & 0\\
-      $N_{1\ell}$ events & 166649 & 140098 & 23237 & 52560 & 18340314 & 18917151 & 166649 & 140098 & 23237 & 52560 & 18340314 & 18917151\\
-      $N_{1\ell\_trigg}$ events & 99912 & 72436 & 21406 & 47589 & 13065106 & 10297682 & 99912 & 72436 & 21406 & 47589 & 13065106 & 10297682\\
-      $N_{1\ell\_trigg\_1\ell}$ events & 22994 & 10915 & 21033 & 38399 & 2835198 & 1538 & 22994 & 10915 & 21033 & 38399 & 2835198 & 1538\\
-      $N_{1\ell\_trigg\_1\ell\pt10}$ events & 21495 & 9111 & 20680 & 36568 & 2726718 & 396 & 21495 & 9111 & 20680 & 36568 & 2726718 & 396\\
-      $N_{1\ell\_trigg\_1\ell\pt10\_1\ell}$ events & 2681 & 857 & 54 & 825 & 16869 & 2 & 2681 & 857 & 54 & 825 & 16869 & 2\\
-      $N_{1\ell\_trigg\_2\ell\pt10}$ events ($3\ell$ events) & 2251 & 619 & 37 & 746 & 10002 & 1 & 2251 & 619 & 37 & 746 & 10002 & 1\\
-      $N_{1\ell\_trigg\_1\ell\pt10\_1\tau}$ events & 4524 & 1022 & 16333 & 29722 & 1819 & 0 & 3389 & 663 & 11742 & 29813 & 1294 & 0\\
-      $N_{1\ell\_trigg\_1\ell\pt10\_1\tau\pt20}$ events ($2\ell1\tau$ events) & 4280 & 908 & 16329 & 29706 & 1696 & 0 & 3389 & 663 & 11742 & 29813 & 1294 & 0\\
-      $N_{1\ell\_trigg\_1\tau}$ events & 23319 & 10796 & 189 & 7478 & 876646 & 7 & 17542 & 7315 & 284 & 7562 & 590115 & 6\\
-      $N_{1\ell\_trigg\_1\tau\pt20}$ events & 22069 & 9684 & 189 & 7476 & 805080 & 6 & 17452 & 7315 & 284 & 7562 & 590115 & 6\\
-      $N_{1\ell\_trigg\_1\tau\pt20\_1\tau}$ events & 3049 & 506 & 1 & 136 & 23 & 0 & 1681 & 190 & 0 & 25 & 7 & 0\\
-      $N_{1\ell\_trigg\_2\tau\pt20}$ events ($1\ell2\tau$ events) & 2670 & 363 & 0 & 104 & 21 & 0 & 1681 & 190 & 0 & 25 & 7 & 0\\
-      $N_{1\tau}$ events & 37486 & 22362 & 0 & 0 & 1182328 & 1301502 & 27692 & 14793 & 0 & 0 & 803086 & 763144\\
-      $N_{1\tau\pt20}$ events & 35331 & 20113 & 0 & 0 & 1090836 & 1124963 & 27692 & 14793 & 0 & 0 & 803086 & 763144\\
-      $N_{1\tau\pt20\_1\tau}$ events & 6960 & 2038 & 0 & 0 & 71619 & 0 & 3724 & 916 & 0 & 0 & 33355 & 0\\
-      $N_{2\tau\pt20}$ events & 6118 & 1637 & 0 & 0 & 60823 & 0 & 3724 & 916 & 0 & 0 & 33355 & 0\\
-      $N_{2\tau\pt20\_1\tau}$ events & 520 & 79 & 0 & 0 & 0 & 0 & 231 & 28 & 0 & 0 & 0 & 0\\
-      $N_{3\tau\pt20}$ events ($3\tau$ events) & 434 & 54 & 0 & 0 & 0 & 0 & 231 & 28 & 0 & 0 & 0 & 0\\
+      Total events ran & $285816$ & $298880$ & $23237$ & $52560$ & $24235935$ & $57358383$ & $285816$ & $298880$ & $23237$ & $52560$ & $24235935$ & $57358383$\\
+      Total events & $286200$ & $299200$ & $23237$ & $52560$ & $24265024$ & $57402435$ & $286200$ & $299200$ & $23237$ & $52560$ & $24265024$ & $57402435$\\
+      $4\ell$ events & $2$ & $4$ & $2$ & $9$ & $855$ & $0$ & $2$ & $4$ & $2$ & $9$ & $855$ & $0$\\
+      $N_{1\ell}$ events & $166649$ & $140098$ & $23237$ & $52560$ & $18340314$ & $18917151$ & $166649$ & $140098$ & $23237$ & $52560$ & $18340314$ & $18917151$\\
+      $N_{1\ell\_trigg}$ events & $99912$ & $72436$ & $21406$ & $47589$ & $13065106$ & $10297682$ & $99912$ & $72436$ & $21406$ & $47589$ & $13065106$ & $10297682$\\
+      $N_{1\ell\_trigg\_1\ell}$ events & $22994$ & $10915$ & $21033$ & $38399$ & $2835198$ & $1538$ & $22994$ & $10915$ & $21033$ & $38399$ & $2835198$ & $1538$\\
+      $N_{1\ell\_trigg\_1\ell\pt10}$ events & $21495$ & $9111$ & $20680$ & $36568$ & $2726718$ & $396$ & $21495$ & $9111$ & $20680$ & $36568$ & $2726718$ & $396$\\
+      $N_{1\ell\_trigg\_1\ell\pt10\_1\ell}$ events & $2681$ & $857$ & $54$ & $825$ & $16869$ & $2$ & $2681$ & $857$ & $54$ & $825$ & $16869$ & $2$\\
+      $N_{1\ell\_trigg\_2\ell\pt10}$ events ($3\ell$ events) & $2251$ & $619$ & $37$ & $746$ & $10002$ & $1$ & $2251$ & $619$ & $37$ & $746$ & $10002$ & $1$\\
+      $N_{1\ell\_trigg\_1\ell\pt10\_1\tau}$ events & $4524$ & $1022$ & $16333$ & $29722$ & $1819$ & $0$ & $3389$ & $663$ & $11742$ & $29813$ & $1294$ & $0$\\
+      $N_{1\ell\_trigg\_1\ell\pt10\_1\tau\pt20}$ events ($2\ell1\tau$ events) & $4280$ & $908$ & $16329$ & $29706$ & $1696$ & $0$ & $3389$ & $663$ & $11742$ & $29813$ & $1294$ & $0$\\
+      $N_{1\ell\_trigg\_1\tau}$ events & $23319$ & $10796$ & $189$ & $7478$ & $876646$ & $7$ & $17542$ & $7315$ & $284$ & $7562$ & $590115$ & $6$\\
+      $N_{1\ell\_trigg\_1\tau\pt20}$ events & $22069$ & $9684$ & $189$ & $7476$ & $805080$ & $6$ & $17452$ & $7315$ & $284$ & $7562$ & $590115$ & $6$\\
+      $N_{1\ell\_trigg\_1\tau\pt20\_1\tau}$ events & $3049$ & $506$ & $1$ & $136$ & $23$ & $0$ & $1681$ & $190$ & $0$ & $25$ & $7$ & $0$\\
+      $N_{1\ell\_trigg\_2\tau\pt20}$ events ($1\ell2\tau$ events) & $2670$ & $363$ & $0$ & $104$ & $21$ & $0$ & $1681$ & $190$ & $0$ & $25$ & $7$ & $0$\\
+      $N_{1\tau}$ events & $37486$ & $22362$ & $0$ & $0$ & $1182328$ & $1301502$ & $27692$ & $14793$ & $0$ & $0$ & $803086$ & $763144$\\
+      $N_{1\tau\pt20}$ events & $35331$ & $20113$ & $0$ & $0$ & $1090836$ & $1124963$ & $27692$ & $14793$ & $0$ & $0$ & $803086$ & $763144$\\
+      $N_{1\tau\pt20\_1\tau}$ events & $6960$ & $2038$ & $0$ & $0$ & $71619$ & $0$ & $3724$ & $916$ & $0$ & $0$ & $33355$ & $0$\\
+      $N_{2\tau\pt20}$ events & $6118$ & $1637$ & $0$ & $0$ & $60823$ & $0$ & $3724$ & $916$ & $0$ & $0$ & $33355$ & $0$\\
+      $N_{2\tau\pt20\_1\tau}$ events & $520$ & $79$ & $0$ & $0$ & $0$ & $0$ & $231$ & $28$ & $0$ & $0$ & $0$ & $0$\\
+      $N_{3\tau\pt20}$ events ($3\tau$ events) & $434$ & $54$ & $0$ & $0$ & $0$ & $0$ & $231$ & $28$ & $0$ & $0$ & $0$ & $0$\\
       \hline
       \hline	
     \end{tabular}%
