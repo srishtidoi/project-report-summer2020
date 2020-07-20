@@ -573,36 +573,37 @@ where $\pt^{\ell}$ is the \pt{} of the lepton under consideration.
 %OS pt dr
 \begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize \pt{} of leading light lepton \ll [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/llpt.png}}}
-  \qquad
-  \renewcommand{\thesubfigure}{d}
-  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/dR0.png} }}%
-  \qquad
-  \renewcommand{\thesubfigure}{b}
-  \subfloat[{\scriptsize \pt{} of sub-leading light lepton \ls [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/slpt.png} }}%
-  \qquad
-  \renewcommand{\thesubfigure}{e}
-  \subfloat[{\scriptsize \DeltaR{} (\ll,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/dR1.png} }}%
-  \qquad
-  \renewcommand{\thesubfigure}{c}
-  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/tpt.png} }}%
-  \qquad
-  \renewcommand{\thesubfigure}{f}
-  \subfloat[{\scriptsize \DeltaR{} (\ls,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/dR2.png} }}%
-  \caption{\pt{} and \DeltaR{} plots for the \2l1t-OS \metpt $>50$ region.}
-  \label{fig:2l1tOSptdr}
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \pt{} of leading light lepton \ll [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/llpt.png}}}
+  \enskip
+  \subfloat[{\scriptsize \pt{} of sub-leading light lepton \ls [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/slpt.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/tpt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.4cm}
+    }
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/dR0.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \DeltaR{} (\ll,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/dR1.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \DeltaR{} (\ls,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/dR2.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.4cm}
+    }
+  \makebox[0pt][c]{%
+    \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/Lt.png}}}
+    \qquad
+    \subfloat[{\scriptsize $m_{T}$ ($\tau$, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/mt2.png} }}%
+  }
+  \caption{Some basic distributions for the \2l1t-OS \metpt $>50$ region.}
+  \label{fig:2l1tOSplots}
 \end{figure}
-\vspace{1cm}
+
 Based on these plots, we attempt to find the optimal signal region so that signal significance is maximized. We try a bunch of selections (or cuts) for the same. The ones that yield the best results are given in Figures~\ref{fig:2l1tc1} to \ref{fig:2l1tc5} (\Lt is used as the discriminating variable). A summary of all the selections is given in Table~\ref{tab:2l1t}.
-%OS Lt & mt2
-\begin{figure}[h]
-  \centering
-  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/Lt.png}}}
-  \qquad
-  \subfloat[{\scriptsize $m_{T}$ ($\tau$, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/mt2.png} }}%
-  \caption{\Lt{} and transverse mass plots for the \2l1t-OS \metpt $>50$ region.}
-  \label{fig:2l1tOSltmt}
-\end{figure}
+
 %cut 1
 \begin{figure}
   \centering
@@ -920,35 +921,33 @@ Following a strategy similar to that of the \2l1t-OS channel, we look at the bas
 %SS pt dr
 \begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize \pt{} of leading light lepton \ll [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/llpt.png}}}
-  \qquad
-  \renewcommand{\thesubfigure}{d}
-  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/dR0.png} }}%
-  \qquad
-  \renewcommand{\thesubfigure}{b}
-  \subfloat[{\scriptsize \pt{} of sub-leading light lepton \ls [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/slpt.png} }}%
-  \qquad
-  \renewcommand{\thesubfigure}{e}
-  \subfloat[{\scriptsize \DeltaR{} (\ll,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/dR1.png} }}%
-  \qquad
-  \renewcommand{\thesubfigure}{c}
-  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/tpt.png} }}%
-  \qquad
-  \renewcommand{\thesubfigure}{f}
-  \subfloat[{\scriptsize \DeltaR{} (\ls,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.37\textwidth]{images/ss/dR2.png} }}%
-  \caption{\pt{} and \DeltaR{} plots for the \2l1t-SS channel.}
-  \label{fig:2l1tSSptdr}
-\end{figure}
-
-%SS Lt & mt2
-\begin{figure}[ht!]
-  \centering
-  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/Lt.png}}}
-  \qquad
-  \subfloat[{\scriptsize $m_{T}$ (\ll, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/mt0.png} }}%
-  \caption{\Lt{} and transverse mass plots for the \2l1t-SS channel.}
-  \label{fig:2l1tSSltmt}
-  \vspace{2cm}
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \pt{} of leading light lepton \ll [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/ss/llpt.png}}}
+  \enskip
+  \subfloat[{\scriptsize \pt{} of sub-leading light lepton \ls [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/ss/slpt.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/ss/tpt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.4cm}
+    }
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/ss/dR0.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \DeltaR{} (\ll,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/ss/dR1.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \DeltaR{} (\ls,$\tau$)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/ss/dR2.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.4cm}
+    }
+  \makebox[0pt][c]{%
+    \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/Lt.png}}}
+    \qquad
+    \subfloat[{\scriptsize $m_{T}$ ($\tau$, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/mt0.png} }}%
+  }
+  \caption{Some basic distributions for the \2l1t-SS region.}
+  \label{fig:2l1tSSplots}
 \end{figure}
 
 %cut 1
@@ -1112,9 +1111,239 @@ Following a strategy similar to that of the \2l1t-OS channel, we look at the bas
 \subsection{\Large{\boldmath$3\ell$}}
 \label{sec:3l}
 
+The \3l channel is similar to the \2l1t{} channel in terms of event topolohy (we have a light lepton fake instead of a $\tau$ fake. \3l{} has fewer events than the \2l1t channel (after applying vetoes). In addition to that, there is a lot of background (majorly DY and \WZ). So, for this part of the analysis, we start by dividing the channel into 7 categories based on the sign (S) and flavour (F) of each lepton and where it lies with respect to the on-\Zboson{} range:
+
+\begin{enumerate}
+\item OSSF Below-\Zboson
+\item OSSF Above-\Zboson
+\item SSSF Below-\Zboson
+\item SSSF Above-\Zboson
+\item OSOF Below-\Zboson
+\item OSOF Above-\Zboson
+\item All same-sign leptons
+\end{enumerate}
+
+Here, the below-\Zboson{} and above-\Zboson{} is defined as $<76\GeV$ and $>106\GeV$ respectively. After analysing a couple of basic plots from each of these categories, we discard the ones which have very less signal (like SSSF and all same-sign categories). Finally, we are left with two categories: \emph{(1)} OSSF Below-\Zboson{} and \emph{(2)} OSOF Below-\Zboson.
+
+\subsubsection{OSSF Below-{\boldmath \Zboson}}
+\label{sec:ossf}
+
+All the events that have at least one opposite-sign same-flavour (OSSF) pair belong to this category. In a lot of cases, we have an ambiguity since two such pairs can be formed (this is also true when we apply vetoes). To resolve this ambiguity, we pick the pair is closer to the \Zboson{} mass ,\ie we check $|M_{\ell\ell} - 91|$ and choose the OSSF pair for which this quantity is minimum. The third lepton is named the odd lepton. Some basic distributions are shown in Figure~\ref{fig:3lOSSFplots} and a summary of the best set of cuts is given in Table~\ref{3l}.
+
+%OS pt dr
+\begin{figure}[h!]
+  \centering
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \pt{} of leading light lepton \ll [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3lossf/llpt.png}}}
+  \enskip
+  \subfloat[{\scriptsize \pt{} of sub-leading light lepton \ls [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3lossf/slpt.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \pt{} of sub-sub-leading lepton \lss [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3lossf/sslpt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.4cm}
+    }
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \pt{} of odd lepton \lodd [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3lossf/oddpt.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3lossf/dR0.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \DeltaR{} (OSSF pair)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3lossf/dRossf.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.4cm}
+    }
+  \makebox[0pt][c]{%
+    \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/3lossf/Lt.png}}}
+    \qquad
+    \subfloat[{\scriptsize \ptmiss{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/3lossf/metpt.png} }}%
+  }
+  \caption{Some basic distributions for the \3l-OSSF below-\Zboson{} channel. From the \pt{} plots, we observe that the odd lepton is often the leading lepton, \ie{} the OSSF pair is often of the lower \pt{} leptons. }
+  \label{fig:3lOSSFplots}
+\end{figure}
+
+%cut 1
+\begin{figure}[h]
+  \centering
+  \subfloat[{\scriptsize \DeltaR{} (OSSF pair)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc1-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -2700 0 -2700,clip, height=4.5cm, width=0.05\textwidth]{images/plus.png} }}%
+  \subfloat[{\scriptsize \ptmiss{} [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc1-2.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/3lossf/3lc1lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cuts & Significance after cuts\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.1192$\\
+        \sig{} $(150) = 0.0940$\\
+        \sig{} $(400) = 0.0023$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.1446$\\
+      \sig{} $(150) = 0.1056$\\
+      \sig{} $(400) = 0.0039$}\\
+    \hline
+  \end{tabular}
+  \caption{\DeltaR{} (OSSF pair) $<2$ and \ptmiss{} $>50$ for \3l-OSSF below-\Zboson{} events.}
+  \label{fig:3lc1}
+\end{figure}
+
+%cut 3
+\begin{figure}[h]
+  \centering
+  \subfloat[{\scriptsize $m_{T}$ (\ll, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc3-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -2700 0 -2700,clip, height=4.5cm, width=0.05\textwidth]{images/plus.png} }}%
+  \subfloat[{\scriptsize \dphi{} (\lodd, $\ell_{OSSF_{1}}$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc3-2.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/3lossf/3lc3lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cuts & Significance after cuts\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.1192$\\
+        \sig{} $(150) = 0.0940$\\
+        \sig{} $(400) = 0.0023$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.1828$\\
+      \sig{} $(150) = 0.1497$\\
+      \sig{} $(400) = 0.0055$}\\
+    \hline
+  \end{tabular}
+  \caption{ $m_{T}$ (\ll, \met) $>80$ and \dphi{} (\lodd, $\ell_{OSSF_{1}}$) $>2.5$ for \3l-OSSF below-\Zboson{} events.}
+  \label{fig:3lc3}
+\end{figure}
+
+%cut 2
+\begin{figure}[h]
+  \centering
+  \subfloat[{\scriptsize \DeltaR{} (OSSF pair)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc2-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -2700 0 -2700,clip, height=4.5cm, width=0.05\textwidth]{images/plus.png} }}%
+  \subfloat[{\scriptsize \dphi{} (\lodd, $\ell_{OSSF_{2}}$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc2-2.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/3lossf/3lc2lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cuts & Significance after cuts\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.1192$\\
+        \sig{} $(150) = 0.0940$\\
+        \sig{} $(400) = 0.0023$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.1794$\\
+      \sig{} $(150) = 0.1138$\\
+      \sig{} $(400) = 0.0043$}\\
+    \hline
+  \end{tabular}
+  \caption{\DeltaR{} (OSSF pair) $<1.2$ and \dphi{} (\lodd, $\ell_{OSSF_{2}}$) $>2.3$ for \3l-OSSF below-\Zboson{} events.}
+  \label{fig:3lc2}
+\end{figure}
+
+\subsubsection{OSOF Below-{\boldmath \Zboson}}
+\label{sec:osof}
+
+The events that do not have an OSSF pair will have an OSOF pair in the final state (excluding all same-sing events). Again, we pick the pair closer to the \Zboson{} mass and the third lepton is called the odd lepton. We try a bunch of selections on the distributions [Figure~\ref{fig:3lOSSFplots}] but they cut down the signal even further. A very small number of events ($<1$) will fail to give us meaningful results. One of the selections has been shown in Figure~\ref{fig:3lc4}. 
+
+% pt dr
+\begin{figure}[h!]
+  \centering
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \pt{} of leading light lepton \ll [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3losof/llpt.png}}}
+  \enskip
+  \subfloat[{\scriptsize \pt{} of sub-leading light lepton \ls [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3losof/slpt.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \pt{} of sub-sub-leading lepton \lss [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3losof/sslpt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.4cm}
+    }
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \pt{} of odd lepton \lodd [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3losof/oddpt.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3losof/dR0.png} }}%
+  \enskip
+  \subfloat[{\scriptsize \DeltaR{} (OSOF pair)}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3losof/dRosof.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.4cm}
+    }
+  \makebox[0pt][c]{%
+    \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/3losof/Lt.png}}}
+    \qquad
+    \subfloat[{\scriptsize \ptmiss{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/3losof/metpt.png} }}%
+  }
+  \caption{Some basic distributions for the \3l-OSOF below-\Zboson{} channel.}
+  \label{fig:3lOSOFplots}
+\end{figure}
+
+%cut 1
+\begin{figure}[h]
+  \centering
+  \subfloat[{\scriptsize \pt{} (\ls) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/3losof/3lc4.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=7cm, width=0.1\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/3losof/3lc4lt.png} }}%
+  \vspace{0.6cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cut & Significance after cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.1955$\\
+        \sig{} $(150) = 0.2161$\\
+        \sig{} $(400) = 0.0079$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.2329$\\
+      \sig{} $(150) = 0.2138$\\
+      \sig{} $(400) = 0.0089$}\\
+    \hline
+  \end{tabular}
+  \caption{\pt{} (\ls) $>30$ for \3l-OSOF below-\Zboson{} events.}
+  \label{fig:3lc4}
+\end{figure}
+
+%summary table
+\begin{table}[h]
+  \centering
+  \large
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.5}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{c|l|c|c|c}
+    \hline \hline
+    Channel & Selection & \multicolumn{1}{r|}{\sig{} $(100)$} & \multicolumn{1}{r|}{\sig{} $(150)$} & \multicolumn{1}{r}{\sig{} $(400)$}\\
+    \hline
+    \multirow{3}{*}{\3l-OSSF} & $m_{\ell\ell}$ (OSSF pair) $<76$ + \DeltaR{} (OSSF pair) $<2$ + \ptmiss{} $>50$ & $0.1446$ & $0.1056$ & $0.0039$\\
+    & $m_{\ell\ell}$ (OSSF pair) $<76$ + $m_{T}$ (\ll, \met) $>80$ + \dphi{} (\lodd, $\ell_{OSSF_{1}}$) $>2.5$ & \colorbox{yellow}{\boldmath $0.1828$} & \colorbox{yellow}{\boldmath $0.1497$} & \colorbox{yellow}{\boldmath $0.0055$}\\
+    & $m_{\ell\ell}$ (OSSF pair) $<76$ + \DeltaR{} (OSSF pair) $<1.2$ + \dphi{} (\lodd, $\ell_{OSSF_{2}}$) $>2.3$ & $0.1794$ & $0.1138$ & $0.0043$\\
+    \hline
+    \3l-OSOF & $m_{\ell\ell}$ (OSSF pair) $<76$ + \pt{} (\ls) $>30$ & $0.2329$ & $0.2138$ & $0.0089$\\
+    \hline \hline
+    \end{tabular}%
+  }
+  \caption{Summary table for \3l{} channel.}
+  \label{tab:3l}
+\end{table}
 
 \section{RHN Acceptance Cut-flow}
 \label{sec:cutflow}
+
+The RHN acceptance cutflow gives us menaingful insights into how different cuts and selections affects the number of events in each channel. This can help us decide which selection to apply for finding the optimal signal region. We can also observe the difference in various object IDs (MVA IS and Deep ID for \t). Table~\ref{tab:cutflow} summarises the cutflow and the numbers at each stage of selection. The main channels used for analysis have been highlighted.
 
 %cutflow
 \begin{table}[h]
@@ -1154,11 +1383,41 @@ Following a strategy similar to that of the \2l1t-OS channel, we look at the bas
       \hline	
     \end{tabular}%
   }
-  \caption{}
+  \caption{RHN acceptance cutflow}
   \label{tab:cutflow}
 \end{table}
 
+After comparing the numbers for the old and new \t{} IDs, we see that the old (MVA) ID seems to result in higher number of events as compared to the new (Deep) ID. This might be because the new ID has a lower false positive rate, and that it has fewer fakes. With a deeper analysis and truth matching, we can draw more definitive conclusions. We use the Deep ID for our analysis.
+ 
 \section{Results}
 \label{sec:results}
+
+The search for right-handed neutrinos (RHN) involves setting limits on the signal cross section. To select the signal regions for this analysis, we apply a number of cuts and selections to get the highest possible signal significance. Possible signal regions (regions with a the best signal significance so far) have been listed in Table~\ref{tab:results}. Multiple regions can be combined for better results.
+
+\begin{table}
+  \centering
+  \large
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \hspace*{-1.7cm}
+  \resizebox{1.2\textwidth}{!}{%
+  \begin{tabular}{c|l|r|r|r}
+    \hline \hline
+    Channel & Region & \sig{} ($100\GeV$)& \sig{} ($150\GeV$)& \sig{} ($400\GeV$)\\
+    \hline
+    \2l1t-OS & \ptmiss $>50$ + \pt{} ($\tau$) $>80$ + \dphi{} (\ll,\ls) $<0.75$ & $0.4426$ & $0.6855$ & $0.0452$\\
+    \2l1t-SS & Events with an OS pair & $0.3657$ & $0.6417$ & $0.0693$\\
+    \3l-OSSF & $m_{\ell\ell}$ (OSSF pair) $<76$ + $m_{T}$ (\ll, \met) $>80$ + \dphi{} (\lodd, $\ell_{OSSF_{1}}$) $>2.5$ & $0.1828$ & $0.1497$ & $0.0055$\\
+    \3l-OSOF & $m_{\ell\ell}$ (OSSF pair) $<76$ + \pt{} (\ls) $>30$ & $0.2329$ & $0.2138$ & $0.0089$\\
+    \hline
+  \end{tabular}%
+  }
+  \caption{A summary of all the channels considered for signal region optimization.}
+  \label{tab:results}
+\end{table}
+
+\section{Acknowledgements}
+\label{sec:acknowledgments}
+
 
 \end{document}
