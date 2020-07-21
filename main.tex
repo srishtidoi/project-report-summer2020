@@ -53,6 +53,7 @@
 \usepackage{url,parskip} 	%other packages for formatting
 \usepackage{makecell}
 
+\renewcommand{\listfigurename}{List of Plots}
 \newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}  %for bullet points inside table
 \newcommand{\HRule}{\rule[20pt]{\linewidth}{0.3mm}}
 \newcommand{\HRulesmall}{\rule[10pt]{0.5\linewidth}{0.3mm}}
@@ -119,10 +120,10 @@ The Standard Model of particle physics (SM) along with the theory of General Rel
 This project is a part of the search for RHN using data samples collected by the CMS experiment at the LHC in 2016 [Table~\ref{tab:samples}], corresponding to an integrated luminosity of 36 \ifb. We employ a technique called multilepton analysis [Section~\ref{sec:overview}]  for the search and the project focuses on a part of the process called Signal Region (SR) optimization. The results obtained are used to produce limits on the production of right handed neutrinos.
 \\
 
-%feynman diagram
+%feynman diagram RHN
 \begin{figure}[h!]
   \includegraphics[width=0.7\textwidth, center]{images/RHNfeynman.png}
-  \caption{Illustrative leading order Feynman diagram for the production of RHN and its subsequent decay that may result in a multilepton final state. The taus can decay either hadronically or leptonically, giving us different channels to analyze that have different background profiles}
+  \caption[RHN Feynman Diagram]{Illustrative leading order Feynman diagram for the production of RHN and its subsequent decay ($N~\rightarrow~\Wboson\tau~\rightarrow~\nu_{\ell}\ell\tau$) that may result in a multilepton final state. The taus can decay either hadronically or leptonically, giving us different channels to analyze that have different background profiles}
   \label{fig:rhnfeyn}
 \end{figure}
 
@@ -133,7 +134,7 @@ The final state of an event (collision) is the set of particles seen by the dete
 
 The model considered here [Figure~\ref{fig:rhnfeyn}] includes a right handed neutrino ($N$) that decays into a \Wboson{} boson and a $\tau$, which decay further, giving rise to multilepton final states. For this analysis, we refer to electrons and muons collectively as light leptons ($\ell$). Events are then categorized by the multiplicity of light leptons and taus ($\tau$) in these final states, into the following channels: $3\ell$, $2\ell1\tau$, $1\ell2\tau$ and $3\tau$.
 
-To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cutflow}, Table~\ref{tab:cutflow}] to understand the process and how various triggers and selections affect the acceptance. Next, we attempt to understand the process of RHN production and decay at the gen-level [Seciton~\ref{sec:gen}] (\ie{} from simulations). Guided by the conclucions drawn from the study of these gen-level plots, we try to carve out a Signal Region [Section~\ref{sec:sro}] from the phase space which will give us good signal sensitivity. Some selections used to cut down on the background are explained in Secion~\ref{sec:reducebkg}. We use signal significance as a metric to compare signal regions. We do this for two channels: $2\ell1\tau$ and $3\ell$.
+To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cutflow}, Table~\ref{tab:cutflow}] to understand the process and how various triggers and selections affect signal acceptance. Next, we attempt to understand the process of RHN production and decay at the gen-level [Section~\ref{sec:gen}] (\ie{} from simulations). Guided by the conclusions drawn from the study of these gen-level plots, we try to carve out a signal region [Section~\ref{sec:sro}] that gives us good signal sensitivity from the phase space. Some selections used to reduce the background are explained in Section~\ref{sec:reducebkg}. We use signal significance as a metric to compare signal regions. The analysis is done for two channels: $2\ell1\tau$ and $3\ell$.
 
 %samples
 \setcounter{table}{0}
@@ -162,14 +163,14 @@ To begin with, we generate the RHN acceptance cutflow table [Section~\ref{sec:cu
       
     \end{tabular}%
   }
-  \caption{Data samples used for this analysis. Three mass points are considered and their respective sample luminosities are calculated using the formula $L_{sample}$ = n$_{sample}$ / xsec$_{sample}$}
+  \caption[Data Samples]{Data samples used for this analysis. Three mass points are considered and their respective sample luminosities are calculated using the formula $L_{sample}$ = n$_{sample}$ / xsec$_{sample}$}
   \label{tab:samples}
 \end{table}
 
 \section{Object and Event Selections}
 \label{sec:selections}
 
-To better identify particles significant to our analysis, we apply certain basic preselections and triggers to the data. Object selections are listed in Table~\ref{tab:objselemu} and Table~\ref{tab:objseltau}. Triggers are listed below. A few corrections like MET filters (on data and MC both), tau energy scale corrections and tau reco scale factors are also applied.
+To better identify particles significant to our analysis, we apply certain basic preselections and triggers to the data. Object selections are listed in Table~\ref{tab:objselemu} and Table~\ref{tab:objseltau}. Triggers are listed below. A few corrections like MET filters (on data and MC both) and tau energy scale corrections are also applied.
 
 Triggers:
 \begin{itemize}
@@ -240,13 +241,11 @@ Triggers:
       
     \end{tabular}%
   }
-  \caption{Object selections for taus. A comparision between the two object IDs is given in Section~\ref{sec:cutflow}.}
+  \caption[Object selections for taus]{Object selections for taus. A comparision between the two object IDs is given in Section~\ref{sec:cutflow}.}
   \label{tab:objseltau}
 \end{table}
 
-
 %event selection flow
-%\advance\rightskip-1cm
 \begin{wrapfigure}[10]{r}{0.15\textwidth} %the [10] is to end the wrap before the next section starts
   \scriptsize
   \centering
@@ -267,8 +266,7 @@ Triggers:
 \caption{Event selection flow}
 \label{fig:eventselflow}
 \end{wrapfigure}
-\
-\
+
 The events used for analysis are selected only if they pass certain conditions (selections) listed in Table~\ref{tab:eventsel}. An event is selected for a channel only if it fails the selections for all the previous channels. The order of priority (event selection flow) is illustrated in Figure~\ref{fig:eventselflow}.
 
 %event sel
@@ -285,7 +283,6 @@ The events used for analysis are selected only if they pass certain conditions (
     \hline
     $\sbullet \hspace{0.2cm}$ Leading light lepton ($e/\mu$) passing triggers\\
     $\sbullet \hspace{0.2cm}$ Altleast two more light leptons ($e/\mu$), $\pt>10,10 \GeV$\\
-    $\sbullet \hspace{0.2cm} \DeltaR>0.4$ among the three leptons\\
     $\sbullet \hspace{0.2cm}$ Minimum invariant mass of same flavor (SF) light lepton pair $> 12 \GeV$\\
     $\sbullet \hspace{0.2cm}$ Minimum $\DeltaR$ between all leptons in the event $> 0.4$\\
     $\sbullet \hspace{0.2cm}$ Triggers (in data only)\\
@@ -304,7 +301,7 @@ The events used for analysis are selected only if they pass certain conditions (
     \hline
     $\sbullet \hspace{0.2cm}$ Exactly one light lepton ($e/\mu$), for triggering\\
     $\sbullet \hspace{0.2cm}$ Atleast two hadronic taus, $\pt>20,20 \GeV$\\
-    \hspace{1cm}- Prompt taus passe tight ID, fake taus pass loose ID\\
+    \hspace{1cm}- Prompt taus pass tight ID, fake taus pass loose ID\\
     $\sbullet \hspace{0.2cm}$ $\DeltaR>0.4$ among the three leptons\\
     $\sbullet \hspace{0.2cm}$ Triggers (in data only)\\
     $\sbullet \hspace{0.2cm}$ Event should fail all other event ($3\ell,2\ell+\geq1\tau..$) selections\\
@@ -314,7 +311,6 @@ The events used for analysis are selected only if they pass certain conditions (
   \caption{Event selections for 3$\ell$, 2$\ell$1$\tau$ and 1$\ell$2$\tau$ channels}
   \label{tab:eventsel}
 \end{table}
-
 
 \section{Background}
 \label{sec:bkgs}
@@ -326,11 +322,11 @@ The events used for analysis are selected only if they pass certain conditions (
     \subfloat[DY]{{\includegraphics[width=0.3\textwidth]{images/DYfeynman.png} }}%
     \qquad
     \subfloat[\ttbar]{{\includegraphics[width=0.3\textwidth]{images/ttbarfeynman.png} }}%
-    \caption{\normalsize{Leading order Feynman diagrams for fake background processes. \emph{(a)} The Drell-Yan process. The third lepton can be faked by another particle/jet. \emph{(b)} One of the possible decay products of the \ttbar{} process}}
+    \caption[Feynman diagrams for background processes]{\normalsize{Leading order Feynman diagrams for fake background processes. \emph{(a)} The Drell-Yan process. The third lepton can be faked by another particle/jet. \emph{(b)} One of the possible decay products of the \ttbar{} process}}
     \label{fig:bkgsfeyn}
   \end{adjustbox}
 \end{figure}
-Many SM processes give rise to multilepton final states, and our objective is to distinguish these processes (background) from the signal (RHN decay). The method used for background estimation in this analysis is Monte-Carlo based. All the background processes considered are listed in Table~\ref{tab:bkgs}. \WZ{} and \ZZ{} are prompt backgrounds while DY and \ttbar{} are fake (\ie{} one of the leptons is faked by another particle/jet).   
+Many SM processes give rise to multilepton final states, and our objective is to distinguish these processes (background) from the signal (RHN). The method used for background estimation in this analysis is Monte-Carlo based. All the background processes considered are listed in Table~\ref{tab:bkgs}. \WZ{} and \ZZ{} are prompt backgrounds while DY and \ttbar{} are fake (\ie{} one of the leptons is faked by another particle/jet).   
 
 
 %bkgs
@@ -361,7 +357,7 @@ Many SM processes give rise to multilepton final states, and our objective is to
      \hline \hline
     \end{tabular}%
   }
-  \caption{A few background processes and their luminosities. Luminosity is calculated by the formula $L$~=~n~/~xsec}
+  \caption[Backgrounds]{A few background processes and their luminosities. Luminosity is calculated by the formula $L$~=~n~/~xsec}
   \label{tab:bkgs} 
 \end{table}
 
@@ -372,7 +368,7 @@ Many SM processes give rise to multilepton final states, and our objective is to
 
 The objective of Signal Region optimization is to find a region in the phase space in which the signal is easily distinguished from background. A metric for the same is signal significance, defined as-
 \[
-Significance = \frac{Signal}{\sqrt{Background}}
+\textrm{Significance} = \frac{\textrm{Signal}}{\sqrt{\textrm{Background}}}
 \]
 
 The higher the significance, the better is the signal region. We perform signal region optimization for the $2\ell1\tau$ and $3\ell$ channels separately because the background profiles for these channels are different.
@@ -380,24 +376,24 @@ The higher the significance, the better is the signal region. We perform signal 
 \subsection{Understanding the Process with Simulations}
 \label{sec:gen}
 
-To undrestand the general topology of the events, like the \DeltaR{} between leptons and origin (mother particle) of the particles involved, we plot these quantities using data from simulations.
+To undrestand the general topology of the events, like the \DeltaR{} $=\sqrt{(\Delta \eta)^{2} + (\dphi)^{2}}$\enskip between leptons and the origin (mother particle) of the particles involved, we plot these quantities using simulated data.
 \vspace{0.7cm}
 \begin{figure}[h]
 \centering
-\subfloat[{\scriptsize RHN \pT{} [\GeV]}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/RHN_pT.png} }}%
+\subfloat[{\scriptsize RHN \pT{} [\GeV]}]{{\includegraphics[trim=10 0 0 50,clip, width=0.3\textwidth]{images/RHN_pT.png} }}%
 \qquad
-\subfloat[{\scriptsize PDG-ID of RHN Mothers}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/RHN_momid.png} }}%
-
-\subfloat[{\scriptsize\pT{} of $\tau$ coming from PV [\GeV] }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/pvtaupt.png} }}%
+\subfloat[{\scriptsize PDG-ID of RHN Mothers}]{{\includegraphics[trim=30 0 0 50,clip, width=0.29\textwidth]{images/RHN_momid.png} }}%
 \qquad
-\subfloat[{\scriptsize \DeltaR{} (RHN,$\tau$)}]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/pvtaudRRHN.png} }}%
-\caption{Gen plots for the production of RHN (all the plots have been normalized to unity). \emph{(a)} Transverse momenta of RHN of different mass points. We can see that the 400\GeV{} RHN is more boosted than the 100\GeV{} RHN. \emph{(b)} PDG-ID of mother particles of RHN. We observe that they are mostly quarks. \emph{(c)} Transverse momentum of the $\tau$ coming from the production vertex (PV). \emph{(d)} \DeltaR{} between RHN and $\tau$ coming from PV. We observe that they are produced back-to-back.}
+\subfloat[{\scriptsize\pT{} of $\tau$ coming from PV [\GeV] }]{{\includegraphics[trim=10 0 0 50,clip, width=0.3\textwidth]{images/pvtaupt.png} }}%
+\qquad
+\subfloat[{\scriptsize \DeltaR{} (RHN,$\tau$)}]{{\includegraphics[trim=10 0 0 50,clip, width=0.3\textwidth]{images/pvtaudRRHN.png} }}%
+\caption[RHN gen plots]{Gen plots for the production of RHN (all the plots have been normalized to unity). \emph{(a)} Transverse momenta of RHN of different mass points. We can see that the 400\GeV{} RHN (yellow) is more boosted than the 100\GeV{} RHN (blue). \emph{(b)} PDG-ID of mother particles of RHN. We observe that they are mostly quarks. \emph{(c)} Transverse momentum of the $\tau$ coming from the production vertex (PV). \emph{(d)} \DeltaR{} between RHN and $\tau$ coming from PV. We observe that they are produced back-to-back.}
 
 \label{fig:gen}  
 \end{figure}
 \clearpage
 
-Next, we look at the final state leptons and their plots. Here, we divide the $2\ell1\tau$ channel further into two categories: (1) OS (opposite-sign) in which the two light leptons have opposite signs and (2) SS (same-sign) in which they have the same sign. The motivation behind this is that these two categories will have different dominating backgrounds. For instance, the $2\ell1\tau$-OS category is likely to have DY in large numbers because it can't produce same-sign dileptons.
+Next, we look at the final state leptons and their plots. Here, we divide the $2\ell1\tau$ channel further into two categories: (1) OS (opposite-sign) in which the two light leptons have opposite signs and (2) SS (same-sign) in which they have the same sign. The motivation behind this is that these two categories will have different dominating backgrounds. For instance, the $2\ell1\tau$-OS category is likely to have DY in large numbers because DY cannot produce same-sign dileptons.
 
 \vspace{0.7cm}
 \begin{figure}[h]
@@ -409,14 +405,14 @@ Next, we look at the final state leptons and their plots. Here, we divide the $2
 \subfloat[{\scriptsize $\tau$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/2L1T_OS_momidT.png} }}%
 \quad
 
-\caption{Gen plots for the $2\ell1\tau$-OS channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading light lepton $\ell_{1}$. We see peaks at $\pm15$ and $\pm24$ which correspond to taus and \Wboson{} bosons respectively. \emph{(b)} PDG-ID of the mother of the sub-leading light lepton $\ell_{2}$. \emph{(c)} PDG-ID of the mother of the $\tau$. We see peaks at 66 and within the range (-6,6), which correspond to RHN and quarks (PV) respectively.}
+\caption[Gen plots for \2l1t-OS]{Gen plots for the $2\ell1\tau$-OS channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading light lepton $\ell_{1}$. We see peaks at $\pm15$ and $\pm24$ which correspond to taus and \Wboson{} bosons respectively. \emph{(b)} PDG-ID of the mother of the sub-leading light lepton $\ell_{2}$. \emph{(c)} PDG-ID of the mother of the $\tau$. We see peaks at 66 and within the range (-6,6), which correspond to RHN and quarks respectively.}
 
 \label{fig:2l1tOSgen}  
 \end{figure}
 
 \vspace{0.7cm}
 
-When we compare Figure~\ref{fig:2l1tOSgen} with the feynman diagram in Figure~\ref{fig:2l1tgenfeyn} (a), we see that the observations match. From the diagram, we can further hypothesize that the light lepton pair should be close together (when boosted). Similarly, the observations from Figure~\ref{fig:2l1tSSgen} (SS gen plots) match with the ones from the Feynman diagram [Figure~\ref{fig:2l1tgenfeyn} (b)].
+When we compare Figure~\ref{fig:2l1tOSgen} to the feynman diagram in Figure~\ref{fig:2l1tgenfeyn} (a), we see that the observations match. From the diagram, we can further hypothesize that the light lepton pair should be close together (when boosted). Similarly, the observations from Figure~\ref{fig:2l1tSSgen} (SS gen plots) match with the ones from the Feynman diagram [Figure~\ref{fig:2l1tgenfeyn} (b)].
 
 %gen feynman diagrams
 \begin{figure}[h]
@@ -424,7 +420,7 @@ When we compare Figure~\ref{fig:2l1tOSgen} with the feynman diagram in Figure~\r
   \subfloat[OS]{{\includegraphics[width=0.4\textwidth]{images/2l1tOSfeynman.png} }}%
   \qquad
   \subfloat[SS]{{\includegraphics[width=0.4\textwidth]{images/2l1tSSfeynman.png} }}%
-  \caption{Feynman diagrams for $2\ell1\tau$ OS and SS channels. \emph{(a)} The PV $\tau$ decays hadronically and the $\tau$ coming from the RHN decays leptonically. Since RHN is electrically neutral, the light lepton pair in the final state will be OS in this case. \emph{(b)} The only way an SS pair can be produced is for one of the light leptons to be a product of the PV $\tau$ decay, since the daughters of RHN will have to be OS (note that this can result in an OS pair as well).}
+  \caption[Feynman diagrams for \2l1t-OS and SS]{Feynman diagrams for $2\ell1\tau$ OS and SS channels. \emph{(a)} The PV $\tau$ decays hadronically and the $\tau$ coming from the RHN decays leptonically. Since RHN is electrically neutral, the light lepton pair in the final state will be OS in this case. \emph{(b)} The only way an SS pair can be produced is for one of the light leptons to be a product of the PV $\tau$ decay, since the daughters of RHN will have to be OS (note that this can result in an OS pair as well).}
   \label{fig:2l1tgenfeyn}
 \end{figure}
 
@@ -439,10 +435,9 @@ When we compare Figure~\ref{fig:2l1tOSgen} with the feynman diagram in Figure~\r
 \subfloat[{\scriptsize $\tau$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/2L1T_SS_momidT.png} }}%
 \quad
 
-\caption{Gen plots for the $2\ell1\tau$-SS channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading light lepton $\ell_{1}$. Again, we see peaks at taus and \Wboson{} bosons, but this time the peak at $\tau$ is comparable to the one at \Wboson{} boson. \emph{(b)} PDG-ID of the mother of the sub-leading light lepton $\ell_{2}$. \emph{(c)} PDG-ID of the mother of the $\tau$. We see a peak only at RHN.}
+\caption[Gen plots for \2l1t-SS]{Gen plots for the $2\ell1\tau$-SS channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading light lepton $\ell_{1}$. Again, we see peaks at taus and \Wboson{} bosons, but this time the peak at $\tau$ is comparable to the one at \Wboson{} boson. \emph{(b)} PDG-ID of the mother of the sub-leading light lepton $\ell_{2}$. \emph{(c)} PDG-ID of the mother of the $\tau$. We see a peak only at RHN.}
 \label{fig:2l1tSSgen}  
 \end{figure}
-\vspace{0.7cm}
 
 In conclusion, we decide to divide the $2\ell1\tau$ channel into OS and SS categories, owing to the differences in their production and backgrounds. For a better understanding, we study the $1\ell2\tau$ channel in a similar manner [Figure~\ref{fig:1l2tgen}]. We observe that the PV $\tau$ is almost always the leading $\tau$.
 
@@ -456,7 +451,7 @@ In conclusion, we decide to divide the $2\ell1\tau$ channel into OS and SS categ
 \subfloat[{\scriptsize $\ell$ Mother PDG-ID }]{{\includegraphics[trim=0 0 0 50,clip, width=0.3\textwidth]{images/1L2T_momidL.png} }}%
 \quad
 
-\caption{Gen plots for the $1\ell2\tau$ channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading tau $\tau_{1}$. We see peaks at RHN and quarks. \emph{(b)} PDG-ID of the mother of the sub-leading tau $\tau_{2}$. \emph{(c)} PDG-ID of the mother of the light lepton $\ell$.}
+\caption[Gen plots for \1l2t]{Gen plots for the $1\ell2\tau$ channel (all the plots have been normalized to unity). All the entries for RHN have been made at ID = 66 (instead of 9900012). \emph{(a)} PDG-ID of the mother of the leading tau $\tau_{1}$. We see peaks at RHN and quarks. \emph{(b)} PDG-ID of the mother of the sub-leading tau $\tau_{2}$. \emph{(c)} PDG-ID of the mother of the light lepton $\ell$.}
 \label{fig:1l2tgen}  
 \end{figure}
 
@@ -496,7 +491,7 @@ Based on our understanding of the SM background processes and the RHN decay, we 
 \hline \hline
     \end{tabular}%
     }
-  \caption{The number of events before and after applying the On-\Zboson{} veto. The signal also reduces with the background but the overall significance immproves in every region.}
+  \caption[Effect of on-\Zboson{} veto]{The number of events before and after applying the On-\Zboson{} veto. The signal also reduces with the background but the overall significance improves in every region.}
   \label{tab:reducebkg}
 \end{table}
 
@@ -507,13 +502,13 @@ Based on our understanding of the SM background processes and the RHN decay, we 
 \qquad
 \subfloat[{\scriptsize \Lt{} after On-\Zboson{} veto [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/Ltav.png} }}%
 
-\caption{\Lt{} plots before and after the application of the On-\Zboson{} veto (\Lt{} is defined as the scalar sum of the \pt{} for the final state leptons). All the sample luminosities have been scaled to the interated luminosity of $36$ \ifb{} so that the comparision is accurate.}
+\caption[Effect of on-\Zboson{} veto]{\Lt{} plots before and after the application of the On-\Zboson{} veto (\Lt{} is defined as the scalar sum of the \pt{} for the final state leptons). All the sample luminosities have been scaled to the integrated luminosity of $36$ \ifb{} so that the comparision is accurate.}
 \label{fig:reducebkg}  
 \end{figure}
 
 \item \textbf{\boldmath$N_{Bjets}$ veto}: This veto is majorly for cutting down \ttbar{} background. The \ttbar{} decay produces b-jets [Figure~\ref{fig:bkgsfeyn}] while RHN does not. So, we include events which have no b-jets ($N_{Bjets}~=~0$).
 
-  \item \textbf{\boldmath$H_{T}^{50} < 100$ veto}: RHN decay usually doesn't result in high energy jets, while other background processes might. So we put a upper limit on the sum \pt of all jets in an event. This variable is named $H_{T}$. We use a modified variable $H_{T}^{50}$ which puts a lower limit of $50$ on jet \pt. This is to avoid pileup and consider only real jets.
+  \item \textbf{\boldmath$H_{T}^{50} < 100$ veto}: RHN decay usually does not result in high energy jets, while other background processes might. So we put a upper limit on the sum of \pt{} of all jets in an event. This variable is named $H_{T}$. We use a modified variable $H_{T}^{50}$ which puts a lower limit of $50$ on jet \pt. This is to avoid pileup and consider real jets only.
   \end{enumerate}
 
   
@@ -552,14 +547,14 @@ Guided by the observations and conclusions from the gen plots, and after applyin
     \hline
   \end{tabular}
   
-  \caption{\metpt{} for \2l1t OS and SS channels. In \emph{(a)}, we observe that most of the DY background lies in the low \metpt{} range. This is confirmed by the significance table. Thus, \metpt $>50$ will be our first selection, \ie{} we exculde the region below $50\GeV$.}
+  \caption[\metpt{} for \2l1t-OS and \2l1t-SS]{\metpt{} for \2l1t OS and SS channels. In \emph{(a)}, we observe that most of the DY background lies in the low \metpt{} range. This is confirmed by the significance table. Thus, \metpt $>50$ will be our first selection, \ie{} we exculde the region below $50\GeV$.}
   \label{fig:2l1tmetpt}
 \end{figure}
 
 \subsubsection{{\Large{\boldmath$2\ell1\tau$}} - OS}
 \label{sec:2l1tOS}
 
-After stduying the \metpt{} plots for the OS channel [Figure~\ref{fig:2l1tmetpt}], we decide to select the region in which \metpt{} is above $50$. This eliminates a lot of DY background. All the following plots are of the \metpt{} $>50$ region. In Figure~\ref{fig:2l1tOSptdr}, we have the \pt{} and \DeltaR{} plots. We observe that the light lepton pair for RHN events is generally closer together [Fig.~\ref{fig:2l1tOSptdr}\emph{(d)}] and that the sub-leading light lepton and the tau are far apart [Fig.~\ref{fig:2l1tOSptdr}\emph{(f)}](as expected from simulations).
+After studying the \metpt{} plots for the OS channel [Figure~\ref{fig:2l1tmetpt}], we decide to select the region in which \metpt{} is above $50$. This eliminates a lot of DY background. All the following plots are of the \metpt{} $>50$ region. In Figure~\ref{fig:2l1tOSplots}, we have the \pt{} and \DeltaR{} plots. We observe that the light lepton pair for RHN events is generally closer together [Fig.~\ref{fig:2l1tOSplots}\emph{(d)}] and that the sub-leading light lepton and the tau are far apart [Fig.~\ref{fig:2l1tOSplots}\emph{(f)}](as expected from simulations).
 
 Next, we plot a number of physical quatities like \dphi, $m_{\ll\ls}$, transverse mass ($m_{T}$), visible transverse mass, etc. We also define a few new variables like \MET/$m_{T}$ and $m_{T}$ ($\ell_{res}$, \MET) where $\ell_{res}$ is defined as the vector sum of one of the two OS pairs. Transverse mass is defined as -
 
@@ -568,9 +563,8 @@ m_{T} = \sqrt{2\pt^{miss}\pt^{\ell}[1 - cos(\dphi_{m_{T}})]}
 \]
 
 where $\pt^{\ell}$ is the \pt{} of the lepton under consideration.
-\clearpage
 
-%OS pt dr
+%OS plots
 \begin{figure}[h!]
   \centering
   \makebox[0pt][c]{%
@@ -602,12 +596,12 @@ where $\pt^{\ell}$ is the \pt{} of the lepton under consideration.
   \label{fig:2l1tOSplots}
 \end{figure}
 
-Based on these plots, we attempt to find the optimal signal region so that signal significance is maximized. We try a bunch of selections (or cuts) for the same. The ones that yield the best results are given in Figures~\ref{fig:2l1tc1} to \ref{fig:2l1tc5} (\Lt is used as the discriminating variable). A summary of all the selections is given in Table~\ref{tab:2l1t}.
+Based on these plots, we attempt to find the optimal signal region so that signal significance is maximized. We try a bunch of selections (or cuts) for the same. The ones that yield the best results are given in Figures~\ref{fig:2l1tc1} to \ref{fig:2l1tc5} (\Lt{} is used as the discriminating variable). A summary of all the selections is given in Table~\ref{tab:2l1t}.
 
 %cut 1
-\begin{figure}
+\begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize \DeltaR{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/2l1tc1.png} }}%
+  \subfloat[{\scriptsize \DeltaR{} (\ll, \ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/2l1tc1.png} }}%
   \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=7cm, width=0.1\textwidth]{images/right-arrow.png} }}%
   \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/2l1tc1lt.png} }}%
   \vspace{0.6cm}
@@ -628,14 +622,15 @@ Based on these plots, we attempt to find the optimal signal region so that signa
       \sig{} $(400) = 0.0176$}\\
     \hline
   \end{tabular}
-  \caption{\DeltaR{} (\ll,\ls) < 1.5 for \2l1t-OS \metpt $>50$ events.}
+  \caption[\2l1t-OS Cut-1: \DeltaR{} (\ll, \ls) < 1.5]{\DeltaR{} (\ll, \ls) < 1.5 for \2l1t-OS \metpt $>50$ events.}
   \label{fig:2l1tc1}
+  \vspace{1cm}
 \end{figure}
-\clearpage
+
 %cut 2
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize \dphi{} (\ll,\ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/2l1tc2.png} }}%
+  \subfloat[{\scriptsize \dphi{} (\ll, \ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/2l1tc2.png} }}%
   \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=7cm, width=0.1\textwidth]{images/right-arrow.png} }}%
   \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/2l1tc2lt.png} }}%
   \vspace{0.6cm}
@@ -656,18 +651,24 @@ Based on these plots, we attempt to find the optimal signal region so that signa
       \sig{} $(400) = 0.0197$}\\
     \hline
   \end{tabular}
-  \caption{\dphi{} (\ll,\ls) < 1 for \2l1t-OS \metpt $>50$ events.}
+  \caption[\2l1t-OS Cut-2: \dphi{} (\ll, \ls) < 1]{\dphi{} (\ll, \ls) < 1 for \2l1t-OS \metpt $>50$ events.}
   \label{fig:2l1tc2}
+  
 \end{figure}
+
 %cut 3
 \begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize $m_{T}$ ($\tau$, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc3.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \DeltaR{} (\ls, $\tau$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc3-1.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/2l1tc3lt.png} }}%
-  \vspace{0.6cm}
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize $m_{T}$ ($\tau$, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/2l1tc3.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \DeltaR{} (\ls, $\tau$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/2l1tc3-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/2l1tc3lt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.6cm}
+    }
   \tiny
   \setlength{\tabcolsep}{20pt}
   \renewcommand{\arraystretch}{1.6}
@@ -689,19 +690,24 @@ Based on these plots, we attempt to find the optimal signal region so that signa
       \sig{} $(400) = 0.0774$}\\
     \hline
   \end{tabular}
-  \caption{$m_{T}$ ($\tau$, \met) $> 100$ and \DeltaR{} (\ls, $\tau$) $>2.5$ \2l1t-OS \metpt $>50$ events.}
+  \caption[\2l1t-OS Cut-3: $m_{T}$ ($\tau$, \met) $> 100$ + \DeltaR{} (\ls, $\tau$) $>2.5$]{$m_{T}$ ($\tau$, \met) $> 100$ and \DeltaR{} (\ls, $\tau$) $>2.5$ for \2l1t-OS \metpt $>50$ events.}
   \label{fig:2l1tc3}
+  \vspace{1cm}
 \end{figure}
-\clearpage
+
 %cut 4
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc4.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \DeltaR{} (\ls, $\tau$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc4-1.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/2l1tc4lt.png} }}%
-  \vspace{0.6cm}
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/2l1tc4.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \DeltaR{} (\ls, $\tau$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/2l1tc4-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/2l1tc4lt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.6cm}
+    }
   \tiny
   \setlength{\tabcolsep}{20pt}
   \renewcommand{\arraystretch}{1.6}
@@ -723,18 +729,24 @@ Based on these plots, we attempt to find the optimal signal region so that signa
       \sig{} $(400) = 0.1408$}\\
     \hline
   \end{tabular}
-  \caption{\pt{} of $\tau$ $>80$ and \DeltaR{} (\ls, $\tau$) $>2$ for \2l1t-OS \metpt $>50$ events.}
+  \caption[\2l1t-OS Cut-4: \pt{} of $\tau$ $>80$ + \DeltaR{} (\ls, $\tau$) $>2$]{\pt{} of $\tau$ $>80$ and \DeltaR{} (\ls, $\tau$) $>2$ for \2l1t-OS \metpt $>50$ events.}
   \label{fig:2l1tc4}
+  \vspace{4cm}
 \end{figure}
+
 %cut 5
 \begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc5.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \dphi{} (\ll, \ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/2l1tc5-1.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/2l1tc5lt.png} }}%
-  \vspace{0.6cm}
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \pt{} of $\tau$ [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/2l1tc5.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \dphi{} (\ll, \ls)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/2l1tc5-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/2l1tc5lt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.6cm}
+    }
   \tiny
   \setlength{\tabcolsep}{20pt}
   \renewcommand{\arraystretch}{1.6}
@@ -756,14 +768,13 @@ Based on these plots, we attempt to find the optimal signal region so that signa
       \sig{} $(400) = 0.0452$}\\
     \hline
   \end{tabular}
-  \caption{\pt{} of $\tau$ $>80$ and \dphi{} (\ll, \ls) $< 0.75$ for \2l1t-OS \metpt $>50$ events.}
+  \caption[\2l1t-OS Cut-5: \pt{} of $\tau$ $>80$ + \dphi{} (\ll, \ls) $< 0.75$]{\pt{} of $\tau$ $>80$ and \dphi{} (\ll, \ls) $< 0.75$ for \2l1t-OS \metpt $>50$ events.}
   \label{fig:2l1tc5}
 \end{figure}
 \vspace{1.5cm}
 
-As expected, the \DeltaR{} variables are impotant and selecting regions based on them can give us good signinificance for all the mass points. We therefore plot 2-D histograms with these variables on one axis. Different regions on the 2-D plane can then be selected as signal regions. These plots are shown in Figures~\ref{fig:2l1t2d1} to \ref{fig:2l1t2d3}.
-\newpage
-\begin{samepage}
+As expected, the \DeltaR{} variables are important and selecting regions based on them can give us good signinificance for all the mass points. We therefore plot 2-D histograms with these variables on one axis. Different regions on the 2-D plane can then be selected as signal regions. These plots are shown in Figures~\ref{fig:2l1t2d1} to \ref{fig:2l1t2d3}.
+
 %2d1
 \captionsetup[subfigure]{labelformat=empty}
 \begin{figure}[h!]
@@ -808,11 +819,11 @@ As expected, the \DeltaR{} variables are impotant and selecting regions based on
     \hline
     \end{tabular}
   }
-  \caption{[2-D histogram] $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ll, \ls) (all $m_{T}$ axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
+  \caption[(\2l1t-OS 2-D histogram) $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ll, \ls)]{[\2l1t-OS 2-D histogram] $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ll, \ls) (all $m_{T}$ axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
   \label{fig:2l1t2d1}
   \vspace{0.4cm}
 \end{figure}
-\nopagebreak
+
 %2d2
 \captionsetup[subfigure]{labelformat=empty}
 \begin{figure}[h!]
@@ -857,11 +868,10 @@ As expected, the \DeltaR{} variables are impotant and selecting regions based on
     \hline
     \end{tabular}
   }
-  \caption{[2-D histogram] $\tau$ \pt{} v/s \DeltaR{} (\ll, \ls) (all \pt{} axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
+  \caption[(\2l1t-OS 2-D histogram) $\tau$ \pt{} v/s \DeltaR{} (\ll, \ls)]{[\2l1t-OS 2-D histogram] $\tau$ \pt{} v/s \DeltaR{} (\ll, \ls) (all \pt{} axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
   \label{fig:2l1t2d2}
 \end{figure}
-\end{samepage}
-\newpage
+
 %2d3
 \captionsetup[subfigure]{labelformat=empty}
 \begin{figure}[h!]
@@ -906,7 +916,7 @@ As expected, the \DeltaR{} variables are impotant and selecting regions based on
     \hline
     \end{tabular}
   }
-  \caption{[2-D histogram] $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ls, $\tau$) (all $m_{T}$ axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
+  \caption[(\2l1t-OS 2-D histogram) $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ls, $\tau$)]{[\2l1t-OS 2-D histogram] $m_{T} (\tau, \met)$ v/s \DeltaR{} (\ls, $\tau$) (all $m_{T}$ axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
   \label{fig:2l1t2d3}
   \vspace{0.4cm}
   \makebox[0pt][c]{
@@ -916,9 +926,9 @@ As expected, the \DeltaR{} variables are impotant and selecting regions based on
 \subsubsection{{\Large{\boldmath$2\ell1\tau$} - SS}}
 \label{sec:2l1tSS}
 
-Following a strategy similar to that of the \2l1t-OS channel, we look at the basic \pt, \DeltaR, $m_{T}$ and \Lt{} plots and then apply the appropriate selections. We try a number of cuts on newly introduced variables specific to this channel (like \DeltaR{} between the same-sign lepton pair, Invariant mass of the same-sign lepton pair, etc). We also make cuts based on the presence of an opposite-sign lepton pair. Unfortunately, none of the selections give a significance better than the initial one. The optimal signal region seems to be the region with events that have an OS pair. A few of the selections we tried are shown in Figures~\ref{fig:ss2l1tc1} to \ref{fig:ss2l1t2d}. A summary of all the selections is given in Table~\ref{tab:2l1t}.
-\newpage
-%SS pt dr
+Following a strategy similar to that of the \2l1t-OS channel, we look at the basic \pt, \DeltaR, $m_{T}$ and \Lt{} plots [Figure~\ref{fig:2l1tSSplots}] and then apply the appropriate selections. We try a number of cuts on newly introduced variables specific to this channel (like \DeltaR{} between the same-sign lepton pair). We also make cuts based on the presence of an OS lepton pair. Unfortunately, none of the selections give a significance better than the initial one. The optimal signal region seems to be the region with events that have an OS pair. A summary of all the selections is given in Table~\ref{tab:2l1t}.
+
+%SS plots
 \begin{figure}[h!]
   \centering
   \makebox[0pt][c]{%
@@ -942,9 +952,9 @@ Following a strategy similar to that of the \2l1t-OS channel, we look at the bas
     \rule{0pt}{0.4cm}
     }
   \makebox[0pt][c]{%
-    \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/Lt.png}}}
+    \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/ss/Lt.png}}}
     \qquad
-    \subfloat[{\scriptsize $m_{T}$ ($\tau$, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/ss/mt0.png} }}%
+    \subfloat[{\scriptsize $m_{T}$ ($\tau$, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/ss/mt0.png} }}%
   }
   \caption{Some basic distributions for the \2l1t-SS region.}
   \label{fig:2l1tSSplots}
@@ -974,7 +984,7 @@ Following a strategy similar to that of the \2l1t-OS channel, we look at the bas
       \sig{} $(400) = 0.0512$}\\
     \hline
   \end{tabular}
-  \caption{\DeltaR{} (\ll,\ls) $> 2.4$ for \2l1t-SS channel.}
+  \caption[\2l1t-SS Cut-1: \DeltaR{} (\ll,\ls) $> 2.4$]{\DeltaR{} (\ll,\ls) $> 2.4$ for \2l1t-SS channel.}
   \label{fig:ss2l1tc1}
 \end{figure}
 
@@ -1002,7 +1012,7 @@ Following a strategy similar to that of the \2l1t-OS channel, we look at the bas
       \sig{} $(400) = 0.0468$}\\
     \hline
   \end{tabular}
-  \caption{\dphi{} (\ll,\ls) $> 2.3$ for \2l1t-SS channel.}
+  \caption[\2l1t-SS Cut-2: \dphi{} (\ll,\ls) $> 2.3$]{\dphi{} (\ll,\ls) $> 2.3$ for \2l1t-SS channel.}
   \label{fig:ss2l1tc2}
 \end{figure}
 
@@ -1030,10 +1040,10 @@ Following a strategy similar to that of the \2l1t-OS channel, we look at the bas
       \sig{} $(400) = 0.0329$}\\
     \hline
   \end{tabular}
-  \caption{\DeltaR{} (\ls,$\tau$) $< 2$ for \2l1t-SS channel.}
+  \caption[\2l1t-SS Cut-3: \DeltaR{} (\ls,$\tau$) $< 2$]{\DeltaR{} (\ls,$\tau$) $< 2$ for \2l1t-SS channel.}
   \label{fig:ss2l1tc3}
 \end{figure}
-\newpage
+
 %2d1
 \captionsetup[subfigure]{labelformat=empty}
 \begin{figure}[h!]
@@ -1078,7 +1088,7 @@ Following a strategy similar to that of the \2l1t-OS channel, we look at the bas
     \hline
     \end{tabular}
   }
-  \caption{[2-D histogram] \Lt{} v/s \DeltaR{} (\ll, \ls) (all \Lt{} axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
+  \caption[(\2l1t-SS 2-D histogram) \Lt{} v/s \DeltaR{} (\ll, \ls)]{[\2l1t-SS 2-D histogram] \Lt{} v/s \DeltaR{} (\ll, \ls) (all \Lt{} axes are in \GeV{} units). The bins (x,y) with the best significance for each mass point have been mentioned in parentheses.}
   \label{fig:ss2l1t2d}
   \vspace{0.4cm}
 \end{figure}
@@ -1104,14 +1114,14 @@ Following a strategy similar to that of the \2l1t-OS channel, we look at the bas
 \hline \hline
     \end{tabular}%
     }
-  \caption{Summary table for \2l1t{} channel.}
+  \caption{Summary table for the \2l1t{} channel.}
   \label{tab:2l1t}
 \end{table}
 
 \subsection{\Large{\boldmath$3\ell$}}
 \label{sec:3l}
 
-The \3l channel is similar to the \2l1t{} channel in terms of event topolohy (we have a light lepton fake instead of a $\tau$ fake. \3l{} has fewer events than the \2l1t channel (after applying vetoes). In addition to that, there is a lot of background (majorly DY and \WZ). So, for this part of the analysis, we start by dividing the channel into 7 categories based on the sign (S) and flavour (F) of each lepton and where it lies with respect to the on-\Zboson{} range:
+The \3l channel is similar to the \2l1t{} channel in terms of event topology (we have a light lepton fake instead of a $\tau$ fake). \3l{} has fewer events than the \2l1t channel (after applying vetoes). In addition to that, there is a lot of background (majorly DY and \WZ). So, for this part of the analysis, we start by dividing the channel into 7 categories based on the sign (S) and flavour (F) of each lepton and where it lies with respect to the on-\Zboson{} range:
 
 \begin{enumerate}
 \item OSSF Below-\Zboson
@@ -1123,14 +1133,14 @@ The \3l channel is similar to the \2l1t{} channel in terms of event topolohy (we
 \item All same-sign leptons
 \end{enumerate}
 
-Here, the below-\Zboson{} and above-\Zboson{} is defined as $<76\GeV$ and $>106\GeV$ respectively. After analysing a couple of basic plots from each of these categories, we discard the ones which have very less signal (like SSSF and all same-sign categories). Finally, we are left with two categories: \emph{(1)} OSSF Below-\Zboson{} and \emph{(2)} OSOF Below-\Zboson.
+Here, the below-\Zboson{} and above-\Zboson{} is defined as $<76\GeV$ and $>106\GeV$ respectively. After analyzing a couple of basic plots from each of these categories, we discard the ones which have very less signal (like SSSF and all same-sign categories). Finally, we are left with two categories: \emph{(1)} OSSF Below-\Zboson{} and \emph{(2)} OSOF Below-\Zboson.
 
 \subsubsection{OSSF Below-{\boldmath \Zboson}}
 \label{sec:ossf}
 
-All the events that have at least one opposite-sign same-flavour (OSSF) pair belong to this category. In a lot of cases, we have an ambiguity since two such pairs can be formed (this is also true when we apply vetoes). To resolve this ambiguity, we pick the pair is closer to the \Zboson{} mass ,\ie we check $|M_{\ell\ell} - 91|$ and choose the OSSF pair for which this quantity is minimum. The third lepton is named the odd lepton. Some basic distributions are shown in Figure~\ref{fig:3lOSSFplots} and a summary of the best set of cuts is given in Table~\ref{3l}.
+All the events that have at least one opposite-sign same-flavour (OSSF) pair belong to this category. In a lot of cases, we have an ambiguity since two such pairs can be formed (this is also true when we apply vetoes). To resolve this ambiguity, we pick the pair that is closer to the \Zboson{} mass, \ie{} we check $|M_{\ell^{+}\ell^{-}} - 91|$ and choose the OSSF pair for which this quantity is minimum. The third lepton is named the odd lepton. Some basic distributions are shown in Figure~\ref{fig:3lOSSFplots} and a summary of the best set of cuts is given in Table~\ref{tab:3l}.
 
-%OS pt dr
+%OSSF plots
 \begin{figure}[h!]
   \centering
   \makebox[0pt][c]{%
@@ -1158,19 +1168,24 @@ All the events that have at least one opposite-sign same-flavour (OSSF) pair bel
     \qquad
     \subfloat[{\scriptsize \ptmiss{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/3lossf/metpt.png} }}%
   }
-  \caption{Some basic distributions for the \3l-OSSF below-\Zboson{} channel. From the \pt{} plots, we observe that the odd lepton is often the leading lepton, \ie{} the OSSF pair is often of the lower \pt{} leptons. }
+  \caption[Some basic distributions for the \3l-OSSF below-\Zboson{} channel]{Some basic distributions for the \3l-OSSF below-\Zboson{} channel. From the \pt{} plots, we observe that the odd lepton is often the leading lepton, \ie{} the OSSF pair is often of the lower \pt{} leptons. }
   \label{fig:3lOSSFplots}
+  \vspace{1cm}
 \end{figure}
 
 %cut 1
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize \DeltaR{} (OSSF pair)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc1-1.png} }}%
-  \subfloat{{\includegraphics[trim=0 -2700 0 -2700,clip, height=4.5cm, width=0.05\textwidth]{images/plus.png} }}%
-  \subfloat[{\scriptsize \ptmiss{} [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc1-2.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/3lossf/3lc1lt.png} }}%
-  \vspace{0.6cm}
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \DeltaR{} (OSSF pair)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/3lossf/3lc1-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -2700 0 -2700,clip, height=5cm, width=0.05\textwidth]{images/plus.png} }}%
+  \subfloat[{\scriptsize \ptmiss{} [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/3lossf/3lc1-2.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3lossf/3lc1lt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.6cm}
+    }
   \tiny
   \setlength{\tabcolsep}{20pt}
   \renewcommand{\arraystretch}{1.6}
@@ -1188,19 +1203,24 @@ All the events that have at least one opposite-sign same-flavour (OSSF) pair bel
       \sig{} $(400) = 0.0039$}\\
     \hline
   \end{tabular}
-  \caption{\DeltaR{} (OSSF pair) $<2$ and \ptmiss{} $>50$ for \3l-OSSF below-\Zboson{} events.}
+  \caption[\3l-OSSF Cut-1: \DeltaR{} (OSSF pair) $<2$ and \ptmiss{} $>50$]{\DeltaR{} (OSSF pair) $<2$ and \ptmiss{} $>50$ for \3l-OSSF below-\Zboson{} events.}
   \label{fig:3lc1}
+  \vspace{1cm}
 \end{figure}
 
 %cut 3
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize $m_{T}$ (\ll, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc3-1.png} }}%
-  \subfloat{{\includegraphics[trim=0 -2700 0 -2700,clip, height=4.5cm, width=0.05\textwidth]{images/plus.png} }}%
-  \subfloat[{\scriptsize \dphi{} (\lodd, $\ell_{OSSF_{1}}$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc3-2.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/3lossf/3lc3lt.png} }}%
-  \vspace{0.6cm}
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize $m_{T}$ (\ll, \met) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/3lossf/3lc3-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -2700 0 -2700,clip, height=5cm, width=0.05\textwidth]{images/plus.png} }}%
+  \subfloat[{\scriptsize \dphi{} (\lodd, $\ell_{OSSF_{1}}$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/3lossf/3lc3-2.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3lossf/3lc3lt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.6cm}
+    }
   \tiny
   \setlength{\tabcolsep}{20pt}
   \renewcommand{\arraystretch}{1.6}
@@ -1218,19 +1238,24 @@ All the events that have at least one opposite-sign same-flavour (OSSF) pair bel
       \sig{} $(400) = 0.0055$}\\
     \hline
   \end{tabular}
-  \caption{ $m_{T}$ (\ll, \met) $>80$ and \dphi{} (\lodd, $\ell_{OSSF_{1}}$) $>2.5$ for \3l-OSSF below-\Zboson{} events.}
+  \caption[\3l-OSSF Cut-2: $m_{T}$ (\ll, \met) $>80$ and \dphi{} (\lodd, $\ell_{OSSF_{1}}$) $>2.5$]{ $m_{T}$ (\ll, \met) $>80$ and \dphi{} (\lodd, $\ell_{OSSF_{1}}$) $>2.5$ for \3l-OSSF below-\Zboson{} events.}
   \label{fig:3lc3}
+  \vspace{4cm}
 \end{figure}
 
 %cut 2
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
-  \subfloat[{\scriptsize \DeltaR{} (OSSF pair)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc2-1.png} }}%
-  \subfloat{{\includegraphics[trim=0 -2700 0 -2700,clip, height=4.5cm, width=0.05\textwidth]{images/plus.png} }}%
-  \subfloat[{\scriptsize \dphi{} (\lodd, $\ell_{OSSF_{2}}$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.3\textwidth]{images/3lossf/3lc2-2.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=4.5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.3\textwidth]{images/3lossf/3lc2lt.png} }}%
-  \vspace{0.6cm}
+  \makebox[0pt][c]{%
+  \subfloat[{\scriptsize \DeltaR{} (OSSF pair)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/3lossf/3lc2-1.png} }}%
+  \subfloat{{\includegraphics[trim=0 -2700 0 -2700,clip, height=5cm, width=0.05\textwidth]{images/plus.png} }}%
+  \subfloat[{\scriptsize \dphi{} (\lodd, $\ell_{OSSF_{2}}$)}]{{\includegraphics[trim=0 0 0 40,clip, width=0.35\textwidth]{images/3lossf/3lc2-2.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=5cm, width=0.05\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.35\textwidth]{images/3lossf/3lc2lt.png} }}%
+  }
+  \makebox[\textwidth][c]{%
+    \rule{0pt}{0.6cm}
+    }
   \tiny
   \setlength{\tabcolsep}{20pt}
   \renewcommand{\arraystretch}{1.6}
@@ -1248,16 +1273,44 @@ All the events that have at least one opposite-sign same-flavour (OSSF) pair bel
       \sig{} $(400) = 0.0043$}\\
     \hline
   \end{tabular}
-  \caption{\DeltaR{} (OSSF pair) $<1.2$ and \dphi{} (\lodd, $\ell_{OSSF_{2}}$) $>2.3$ for \3l-OSSF below-\Zboson{} events.}
+  \caption[\3l-OSSF Cut-3: \DeltaR{} (OSSF pair) $<1.2$ and \dphi{} (\lodd, $\ell_{OSSF_{2}}$) $>2.3$]{\DeltaR{} (OSSF pair) $<1.2$ and \dphi{} (\lodd, $\ell_{OSSF_{2}}$) $>2.3$ for \3l-OSSF below-\Zboson{} events.}
   \label{fig:3lc2}
 \end{figure}
 
 \subsubsection{OSOF Below-{\boldmath \Zboson}}
 \label{sec:osof}
 
-The events that do not have an OSSF pair will have an OSOF pair in the final state (excluding all same-sing events). Again, we pick the pair closer to the \Zboson{} mass and the third lepton is called the odd lepton. We try a bunch of selections on the distributions [Figure~\ref{fig:3lOSSFplots}] but they cut down the signal even further. A very small number of events ($<1$) will fail to give us meaningful results. One of the selections has been shown in Figure~\ref{fig:3lc4}. 
+The events that do not have an OSSF pair will have an OSOF pair in the final state (excluding all same-sing events). Again, we pick the pair closer to the \Zboson{} mass and the third lepton is called the odd lepton. We try a few selections on the distributions [Figure~\ref{fig:3lOSSFplots}] but they cut down the signal even further. A very small number of events ($<1$) will fail to give us meaningful results. One of the selections has been shown in Figure~\ref{fig:3lc4}. 
 
-% pt dr
+%cut 1
+\begin{figure}[h!]
+  \centering
+  \subfloat[{\scriptsize \pt{} (\ls) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.4\textwidth]{images/3losof/3lc4.png} }}%
+  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=6cm, width=0.1\textwidth]{images/right-arrow.png} }}%
+  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.4\textwidth]{images/3losof/3lc4lt.png} }}%
+  \vspace{0.4cm}
+  \tiny
+  \setlength{\tabcolsep}{20pt}
+  \renewcommand{\arraystretch}{1.6}
+  \begin{tabular}{|c|c|}
+    \hline
+    Significance before cut & Significance after cut\\
+    \hline
+    \Gape[0.2cm]{\makecell{
+        \sig{} $(100) = 0.1955$\\
+        \sig{} $(150) = 0.2161$\\
+        \sig{} $(400) = 0.0079$ }} & 
+    \makecell{
+      \sig{} $(100) = 0.2329$\\
+      \sig{} $(150) = 0.2138$\\
+      \sig{} $(400) = 0.0089$}\\
+    \hline
+  \end{tabular}
+  \caption[\3l-OSOF Cut-1: \pt{} (\ls) $>30$]{\pt{} (\ls) $>30$ for \3l-OSOF below-\Zboson{} events.}
+  \label{fig:3lc4}
+\end{figure}
+
+%OSOF plots
 \begin{figure}[h!]
   \centering
   \makebox[0pt][c]{%
@@ -1287,42 +1340,15 @@ The events that do not have an OSSF pair will have an OSOF pair in the final sta
   }
   \caption{Some basic distributions for the \3l-OSOF below-\Zboson{} channel.}
   \label{fig:3lOSOFplots}
-\end{figure}
-
-%cut 1
-\begin{figure}[h]
-  \centering
-  \subfloat[{\scriptsize \pt{} (\ls) [\GeV]}]{{\includegraphics[trim=0 0 0 40,clip, width=0.45\textwidth]{images/3losof/3lc4.png} }}%
-  \subfloat{{\includegraphics[trim=0 -1400 0 -1400,clip, height=7cm, width=0.1\textwidth]{images/right-arrow.png} }}%
-  \subfloat[{\scriptsize \Lt{} [\GeV]}]{{\includegraphics[trim=0 0 0 45,clip, width=0.45\textwidth]{images/3losof/3lc4lt.png} }}%
-  \vspace{0.6cm}
-  \tiny
-  \setlength{\tabcolsep}{20pt}
-  \renewcommand{\arraystretch}{1.6}
-  \begin{tabular}{|c|c|}
-    \hline
-    Significance before cut & Significance after cut\\
-    \hline
-    \Gape[0.2cm]{\makecell{
-        \sig{} $(100) = 0.1955$\\
-        \sig{} $(150) = 0.2161$\\
-        \sig{} $(400) = 0.0079$ }} & 
-    \makecell{
-      \sig{} $(100) = 0.2329$\\
-      \sig{} $(150) = 0.2138$\\
-      \sig{} $(400) = 0.0089$}\\
-    \hline
-  \end{tabular}
-  \caption{\pt{} (\ls) $>30$ for \3l-OSOF below-\Zboson{} events.}
-  \label{fig:3lc4}
+  \vspace{1cm}
 \end{figure}
 
 %summary table
 \begin{table}[h]
   \centering
-  \large
+  \Large
   \setlength{\tabcolsep}{20pt}
-  \renewcommand{\arraystretch}{1.5}
+  \renewcommand{\arraystretch}{2.5}
   \resizebox{\textwidth}{!}{%
     \begin{tabular}{c|l|c|c|c}
     \hline \hline
@@ -1336,22 +1362,24 @@ The events that do not have an OSSF pair will have an OSOF pair in the final sta
     \hline \hline
     \end{tabular}%
   }
-  \caption{Summary table for \3l{} channel.}
+  \caption{Summary table for the \3l{} channel.}
   \label{tab:3l}
+  \vspace{1cm}
 \end{table}
 
 \section{RHN Acceptance Cut-flow}
 \label{sec:cutflow}
 
-The RHN acceptance cutflow gives us menaingful insights into how different cuts and selections affects the number of events in each channel. This can help us decide which selection to apply for finding the optimal signal region. We can also observe the difference in various object IDs (MVA IS and Deep ID for \t). Table~\ref{tab:cutflow} summarises the cutflow and the numbers at each stage of selection. The main channels used for analysis have been highlighted.
+The RHN acceptance cutflow gives us meaningful insights into how different cuts and selections affect the number of events in each channel. This can help us decide which selection to apply for finding the optimal signal region. We can also observe the difference in various object IDs (MVA IS and Deep ID for \t). Table~\ref{tab:cutflow} summarises the cutflow and the numbers at each stage of selection. The main channels used for analysis have been highlighted.\\
+\rule{0pt}{1cm}
 
 %cutflow
 \begin{table}[h]
   \centering
   \setlength{\tabcolsep}{5pt}
   \renewcommand{\arraystretch}{1.2}
-  \hspace*{-1.7cm}
-  \resizebox{1.2\linewidth}{!}{%
+  \hspace*{-0.9cm}
+  \resizebox{1.1\linewidth}{!}{%
     \begin{tabular}{l|rr|rrrr|rr|rrrr}
       \hline \hline
        & \multicolumn{6}{c}{MVA} & \multicolumn{6}{c}{Deep} \\
@@ -1366,25 +1394,39 @@ The RHN acceptance cutflow gives us menaingful insights into how different cuts 
       $N_{1\ell\_trigg\_1\ell}$ events & $22994$ & $10915$ & $21033$ & $38399$ & $2835198$ & $1538$ & $22994$ & $10915$ & $21033$ & $38399$ & $2835198$ & $1538$\\
       $N_{1\ell\_trigg\_1\ell\pt10}$ events & $21495$ & $9111$ & $20680$ & $36568$ & $2726718$ & $396$ & $21495$ & $9111$ & $20680$ & $36568$ & $2726718$ & $396$\\
       $N_{1\ell\_trigg\_1\ell\pt10\_1\ell}$ events & $2681$ & $857$ & $54$ & $825$ & $16869$ & $2$ & $2681$ & $857$ & $54$ & $825$ & $16869$ & $2$\\
+      \arrayrulecolor{red}\hline
+      \rowcolor{red!20}
       $N_{1\ell\_trigg\_2\ell\pt10}$ events ($3\ell$ events) & $2251$ & $619$ & $37$ & $746$ & $10002$ & $1$ & $2251$ & $619$ & $37$ & $746$ & $10002$ & $1$\\
+      \hline
       $N_{1\ell\_trigg\_1\ell\pt10\_1\tau}$ events & $4524$ & $1022$ & $16333$ & $29722$ & $1819$ & $0$ & $3389$ & $663$ & $11742$ & $29813$ & $1294$ & $0$\\
+      \hline
+      \rowcolor{red!20}
       $N_{1\ell\_trigg\_1\ell\pt10\_1\tau\pt20}$ events ($2\ell1\tau$ events) & $4280$ & $908$ & $16329$ & $29706$ & $1696$ & $0$ & $3389$ & $663$ & $11742$ & $29813$ & $1294$ & $0$\\
+      \hline
       $N_{1\ell\_trigg\_1\tau}$ events & $23319$ & $10796$ & $189$ & $7478$ & $876646$ & $7$ & $17542$ & $7315$ & $284$ & $7562$ & $590115$ & $6$\\
       $N_{1\ell\_trigg\_1\tau\pt20}$ events & $22069$ & $9684$ & $189$ & $7476$ & $805080$ & $6$ & $17452$ & $7315$ & $284$ & $7562$ & $590115$ & $6$\\
       $N_{1\ell\_trigg\_1\tau\pt20\_1\tau}$ events & $3049$ & $506$ & $1$ & $136$ & $23$ & $0$ & $1681$ & $190$ & $0$ & $25$ & $7$ & $0$\\
+      \hline
+      \rowcolor{red!20}
       $N_{1\ell\_trigg\_2\tau\pt20}$ events ($1\ell2\tau$ events) & $2670$ & $363$ & $0$ & $104$ & $21$ & $0$ & $1681$ & $190$ & $0$ & $25$ & $7$ & $0$\\
+      \hline
       $N_{1\tau}$ events & $37486$ & $22362$ & $0$ & $0$ & $1182328$ & $1301502$ & $27692$ & $14793$ & $0$ & $0$ & $803086$ & $763144$\\
       $N_{1\tau\pt20}$ events & $35331$ & $20113$ & $0$ & $0$ & $1090836$ & $1124963$ & $27692$ & $14793$ & $0$ & $0$ & $803086$ & $763144$\\
       $N_{1\tau\pt20\_1\tau}$ events & $6960$ & $2038$ & $0$ & $0$ & $71619$ & $0$ & $3724$ & $916$ & $0$ & $0$ & $33355$ & $0$\\
       $N_{2\tau\pt20}$ events & $6118$ & $1637$ & $0$ & $0$ & $60823$ & $0$ & $3724$ & $916$ & $0$ & $0$ & $33355$ & $0$\\
       $N_{2\tau\pt20\_1\tau}$ events & $520$ & $79$ & $0$ & $0$ & $0$ & $0$ & $231$ & $28$ & $0$ & $0$ & $0$ & $0$\\
+      \hline
+      \rowcolor{red!20}
       $N_{3\tau\pt20}$ events ($3\tau$ events) & $434$ & $54$ & $0$ & $0$ & $0$ & $0$ & $231$ & $28$ & $0$ & $0$ & $0$ & $0$\\
+      \hline
+      \arrayrulecolor{black}
       \hline
       \hline	
     \end{tabular}%
   }
   \caption{RHN acceptance cutflow}
   \label{tab:cutflow}
+  \vspace{1.5cm}
 \end{table}
 
 After comparing the numbers for the old and new \t{} IDs, we see that the old (MVA) ID seems to result in higher number of events as compared to the new (Deep) ID. This might be because the new ID has a lower false positive rate, and that it has fewer fakes. With a deeper analysis and truth matching, we can draw more definitive conclusions. We use the Deep ID for our analysis.
@@ -1392,15 +1434,16 @@ After comparing the numbers for the old and new \t{} IDs, we see that the old (M
 \section{Results}
 \label{sec:results}
 
-The search for right-handed neutrinos (RHN) involves setting limits on the signal cross section. To select the signal regions for this analysis, we apply a number of cuts and selections to get the highest possible signal significance. Possible signal regions (regions with a the best signal significance so far) have been listed in Table~\ref{tab:results}. Multiple regions can be combined for better results.
+The search for right-handed neutrinos (RHN) involves setting limits on the signal cross section. To select the signal regions for this analysis, we apply a number of selections to get the highest possible signal significance. Possible signal regions (regions with a the best signal significance so far) have been listed in Table~\ref{tab:results}. Multiple regions can be combined for better results.\\
+\rule{0pt}{0.7cm}
 
-\begin{table}
+\begin{table}[h!]
   \centering
-  \large
+  \Large
   \setlength{\tabcolsep}{20pt}
-  \renewcommand{\arraystretch}{1.6}
-  \hspace*{-1.7cm}
-  \resizebox{1.2\textwidth}{!}{%
+  \renewcommand{\arraystretch}{2}
+  \hspace*{-0.9cm}
+  \resizebox{1.1\textwidth}{!}{%
   \begin{tabular}{c|l|r|r|r}
     \hline \hline
     Channel & Region & \sig{} ($100\GeV$)& \sig{} ($150\GeV$)& \sig{} ($400\GeV$)\\
@@ -1412,12 +1455,19 @@ The search for right-handed neutrinos (RHN) involves setting limits on the signa
     \hline
   \end{tabular}%
   }
-  \caption{A summary of all the channels considered for signal region optimization.}
+  \caption[Results]{A summary of all the channels considered for signal region optimization.}
   \label{tab:results}
 \end{table}
 
 \section{Acknowledgements}
 \label{sec:acknowledgments}
 
+I would like to thank Dr. Sourabh Dube for giving me this opportuninty to delve into the subject and for greatly improving my understanding of the same, and Angira Rastogi for her guidance and help with the project. I thank them both for all the crucial insights and discussions during the course of the project.
+\newpage
+
+\thispagestyle{empty}
+
+\listoftables
+\listoffigures
 
 \end{document}
